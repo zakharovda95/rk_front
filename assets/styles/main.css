@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+@font-face {
+  font-family: 'Trajan';
+  src: url('../fonts/trajan-pro-3.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../fonts/helvetica-regular.otf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
