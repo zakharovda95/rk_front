@@ -1,10 +1,6 @@
 <template>
-  <div class="relative w-full">
-    <div
-      class="relative w-full h-full max-w-[1399px] p-5"
-      style="margin: 0 auto"
-      v-if="!isBurgerOpen"
-    >
+  <div class="w-full">
+    <div class="w-full h-full max-w-[1399px] px-5" style="margin: 0 auto" v-if="!isBurgerOpen">
       <PagesMainFirstSectionBrand class="absolute top-[92vh] z-[10]" v-if="!isThereOffset" />
     </div>
   </div>

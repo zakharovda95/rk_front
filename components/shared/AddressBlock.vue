@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="address-block">
     <UIText class="text-[56px] text-titleBrown font-trajan" tag="h1">
       Римского<br />Корсакова
     </UIText>

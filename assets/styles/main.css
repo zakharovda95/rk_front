@@ -8,9 +8,9 @@
   box-sizing: border-box;
 }
 
-::-webkit-scrollbar {
-  width: 0;
-}
+/*::-webkit-scrollbar {*/
+/*  width: 0;*/
+/*}*/
 
 @font-face {
   font-family: 'Trajan';
