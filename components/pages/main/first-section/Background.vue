@@ -1,5 +1,5 @@
 <template>
-  <div class="bg w-full h-[100vh]" />
+  <div id="background" class="bg w-full h-[100vh]" />
 </template>
 
 <script setup lang="ts">
@@ -30,5 +30,6 @@ const philter: Ref<string> = computed(() =>
   filter: v-bind(philter);
   -webkit-filter: v-bind(philter);
   transition: 1s;
+  background-attachment: fixed;
 }
 </style>

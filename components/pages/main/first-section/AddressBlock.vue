@@ -14,17 +14,20 @@
 </template>
 
 <script setup lang="ts">
-const address: Ref<Element | null> = ref(null);
+import { AddressBlockSizesType } from '~/helpers/types/pages/index-page.type';
 
 const emits = defineEmits(['custom:get-address-block-sizes']);
 
+const address: Ref<Element | null> = ref(null);
+const sizes: Ref<AddressBlockSizesType | null> = ref(null);
+
 onMounted((): void => {
-  const sizes: { w: number; h: number } = {
+  sizes.value = {
     w: address.value!.clientWidth,
     h: address.value!.clientHeight,
   };
 
-  if (sizes.w && sizes.h) {
+  if (sizes.value.w && sizes.value.h) {
     emits('custom:get-address-block-sizes', sizes);
   }
 });

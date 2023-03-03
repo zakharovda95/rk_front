@@ -1,6 +1,6 @@
 <template>
   <div class="menu fixed w-full h-[100vh] overflow-hidden z-[900]">
-    <SharedBackground class="absolute z-[80]" />
+    <PagesMainFirstSectionBackground class="absolute z-[80]" />
     <LayoutsMenuSidebar class="sidebar" />
 
     <div class="max-w-[1399px] relative z-[90] p-5" style="margin: 0 auto">

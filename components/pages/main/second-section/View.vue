@@ -1,83 +1,57 @@
 <template>
-  <div>
-    <div id="section-2" class="w-full h-[100vh] flex flex-col relative z-[10]">
-      <div
-        id="section2-text"
-        class="text w-full max-w-[1399px] flex flex-col items-start justify-end relative bottom-[50px] mt-2"
-        style="margin: 0 auto"
-        :style="textSize"
-      >
-        <UIText tag="h1" class="font-trajan text-[white] text-[46px] mb-2">Клубный проект</UIText>
-        <UIText tag="h2" class="font-trajan text-[white] text-[26px]">
-          12 коллекционных резиденций,
-          <br />
-          включая 4 двухуровневых апартамента
-        </UIText>
+  <div class="w-full h-[100vh] bg-[white]">
+    <div class="w-full max-w-[1399px] pt-36" style="margin: 0 auto">
+      <UIText class="font-trajan text-black text-[22px] w-full">
+        В самом центре Санкт-Петербурга на месте пересечения канала Грибоедова и Крюкова мы создали
+        уникальный проект реновации, сочетающий архитектуру 18 века и современные концепции
+        премиального жилого пространства.
+      </UIText>
+
+      <div class="w-full flex justify-between items-center mt-24 relative">
+        <img
+          src="/img/images/section3-1.png"
+          alt="img1"
+          class="section2img h-[350px] relative top-0 left-0"
+        />
+        <img
+          is="section2img-1"
+          src="/img/images/section3-2.png"
+          alt="img2"
+          class="relative top-0 left-0"
+        />
+        <img
+          src="/img/images/section3-3.png"
+          alt="img3"
+          class="section2img h-[350px] relative top-0 left-0"
+        />
       </div>
-      <div id="section2img" :style="imgSizes" class="img relative z-[20]" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { PropType } from '@vue/runtime-core';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-const props = defineProps({
-  addressBlockSizes: {
-    type: Object as PropType<{ w: number; h: number } | null>,
-    required: true,
-  },
-});
-const scrollBarWidth: Ref<number> = ref(0);
+gsap.registerPlugin(ScrollTrigger);
 
-onMounted(() => {
-  const clientWidth: number = document.body.clientWidth;
-  const innerWidth: number = window.innerWidth;
+onMounted((): void => {
+  const tl = gsap.timeline({
+    paused: true,
+    scrollTrigger: {
+      pin: true,
+      trigger: '#section-wrapper-2',
+      start: 'top bottom ',
+      markers: true,
+      scrub: 1,
+    },
+  });
 
-  scrollBarWidth.value = innerWidth - clientWidth;
-});
-
-const imgSizes: Ref<{ width: string | null; height: string | null } | null> = computed(() => {
-  if (props.addressBlockSizes) {
-    return {
-      width: imgWidth.value,
-      height: imgHeight.value,
-    };
-  }
-  return null;
-});
-
-const imgWidth: Ref<string | null> = computed(() => {
-  if (props.addressBlockSizes) {
-    return `calc(100vw - ${scrollBarWidth.value + props.addressBlockSizes.w}px)`;
-  } else {
-    return null;
-  }
-});
-
-const imgHeight: Ref<string | null> = computed(() => {
-  if (props.addressBlockSizes) {
-    return `${props.addressBlockSizes.h}px`;
-  } else {
-    return null;
-  }
-});
-
-const textSize: Ref<{ height: string } | null> = computed(() => {
-  if (props.addressBlockSizes) {
-    return {
-      height: `calc(100vh - ${props.addressBlockSizes.h}px)`,
-    };
-  }
-  return null;
+  tl.fromTo('.section2img', { x: 0, y: '500px' }, { x: 0, y: 20, duration: 5 });
+  tl.to('#section2img-1', {
+    width: '100vw',
+    height: '100vh',
+    duration: 5,
+  });
 });
 </script>
-
-<style scoped lang="scss">
-.img {
-  background-image: url('/img/images/section-2-img.png');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-</style>
