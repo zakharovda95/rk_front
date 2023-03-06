@@ -42,7 +42,7 @@ onMounted((): void => {
       pin: true,
       start: 'center center',
       endTrigger: '#section5dates',
-      end: 'bottom 60%',
+      end: 'top top',
     },
   });
 
