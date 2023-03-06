@@ -13,7 +13,7 @@ const isReadMore: Ref<boolean> = ref(false);
 const text: Ref<string> = computed(() => (isReadMore.value ? 'скрыть' : 'читать далее'));
 
 const readMore = (): void => {
-  emits('custom:read-more', isReadMore.value);
+  emits('custom:read-more');
   isReadMore.value = !isReadMore.value;
 };
 </script>

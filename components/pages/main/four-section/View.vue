@@ -2,21 +2,25 @@
   <div class="w-full h-[100vh] relative">
     <div class="map w-full max-w-[1399px] h-full flex" style="margin: 0 auto">
       <div class="w-[70%]">
-        <UIText id="section4text" class="w-full text-black font-trajan text-[46px] mt-20">
+        <UIText tag="h1" id="section4text" class="w-full text-black font-trajan text-[46px] mt-20">
           Апартаменты <br />
           <span class="text-titleBrown"> Римского-Корсакова, 22:</span>
           вдохновение историей императорских яхт.
         </UIText>
 
-        <UIText class="w-full text-black font-helvetica text-[19px] mt-5 mr-5">
+        <UIText tag="p" class="w-full text-black font-helvetica text-[19px] mt-5 mr-5">
           Более 100 лет по этому адресу размещался штаб Императорского флотского экипажа — самого
           привилегированного формирования, офицеры которого несли службу в царских резиденциях и на
           императорских яхтах.
         </UIText>
 
-        <PagesMainFourSectionReadMore class="mt-3" @custom:read-more="isReadMore = $event" />
+        <PagesMainFourSectionReadMore class="mt-3" @custom:read-more="isReadMore = !isReadMore" />
 
-        <UIText v-if="!isReadMore" class="w-full text-black font-helvetica text-[19px] mt-5 mr-5">
+        <UIText
+          tag="p"
+          v-if="isReadMore"
+          class="w-full text-black font-helvetica text-[19px] mt-5 mr-5"
+        >
           Более 100 лет по этому адресу размещался штаб Императорского флотского экипажа — самого
           привилегированного формирования, офицеры которого несли службу в царских резиденциях и на
           императорских яхтах.
@@ -66,7 +70,6 @@ onMounted((): void => {
   );
 
   gsap.to('#section4img', {
-    transform: 'scaleY(1.5) scaleX(1.2)',
     duration: 1,
     scrollTrigger: {
       trigger: '#section4img',

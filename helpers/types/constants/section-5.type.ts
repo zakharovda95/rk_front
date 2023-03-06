@@ -1,5 +1,6 @@
 export interface Section5Type {
   id: number;
-  date: string;
+  count: string;
   text: string;
+  small?: string;
 }

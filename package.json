@@ -17,6 +17,7 @@
   "dependencies": {
     "@pinia/nuxt": "^0.4.7",
     "gsap": "^3.11.4",
+    "gsap-trial": "^3.11.4",
     "locomotive-scroll": "^4.1.4",
     "pinia": "^2.0.32",
     "prettier": "^2.8.4",

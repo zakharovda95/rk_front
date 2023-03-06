@@ -2,6 +2,7 @@
   <div class="w-full h-[100vh]">
     <div class="relative w-full max-w-[1399px]" style="margin: 0 auto">
       <UIText
+        tag="h1"
         id="section3text"
         class="absolute z-[50] left-0 top-[20px] font-trajan text-black text-[46px] w-[45%]"
       >

@@ -5,7 +5,7 @@
       style="margin: 0 auto"
     >
       <div id="section5dates" class="flex flex-col">
-        <PagesMainFiveSectionDateItem v-for="date in dates" :key="date.id" :item-data="date" />
+        <SharedDataItem v-for="el in data" :key="el.id" :item-data="el" />
       </div>
 
       <div class="flex flex-col w-1/2 h-full">
@@ -31,10 +31,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const dates = ref(SECTION_5_CONSTANTS);
+const data = ref(SECTION_5_CONSTANTS);
 
 onMounted((): void => {
-  const tl = gsap.timeline({
+  gsap.timeline({
     paused: true,
     scrollTrigger: {
       trigger: '#section5textcontainer',
@@ -42,7 +42,7 @@ onMounted((): void => {
       pin: true,
       start: 'center center',
       endTrigger: '#section5dates',
-      end: 'top top',
+      end: 'bottom top',
     },
   });
 
@@ -51,10 +51,10 @@ onMounted((): void => {
     { opacity: 0 },
     {
       opacity: 1,
-      duration: 1,
+      duration: 0.8,
       scrollTrigger: {
-        trigger: '#section-wrapper-4',
-        start: 'bottom bottom',
+        trigger: '#section5textcontainer',
+        start: 'top bottom',
       },
     },
   );
