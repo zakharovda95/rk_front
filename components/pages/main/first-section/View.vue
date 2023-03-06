@@ -1,6 +1,7 @@
 <template>
   <div class="w-full h-[100vh] relative">
-    <PagesMainFirstSectionBackground blur class="fixed z-[-1] overflow-hidden" />
+    <SharedBackground blur class="fixed z-[-1] overflow-hidden" />
+
     <PagesMainFirstSectionAddressBlock
       class="absolute bottom-0 right-0 z-[5]"
       @custom:get-address-block-sizes="commonStore.addressBlockSizes = $event"
@@ -8,7 +9,7 @@
 
     <div class="w-full h-full max-w-[1399px] px-5" style="margin: 0 auto" v-if="!isBurgerOpen">
       <PagesMainFirstSectionBrand class="relative top-[92vh] z-[5]" v-if="!isThereOffset" />
-      <PagesMainFirstSectionHeader class="relative left-0 top-[30vh] z-[5]" />
+      <PagesMainFirstSectionHeader class="relative left-0 top-[40vh] z-[5]" />
     </div>
 
     <div id="section1img" class="img absolute z-[5] bottom-0 left-0" :style="imgSizes" />
@@ -19,6 +20,7 @@
 import { useCommonStore } from '~/store/common.store';
 import { AddressBlockSizesType } from '~/helpers/types/pages/index-page.type';
 import { StyleType } from '~/helpers/types/style.type';
+
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -34,11 +36,19 @@ onMounted(() => {
     paused: true,
     scrollTrigger: {
       pin: true,
-      trigger: '#container',
+      trigger: '#section-wrapper-1',
       start: 'top top',
-      end: 'bottom bottom',
+      endTrigger: '#section-wrapper-2',
+      end: 'bottom top',
       scrub: 1,
     },
+  });
+
+  tl.to('#scroll', {
+    opacity: 0,
+    x: 0,
+    y: 0,
+    duration: 1,
   });
 
   tl.fromTo(
@@ -47,7 +57,25 @@ onMounted(() => {
     {
       y: 0,
       x: 0,
-      duration: 10,
+      duration: 2,
+    },
+  );
+
+  tl.fromTo(
+    ['#play'],
+    { opacity: 1 },
+    {
+      opacity: 0,
+      duration: 1,
+    },
+  );
+
+  tl.fromTo(
+    ['#phone', '#address-badge', '#plans'],
+    { opacity: 0 },
+    {
+      opacity: 1,
+      duration: 1,
     },
   );
 
@@ -56,24 +84,33 @@ onMounted(() => {
     { opacity: 0 },
     {
       opacity: 1,
-      duration: 10,
+      duration: 1,
     },
   );
 
   tl.to('#address-block', {
     x: '50vw',
-    duration: 5,
+    duration: 3,
   });
 
   tl.to('#section1text', {
     x: '-50vw',
-    duration: 5,
+    duration: 3,
+  });
+
+  tl.to('#header', {
+    opacity: 0,
+    x: 0,
+    y: 0,
+    duration: 2,
   });
 
   tl.to('#section1img', {
+    x: 0,
+    y: 0,
     height: '100vh',
     width: '100vw',
-    duration: 5,
+    duration: 2,
   });
 
   tl.fromTo(
@@ -82,7 +119,7 @@ onMounted(() => {
     {
       x: 0,
       y: 0,
-      duration: 10,
+      duration: 2,
     },
   );
 });

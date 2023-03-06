@@ -1,11 +1,11 @@
 <template>
   <div class="menu fixed w-full h-[100vh] overflow-hidden z-[900]">
-    <PagesMainFirstSectionBackground class="absolute z-[80]" />
+    <SharedBackground class="absolute z-[80]" />
     <LayoutsMenuSidebar class="sidebar" />
 
     <div class="max-w-[1399px] relative z-[90] p-5" style="margin: 0 auto">
       <LayoutsMenuPhoneBadge class="phone-badge absolute left-[30vw] top-[90vh] z-[95]" />
-      <LayoutsMenuAddressBadge class="address-badge absolute top-[90vh] z-[95]" />
+      <SharedAddressBadge class="address-badge absolute top-[90vh] z-[95]" />
       <LayoutsMenuLinks class="links absolute top-[32vh]" />
     </div>
   </div>

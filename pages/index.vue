@@ -1,17 +1,37 @@
 <template>
   <NuxtLayout>
-    <div class="scroll-container">
-      <div class="w-full min-h-[100vh] overflow-hidden">
-        <SharedScroll class="fixed bottom-[10vh] right-[85vw] z-[100]" />
+    <div class="smooth-wrapper">
+      <div class="smooth-content">
+        <SharedScroll
+          id="scroll"
+          class="right-[90vw] top-[80vh] z-[1000]"
+          style="position: fixed"
+        />
 
-        <div ref="container" id="container" class="w-full overflow-hidden" v-if="!isBurgerOpen">
-          <section id="section-wrapper-1" class="w-full h-[100vh]">
-            <PagesMainFirstSectionView />
-          </section>
+        <div class="w-full min-h-[100vh] overflow-hidden">
+          <div ref="container" id="container" class="w-full overflow-hidden" v-if="!isBurgerOpen">
+            <section id="section-wrapper-1" class="w-full h-[100vh]">
+              <PagesMainFirstSectionView />
+            </section>
 
-          <section id="section-wrapper-2" class="w-full h-[100vh]">
-            <PagesMainSecondSectionView />
-          </section>
+            <section id="section-wrapper-2" class="w-full h-[100vh]">
+              <PagesMainSecondSectionView />
+            </section>
+
+            <section id="section-wrapper-3" class="w-full h-[100vh]">
+              <PagesMainThirdSectionView />
+            </section>
+
+            <section id="section-wrapper-4" class="w-full h-[100vh]">
+              <PagesMainFourSectionView />
+            </section>
+
+            <section id="section-wrapper-5" class="w-full h-[100vh]">
+              <PagesMainFiveSectionView />
+            </section>
+
+            <section id="section-wrapper-6" class="w-full h-[100vh]"></section>
+          </div>
         </div>
       </div>
     </div>
@@ -21,6 +41,10 @@
 <script setup lang="ts">
 import usePageOffsetWatcher from '~/composables/usePageOffsetWatcher';
 import { useCommonStore } from '~/store/common.store';
+// import { gsap } from 'gsap';
+// import { ScrollSmoother } from 'gsap-trial/ScrollSmoother';
+//
+// gsap.registerPlugin(ScrollSmoother);
 
 const commonStore = useCommonStore();
 const offset = usePageOffsetWatcher();
@@ -28,6 +52,16 @@ const offset = usePageOffsetWatcher();
 const isBurgerOpen: Ref<boolean> = computed(() => commonStore.isBurgerOpen);
 
 const container = ref(null);
+
+// onMounted((): void => {
+//   ScrollSmoother.create({
+//     wrapper: '.smooth-wrapper',
+//     content: '.smooth-content',
+//     smooth: 1.5,
+//     effects: true,
+//     speed: 0.5,
+//   });
+// });
 
 watch(
   offset,

@@ -1,4 +1,11 @@
 export default defineNuxtConfig({
+  app: {
+    head: {
+      title: 'Римского Корсакова, 22',
+      script: [{ src: 'helpers/plugins/ScrollSmoother.min.js', defer: true }],
+    },
+  },
+
   postcss: {
     plugins: {
       tailwindcss: {},

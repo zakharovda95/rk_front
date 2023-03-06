@@ -1,31 +1,33 @@
 <template>
-  <div class="w-full h-[100vh] bg-[white]">
-    <div class="w-full max-w-[1399px] pt-36" style="margin: 0 auto">
+  <div class="w-full h-[100vh] bg-[white] relative z-[10]">
+    <div class="relative w-full h-full max-w-[1399px] pt-36" style="margin: 0 auto">
       <UIText class="font-trajan text-black text-[22px] w-full">
         В самом центре Санкт-Петербурга на месте пересечения канала Грибоедова и Крюкова мы создали
         уникальный проект реновации, сочетающий архитектуру 18 века и современные концепции
         премиального жилого пространства.
       </UIText>
 
-      <div class="w-full flex justify-between items-center mt-24 relative">
-        <img
-          src="/img/images/section3-1.png"
-          alt="img1"
-          class="section2img h-[350px] relative top-0 left-0"
-        />
-        <img
-          is="section2img-1"
-          src="/img/images/section3-2.png"
-          alt="img2"
-          class="relative top-0 left-0"
-        />
-        <img
-          src="/img/images/section3-3.png"
-          alt="img3"
-          class="section2img h-[350px] relative top-0 left-0"
-        />
-      </div>
+      <PagesMainSecondSectionParalaxImages class="relative z-20 bottom-[5%] left-0" />
+
+      <UIText
+        id="section2text"
+        tag="h1"
+        class="absolute bottom-[30px] z-[35] font-trajan text-[46px] text-[white] w-[50%]"
+      >
+        Выберете свою идеальную планировку
+      </UIText>
+
+      <PagesMainSecondSectionNavigation
+        class="absolute z-[35] right-0 bottom-[30px] w-[30%] hover:opacity-[0.5]"
+      />
     </div>
+
+    <img
+      id="section2img-1"
+      src="/img/images/section2img.png"
+      alt="img2"
+      class="absolute w-[420px] h-[420px] bottom-[22vh] left-[38.5vw] z-[20]"
+    />
   </div>
 </template>
 
@@ -39,19 +41,48 @@ onMounted((): void => {
   const tl = gsap.timeline({
     paused: true,
     scrollTrigger: {
-      pin: true,
       trigger: '#section-wrapper-2',
-      start: 'top bottom ',
-      markers: true,
-      scrub: 1,
+      endTrigger: '#section-wrapper-3',
+      start: 'top top',
+      end: 'bottom top',
+      scrub: true,
+      pin: true,
     },
   });
 
-  tl.fromTo('.section2img', { x: 0, y: '500px' }, { x: 0, y: 20, duration: 5 });
   tl.to('#section2img-1', {
+    left: 0,
+    top: 0,
     width: '100vw',
     height: '100vh',
-    duration: 5,
+    duration: 3,
   });
+
+  tl.fromTo(
+    '#section2text',
+    { opacity: 0 },
+    {
+      opacity: 1,
+      duration: 1,
+    },
+  );
+
+  tl.fromTo(
+    ['#section2navigation', '#section2button'],
+    { opacity: 0 },
+    {
+      opacity: 1,
+      duration: 1,
+    },
+  );
+  tl.fromTo(
+    '#section-wrapper-2',
+    { x: 0, y: 0 },
+    {
+      x: 0,
+      y: 0,
+      duration: 3,
+    },
+  );
 });
 </script>

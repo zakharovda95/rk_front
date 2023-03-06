@@ -1,7 +1,9 @@
 <template>
   <div class="el flex items-center gap-3 cursor-pointer">
     <span class="line" />
-    <UIText class="font-helvetica font-[18px]" :class="textClass"> получить буклет </UIText>
+    <UIText class="font-helvetica font-[18px]" :class="textClass">
+      <slot />
+    </UIText>
   </div>
 </template>
 
