@@ -11,22 +11,11 @@ gsap.registerPlugin(ScrollTrigger);
 onMounted((): void => {
   gsap.timeline({
     scrollTrigger: {
-      trigger: '#section5dates',
+      trigger: '#section5text',
       pin: '#section-wrapper-6',
-      scrub: 1,
-      start: 'top 40%',
-      end: 'bottom center',
-    },
-  });
-
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: '#section-wrapper-6',
-      endTrigger: '#section5dates',
-      pin: true,
       scrub: true,
-      start: 'top 0',
-      end: 'bottom bottom',
+      start: 'top 50%',
+      end: 'bottom top',
     },
   });
 });

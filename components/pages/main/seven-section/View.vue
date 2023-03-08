@@ -1,7 +1,7 @@
 <template>
   <div class="w-full h-full flex justify-between relative p-5">
-    <div class="map w-full max-w-[1399px] h-full flex" style="margin: 0 auto">
-      <div id="section7text" class="w-[30%]">
+    <div class="map w-full max-w-[1499px] h-full flex" style="margin: 0 auto">
+      <div id="section7text" class="w-[30%] xl:ml-10 xl:text-[calc(1vh+1vw*2)]">
         <UIText tag="h1" class="font-trajan text-black text-[46px]">Окружение</UIText>
         <UIText tag="p" class="font-helvetica text-black text-[18px]">
           Коломна — исторический район Санкт-Петербурга, один из уникальных мест, откуда быстро и
@@ -39,15 +39,24 @@ const carData: Ref<Section7Type[]> = ref(SECTION_7_CAR_CONSTANTS);
 const walkData: Ref<Section7Type[]> = ref(SECTION_7_WALK_CONSTANTS);
 
 onMounted((): void => {
-  const tl = gsap.timeline({
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: '.section6image',
+      scrub: true,
+      pin: '#section-wrapper-7',
+      start: 'top 10%',
+      end: 'bottom 80%',
+    },
+  });
+
+  gsap.timeline({
     scrollTrigger: {
       trigger: '#section-wrapper-7',
       scrub: true,
-      pin: '#section7text',
-      start: 'top 30%',
+      pin: ['#section7text', '#section-wrapper-8'],
+      start: 'top 40%',
       endTrigger: '#section7values',
       end: 'bottom top',
-      markers: true,
     },
   });
 });

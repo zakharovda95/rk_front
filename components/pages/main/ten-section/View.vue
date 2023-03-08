@@ -4,11 +4,19 @@
       class="map w-full max-w-[1399px] h-full flex flex-col justify-center items-center"
       style="margin: 0 auto"
     >
-      <div class="w-full flex flex-col justify-around mt-10">
-        <UIText class="font-trajan text-black text-[46px] text-left">
+      <div is="section10textwrapper" class="w-full flex flex-col justify-around mt-10">
+        <UIText
+          id="section10text1"
+          class="font-trajan text-black 2xl:text-[46px] xl:text-[calc(1vh+1vw*2)] xl:ml-10 text-left"
+        >
           Высокотехнологичное оснащение
         </UIText>
-        <UIText class="font-trajan text-black text-[46px] text-right">для комфортной жизни</UIText>
+        <UIText
+          id="section10text2"
+          class="font-trajan text-black 2xl:text-[46px] xl:text-[calc(1vh+1vw*2)] xl:mr-10 text-right"
+        >
+          для комфортной жизни
+        </UIText>
       </div>
 
       <div class="flex items-center text-center max-w-[800px] mt-10">
@@ -71,5 +79,46 @@
 import { Section10Type } from '~/helpers/types/constants/section-10.type';
 import { SECTION_10_CONSTANTS } from '~/helpers/constants/section-10.constants';
 
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 const data: Ref<Section10Type[]> = ref(SECTION_10_CONSTANTS);
+
+onMounted(() => {
+  gsap.fromTo(
+    '#section10text1',
+    {
+      x: '-2vw',
+    },
+    {
+      x: 0,
+      duration: 2,
+      scrollTrigger: {
+        trigger: '#section10text1',
+        start: 'top 20%',
+        end: 'top top',
+        scrub: true,
+      },
+    },
+  );
+
+  gsap.fromTo(
+    '#section10text2',
+    {
+      x: '2vw',
+    },
+    {
+      x: 0,
+      duration: 2,
+      scrollTrigger: {
+        trigger: '#section10text1',
+        start: 'top 20%',
+        end: 'top top',
+        scrub: true,
+      },
+    },
+  );
+});
 </script>

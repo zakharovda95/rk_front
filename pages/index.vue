@@ -20,19 +20,19 @@
               <PagesMainFourSectionView />
             </section>
 
-            <section id="section-wrapper-5" class="w-full min-h-[100vh]">
+            <section id="section-wrapper-5" class="w-full h-[100vh]">
               <PagesMainFiveSectionView />
             </section>
 
             <section id="section-wrapper-6" class="w-full h-[100vh]">
-              <PagesMainSixSectionView data-speed="1.1" />
+              <PagesMainSixSectionView />
             </section>
 
-            <section id="section-wrapper-7" class="w-full min-h-[110vh]">
-              <PagesMainSevenSectionView data-speed="1.2" />
+            <section id="section-wrapper-7" class="w-full h-[100vh]">
+              <PagesMainSevenSectionView />
             </section>
 
-            <section id="section-wrapper-8" class="w-full min-h-[110vh]">
+            <section id="section-wrapper-8" class="w-full h-[100vh]">
               <PagesMainEightSectionView />
             </section>
 
@@ -46,6 +46,10 @@
 
             <section id="section-wrapper-11" class="w-full h-[100vh]">
               <PagesMainElevenSectionView />
+            </section>
+
+            <section id="section-wrapper-12" class="w-full h-[100vh]">
+              <PagesMainTwelveSectionView />
             </section>
           </div>
         </div>
@@ -75,7 +79,6 @@ onMounted((): void => {
     content: '.smooth-content',
     smooth: 1.2,
     effects: true,
-    speed: 0.8,
   });
 });
 

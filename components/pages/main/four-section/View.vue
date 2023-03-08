@@ -13,7 +13,7 @@
         </UIText>
       </div>
 
-      <div class="h-full flex w-full mt-2">
+      <div class="h-full flex w-full justify-between mt-2">
         <div class="w-[45%] xl:ml-10">
           <UIText tag="p" class="w-full text-black font-helvetica text-[19px] mt-5 mr-5">
             Более 100 лет по этому адресу размещался штаб Императорского флотского экипажа — самого
@@ -35,13 +35,13 @@
         </div>
         <div
           id="section4imgwrapper"
-          class="w-[45%] 2xl:h-[70%] xl:h-[80%] relative top-0 overflow-hidden"
+          class="2xl:w-[45%] 2xl:h-[70%] xl:w-[40%] xl:h-[80%] relative top-0 overflow-hidden"
         >
           <img
             id="section4img"
-            data-speed="1.3"
             class="w-full h-auto"
             alt="img"
+            data-speed="1.3"
             src="/img/images/section4img.png"
           />
         </div>
@@ -59,16 +59,16 @@ gsap.registerPlugin(ScrollTrigger);
 const isReadMore: Ref<boolean> = ref(false);
 
 onMounted((): void => {
-  const tl = gsap.timeline({
+  gsap.timeline({
     scrollTrigger: {
       trigger: '#section-wrapper-4',
       start: 'top top',
-      end: 'bottom top',
+      end: 'bottom 20%',
       scrub: true,
       pin: true,
     },
   });
 
-  tl.to('#section4imgwrapper', { x: 0, y: 0, duration: 2 });
+  // tl.to('#section4imgwrapper', { x: 0, y: 0, duration: 2 });
 });
 </script>

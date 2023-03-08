@@ -13,11 +13,16 @@
       </div>
 
       <div class="w-auto">
-        <SharedAddressBadge id="address-badge" class="relative top-[10%]" v-if="!isBurgerOpen" />
+        <SharedAddressBadge
+          @click="$router.push('/')"
+          id="address-badge"
+          class="relative top-[10%]"
+          v-if="!isBurgerOpen"
+        />
       </div>
 
       <div class="flex justify-around h-full justify-end items-center w-[30%] flex-nowrap">
-        <LayoutsHeaderBooklet> планировки </LayoutsHeaderBooklet>
+        <LayoutsHeaderBooklet @click="$router.push('/floor')"> планировки </LayoutsHeaderBooklet>
         <LayoutsHeaderBooklet> получить&nbsp;буклет </LayoutsHeaderBooklet>
       </div>
     </div>
