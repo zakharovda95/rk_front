@@ -61,9 +61,9 @@
 <script setup lang="ts">
 import usePageOffsetWatcher from '~/composables/usePageOffsetWatcher';
 import { useCommonStore } from '~/store/common.store';
-import { gsap } from 'gsap';
+// import { gsap } from 'gsap';
 
-gsap.registerPlugin(ScrollSmoother);
+// gsap.registerPlugin(ScrollSmoother);
 
 const commonStore = useCommonStore();
 const offset = usePageOffsetWatcher();
