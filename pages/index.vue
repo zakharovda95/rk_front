@@ -63,6 +63,7 @@ import usePageOffsetWatcher from '~/composables/usePageOffsetWatcher';
 import { useCommonStore } from '~/store/common.store';
 import { gsap } from 'gsap';
 import { ScrollSmoother } from 'gsap-trial/ScrollSmoother';
+import LocomotiveScroll from 'locomotive-scroll';
 
 gsap.registerPlugin(ScrollSmoother);
 
@@ -76,13 +77,24 @@ const container = ref(null);
 const animation = ref();
 const smoothscroll = ref();
 
+const scroll = ref();
+
 onMounted((): void => {
-  // ScrollSmoother.create({
+  // setTimeout(async () => {
+  //   const LocomotiveScroll = await import('locomotive-scroll');
+  //   scroll.value = new LocomotiveScroll.default({
+  //     el: document.querySelector('.smooth-wrapper') as HTMLElement,
+  //     smooth: true,
+  //   });
+  // }, 100);
+  // const smoother = ScrollSmoother.create({
   //   wrapper: '.smooth-wrapper',
   //   content: '.smooth-content',
   //   smooth: 1.2,
   //   effects: true,
   // });
+  //
+  // smoother.effects('#section4img', { speed: 'auto' });
 });
 
 watch(

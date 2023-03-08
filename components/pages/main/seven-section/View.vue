@@ -39,15 +39,16 @@ const carData: Ref<Section7Type[]> = ref(SECTION_7_CAR_CONSTANTS);
 const walkData: Ref<Section7Type[]> = ref(SECTION_7_WALK_CONSTANTS);
 
 onMounted((): void => {
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: '.section6image',
-      scrub: true,
-      pin: '#section-wrapper-7',
-      start: 'top 10%',
-      end: 'bottom 80%',
-    },
-  });
+  // gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: '.section6image',
+  //     scrub: true,
+  //     pin: '#section-wrapper-7',
+  //     start: 'top center',
+  //     end: 'bottom top',
+  //     markers: true,
+  //   },
+  // });
 
   gsap.timeline({
     scrollTrigger: {

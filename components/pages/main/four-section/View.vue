@@ -37,13 +37,7 @@
           id="section4imgwrapper"
           class="2xl:w-[45%] 2xl:h-[70%] xl:w-[40%] xl:h-[80%] relative top-0 overflow-hidden"
         >
-          <img
-            id="section4img"
-            class="w-full h-auto"
-            alt="img"
-            data-speed="1.3"
-            src="/img/images/section4img.png"
-          />
+          <img id="section4img" class="w-full h-auto" alt="img" src="/img/images/section4img.png" />
         </div>
       </div>
     </div>
@@ -59,7 +53,7 @@ gsap.registerPlugin(ScrollTrigger);
 const isReadMore: Ref<boolean> = ref(false);
 
 onMounted((): void => {
-  gsap.timeline({
+  const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '#section-wrapper-4',
       start: 'top top',
@@ -69,6 +63,6 @@ onMounted((): void => {
     },
   });
 
-  // tl.to('#section4imgwrapper', { x: 0, y: 0, duration: 2 });
+  tl.to('#section4img', { x: 0, y: '-20%', duration: 2 });
 });
 </script>

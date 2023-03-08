@@ -9,7 +9,7 @@
 
       <PagesMainSecondSectionParalaxImages
         id="section2img"
-        class="relative z-20 bottom-[5%] left-0"
+        class="relative z-20 bottom-[-10vh] left-0"
       />
 
       <img
@@ -39,6 +39,16 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted((): void => {
+  gsap.to('#section2img', {
+    y: '-10vh',
+    duration: 3,
+    scrollTrigger: {
+      trigger: '#section2img',
+      start: 'top 40%',
+      markers: true,
+    },
+  });
+
   gsap.to('#section2img-1', {
     left: 0,
     top: 0,
