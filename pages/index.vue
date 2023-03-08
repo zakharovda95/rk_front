@@ -62,8 +62,6 @@
 import usePageOffsetWatcher from '~/composables/usePageOffsetWatcher';
 import { useCommonStore } from '~/store/common.store';
 import { gsap } from 'gsap';
-import { ScrollSmoother } from 'gsap-trial/ScrollSmoother';
-import LocomotiveScroll from 'locomotive-scroll';
 
 gsap.registerPlugin(ScrollSmoother);
 
@@ -71,13 +69,6 @@ const commonStore = useCommonStore();
 const offset = usePageOffsetWatcher();
 
 const isBurgerOpen: Ref<boolean> = computed(() => commonStore.isBurgerOpen);
-
-const container = ref(null);
-
-const animation = ref();
-const smoothscroll = ref();
-
-const scroll = ref();
 
 onMounted((): void => {
   // setTimeout(async () => {
