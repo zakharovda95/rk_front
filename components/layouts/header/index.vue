@@ -1,23 +1,19 @@
 <template>
-  <div id="header" class="fixed h-[80px] w-full z-[950] flex items-center px-2">
-    <div class="w-full h-full max-w-[1399px] flex justify-between" style="margin: 0 auto">
-      <div class="h-full flex justify-start">
+  <div class="fixed h-[90px] w-full z-[950] flex items-center px-2">
+    <div
+      class="w-full h-full max-w-[1599px] flex justify-between flex-nowrap"
+      style="margin: 0 auto"
+    >
+      <div class="h-full flex justify-between items-center flex-nowrap w-[15%]">
         <LayoutsHeaderBurger class="p-2" />
       </div>
-      <UIText
-        id="phone"
-        v-if="!isBurgerOpen"
-        class="font-helvetica text-[white] text-[18px] relative top-[25%]"
+
+      <div
+        class="flex justify-around h-full justify-end items-center 2xl:w-[20%] w-[30%] flex-nowrap"
       >
-        +7 812 242 52 10
-      </UIText>
-
-      <SharedAddressBadge id="address-badge" class="relative top-[10%]" v-if="!isBurgerOpen" />
-
-      <div class="flex justify-between h-full items-center gap-20">
         <LayoutsHeaderPlay id="play" v-if="!isBurgerOpen" />
-        <LayoutsHeaderBooklet id="plans" v-if="!isBurgerOpen"> планировки </LayoutsHeaderBooklet>
-        <LayoutsHeaderBooklet> получить буклет </LayoutsHeaderBooklet>
+        <LayoutsHeaderBooklet id="plans" v-if="isBurgerOpen"> планировки </LayoutsHeaderBooklet>
+        <LayoutsHeaderBooklet> получить&nbsp;буклет </LayoutsHeaderBooklet>
       </div>
     </div>
   </div>

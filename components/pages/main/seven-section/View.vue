@@ -9,7 +9,7 @@
         </UIText>
       </div>
 
-      <div class="w-[70%] flex justify-around items-start">
+      <div id="section7values" class="w-[70%] flex justify-around items-start">
         <div class="flex flex-col">
           <PagesMainSevenSectionBadge class="my-2"> пешком </PagesMainSevenSectionBadge>
           <SharedDataItem v-for="el in walkData" :key="el.id" :item-data="el" />
@@ -39,15 +39,15 @@ const carData: Ref<Section7Type[]> = ref(SECTION_7_CAR_CONSTANTS);
 const walkData: Ref<Section7Type[]> = ref(SECTION_7_WALK_CONSTANTS);
 
 onMounted((): void => {
-  gsap.timeline({
-    paused: true,
+  const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: '#section-wrapper-6',
+      trigger: '#section-wrapper-7',
       scrub: true,
-      pin: '#section-wrapper-7',
-      start: 'top top',
-      endTrigger: '#section-wrapper-7',
-      end: 'bottom bottom',
+      pin: '#section7text',
+      start: 'top 30%',
+      endTrigger: '#section7values',
+      end: 'bottom top',
+      markers: true,
     },
   });
 });

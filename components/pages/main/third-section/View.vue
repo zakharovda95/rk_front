@@ -1,10 +1,10 @@
 <template>
-  <div class="w-full h-[100vh]">
-    <div class="relative w-full max-w-[1399px]" style="margin: 0 auto">
+  <div class="map w-full h-[100vh]">
+    <div class="relative w-full max-w-[1499px]" style="margin: 0 auto">
       <UIText
         tag="h1"
         id="section3text"
-        class="absolute z-[50] left-0 top-[20px] font-trajan text-black text-[46px] w-[45%]"
+        class="absolute z-[50] left-0 top-[100px] font-trajan text-black 2xl:text-[46px] w-[45%] xl:text-[calc(1vh+1vw*2)] xl:ml-10"
       >
         Атмосфера локации в историческом центре
       </UIText>
@@ -20,8 +20,11 @@
         Видео обзор локации
       </UIButton>
     </div>
-
-    <PagesMainThirdSectionMap />
+    <img
+      alt="map"
+      src="/img/components/map-clear.svg"
+      class="w-[100vw] h-[100vh] relative z-[40] top-0 left-0 m-auto object-cover"
+    />
   </div>
 </template>
 

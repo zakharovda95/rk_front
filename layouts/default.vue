@@ -1,5 +1,6 @@
 <template>
-  <LayoutsHeader />
+  <LayoutsHeader v-if="!isThereOffset" />
+  <LayoutsExtendedHeader v-if="isThereOffset" />
   <LayoutsMenu v-if="isBurgerOpen" />
   <slot />
 </template>
@@ -9,4 +10,5 @@ import { useCommonStore } from '~/store/common.store';
 
 const commonStore = useCommonStore();
 const isBurgerOpen: Ref<boolean> = computed(() => commonStore.isBurgerOpen);
+const isThereOffset: Ref<boolean> = computed(() => commonStore.isThereOffset);
 </script>

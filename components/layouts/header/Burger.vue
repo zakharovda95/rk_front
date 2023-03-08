@@ -45,25 +45,26 @@ const burgerText: Ref<string> = computed(() => (isBurgerOpen.value ? 'закры
   animation: anim 0.5s forwards;
 }
 
-@keyframes anim {
-  0% {
-    opacity: 0;
-    transform: translateX(30%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes anim2 {
-  0% {
-    opacity: 0;
-    transform: translateX(30%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
+//@keyframes anim {
+//  0% {
+//    opacity: 0;
+//    transform: translateX(30%);
+//  }
+//  100% {
+//    opacity: 1;
+//    transform: translateX(0);
+//    transition: 0.5s;
+//  }
+//}
+//
+//@keyframes anim2 {
+//  0% {
+//    opacity: 0;
+//    transform: translateX(30%);
+//  }
+//  100% {
+//    opacity: 1;
+//    transform: translateX(0);
+//  }
+//}
 </style>

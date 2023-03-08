@@ -30,7 +30,11 @@
       type="round"
       class="w-[91px] h-[91px] ml-10"
     >
-      <img alt="arrow" src="/img/icons/arrow-right.svg" class="relative left-[30%]" />
+      <img
+        alt="arrow"
+        src="/img/icons/arrow-right.svg"
+        class="relative left-[30%] transition-[0.8s]"
+      />
     </UIButton>
   </div>
 </template>
@@ -45,5 +49,11 @@ const data: Ref<Section2NavigationType[]> = ref(SECTION_2_NAVIGATION_CONSTANTS);
 <style scoped lang="scss">
 .link-active {
   border-bottom: 5px solid #e3bc98;
+}
+
+#section2button:hover {
+  img {
+    transform: scale(1.5);
+  }
 }
 </style>

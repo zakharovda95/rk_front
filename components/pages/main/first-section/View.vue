@@ -1,18 +1,39 @@
 <template>
-  <div class="w-full h-[100vh] relative">
-    <SharedBackground blur class="fixed z-[-1] overflow-hidden" />
+  <div class="w-full h-[100vh]">
+    <SharedBackground blur class="fixed z-[0] overflow-hidden" />
 
-    <PagesMainFirstSectionAddressBlock
-      class="absolute bottom-0 right-0 z-[5]"
-      @custom:get-address-block-sizes="commonStore.addressBlockSizes = $event"
-    />
-
-    <div class="w-full h-full max-w-[1399px] px-5" style="margin: 0 auto" v-if="!isBurgerOpen">
-      <PagesMainFirstSectionBrand class="relative top-[92vh] z-[5]" v-if="!isThereOffset" />
-      <PagesMainFirstSectionHeader class="relative left-0 top-[40vh] z-[5]" />
+    <div
+      class="w-full h-full max-w-[1499px] px-5 relative"
+      style="margin: 0 auto"
+      v-if="!isBurgerOpen"
+    >
+      <PagesMainFirstSectionBrand class="absolute top-[92vh] z-[500]" v-if="!isThereOffset" />
+      <PagesMainFirstSectionScroll class="absolute top-[80vh] z-[500]" v-if="!isThereOffset" />
     </div>
 
-    <div id="section1img" class="img absolute z-[5] bottom-0 left-0" :style="imgSizes" />
+    <div class="absolute top-0 left-0 w-full h-[100vh] z-[2000]">
+      <div class="flex flex-col w-full h-full justify-end">
+        <div class="flex items-end">
+          <div class="flex flex-col">
+            <div id="section1text" class="flex flex-col justify-end ml-[10%]">
+              <UIText tag="h1" class="font-trajan text-[white] text-[calc(1vh+1vw*2)] mb-2">
+                Клубный проект
+              </UIText>
+              <UIText tag="h2" class="font-trajan text-[white] text-[calc(1vh+1vw*0.9)]">
+                12 коллекционных резиденций,
+                <br />
+                включая 4 двухуровневых апартамента
+              </UIText>
+            </div>
+            <div id="section1img" class="img mt-10" :style="imgSizes" />
+          </div>
+
+          <PagesMainFirstSectionAddressBlock
+            @custom:get-address-block-sizes="commonStore.addressBlockSizes = $event"
+          />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -33,7 +54,6 @@ onMounted(() => {
   scrollBarWidth.value = innerWidth - clientWidth;
 
   const tl = gsap.timeline({
-    paused: true,
     scrollTrigger: {
       pin: true,
       trigger: '#section-wrapper-1',
@@ -44,12 +64,20 @@ onMounted(() => {
     },
   });
 
-  tl.to('#scroll', {
-    opacity: 0,
-    x: 0,
-    y: 0,
-    duration: 1,
-  });
+  tl.fromTo(
+    '#section1text',
+    { opacity: 0 },
+    {
+      opacity: 1,
+      duration: 0.1,
+      scrollTrigger: {
+        trigger: '#section-wrapper-1',
+        start: 'top 0.2%',
+        end: 'bottom 50%',
+        scrub: 0.2,
+      },
+    },
+  );
 
   tl.fromTo(
     '#section1img',
@@ -57,53 +85,9 @@ onMounted(() => {
     {
       y: 0,
       x: 0,
-      duration: 2,
+      duration: 3,
     },
   );
-
-  tl.fromTo(
-    ['#play'],
-    { opacity: 1 },
-    {
-      opacity: 0,
-      duration: 1,
-    },
-  );
-
-  tl.fromTo(
-    ['#phone', '#address-badge', '#plans'],
-    { opacity: 0 },
-    {
-      opacity: 1,
-      duration: 1,
-    },
-  );
-
-  tl.fromTo(
-    '#section1text',
-    { opacity: 0 },
-    {
-      opacity: 1,
-      duration: 1,
-    },
-  );
-
-  tl.to('#address-block', {
-    x: '50vw',
-    duration: 3,
-  });
-
-  tl.to('#section1text', {
-    x: '-50vw',
-    duration: 3,
-  });
-
-  tl.to('#header', {
-    opacity: 0,
-    x: 0,
-    y: 0,
-    duration: 2,
-  });
 
   tl.to('#section1img', {
     x: 0,

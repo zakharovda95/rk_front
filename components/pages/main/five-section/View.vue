@@ -1,16 +1,19 @@
 <template>
   <div class="w-full h-[100vh] flex justify-between relative">
     <div
-      class="map w-full max-w-[1399px] h-full flex items-end justify-between p-5"
+      class="map w-full max-w-[1399px] h-full flex items-end justify-around p-5"
       style="margin: 0 auto"
     >
-      <div id="section5dates" class="flex flex-col">
+      <div id="section5dates" class="flex flex-col xl:ml-10">
         <SharedDataItem v-for="el in data" :key="el.id" :item-data="el" />
       </div>
 
-      <div class="flex flex-col w-1/2 h-full">
+      <div class="flex flex-col w-1/2 h-full relative top-[10%]">
         <div id="section5textcontainer">
-          <UIText id="section5text" class="font-trajan text-[46px] text-black">
+          <UIText
+            id="section5text"
+            class="font-trajan 2xl:text-[46px] xl:text-[calc(1vh+1vw*2)] text-black"
+          >
             РЕКОНСТРУКЦИЯ С БЕРЕЖНЫМ ОТНОШЕНИЕМ К ИСТОРИИ ГОРОДА
           </UIText>
           <UIText class="font-helvetica text-[18px] text-black">
@@ -34,27 +37,41 @@ gsap.registerPlugin(ScrollTrigger);
 const data = ref(SECTION_5_CONSTANTS);
 
 onMounted((): void => {
-  gsap.timeline({
-    paused: true,
+  const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: '#section5textcontainer',
+      trigger: '#section-wrapper-5',
       scrub: true,
-      pin: true,
-      start: 'center center',
+      pin: '#section5textcontainer',
+      start: 'top 10%',
       endTrigger: '#section5dates',
-      end: 'bottom top',
+      end: 'bottom 10%',
     },
   });
 
-  gsap.fromTo(
+  tl.fromTo(
     '#section5text',
     { opacity: 0 },
     {
       opacity: 1,
       duration: 0.8,
       scrollTrigger: {
+        trigger: 'section5dates',
+        start: 'top 10%',
+        scrub: true,
+      },
+    },
+  );
+
+  tl.fromTo(
+    '#section5text',
+    { opacity: 1 },
+    {
+      opacity: 0,
+      duration: 0.8,
+      scrollTrigger: {
         trigger: '#section5textcontainer',
-        start: 'top bottom',
+        start: 'bottom 10%',
+        scrub: true,
       },
     },
   );

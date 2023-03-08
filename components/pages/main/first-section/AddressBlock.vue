@@ -1,14 +1,14 @@
 <template>
-  <div id="address-block">
-    <UIText class="text-[56px] text-titleBrown font-trajan" tag="h1">
+  <div id="address-block" class="flex flex-col items-center">
+    <UIText class="text-[calc(1vh+1vw*2.2)] mx-1 text-titleBrown font-trajan" tag="h1">
       Римского<br />Корсакова
     </UIText>
 
     <div
       ref="address"
-      class="flex items-center justify-center w-[380px] h-[380px] bg-[white] mt-10"
+      class="flex items-center justify-center w-[40vh] h-[40vh] max-w-[380px] max-h-[380px] bg-[white] mt-10"
     >
-      <UIText class="text-[180px] font-helvetica" tag="h1">22</UIText>
+      <UIText class="text-[calc(1vh+1vw*8)] font-helvetica" tag="h1">22</UIText>
     </div>
   </div>
 </template>

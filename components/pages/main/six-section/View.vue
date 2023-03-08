@@ -10,13 +10,23 @@ gsap.registerPlugin(ScrollTrigger);
 
 onMounted((): void => {
   gsap.timeline({
-    paused: true,
     scrollTrigger: {
-      trigger: '#section5textcontainer',
+      trigger: '#section5dates',
+      pin: '#section-wrapper-6',
+      scrub: 1,
+      start: 'top 40%',
+      end: 'bottom center',
+    },
+  });
+
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: '#section-wrapper-6',
+      endTrigger: '#section5dates',
+      pin: true,
       scrub: true,
-      pin: '.section6image',
-      start: 'top center',
-      end: 'bottom top',
+      start: 'top 0',
+      end: 'bottom bottom',
     },
   });
 });
@@ -26,7 +36,6 @@ onMounted((): void => {
 .section6image {
   background-image: url('/public/img/images/section6img.png');
   background-size: cover;
-  background-attachment: fixed;
   background-position: left top;
 }
 </style>

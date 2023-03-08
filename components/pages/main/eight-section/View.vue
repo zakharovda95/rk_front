@@ -5,8 +5,8 @@
       style="margin: 0 auto"
     >
       <div class="w-1/2 h-full flex flex-col gap-5">
-        <img class="w-[90%] my-3" src="/img/images/section8img1.png" alt="img" />
-        <img class="w-[90%] my-3" src="/img/images/section8img2.png" alt="img" />
+        <img data-speed="1.2" class="w-[90%] my-3" src="/img/images/section8img1.png" alt="img" />
+        <img data-speed="1.3" class="w-[90%] my-3" src="/img/images/section8img2.png" alt="img" />
       </div>
 
       <div class="w-1/2 h-full flex flex-col justify-center items-center p-[24px]">
@@ -25,3 +25,24 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted((): void => {
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: '#section-wrapper-8',
+      scrub: true,
+      pin: true,
+      start: 'top bottom',
+      // endTrigger: '#section7values',
+      // end: 'bottom 40%',
+      // markers: true,
+    },
+  });
+});
+</script>

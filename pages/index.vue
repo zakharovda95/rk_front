@@ -2,12 +2,6 @@
   <NuxtLayout>
     <div class="smooth-wrapper">
       <div class="smooth-content">
-        <SharedScroll
-          id="scroll"
-          class="right-[90vw] top-[80vh] z-[1000]"
-          style="position: fixed"
-        />
-
         <div class="w-full min-h-[100vh] overflow-hidden">
           <div ref="container" id="container" class="w-full overflow-hidden" v-if="!isBurgerOpen">
             <section id="section-wrapper-1" class="w-full h-[100vh] bg-black">
@@ -31,11 +25,11 @@
             </section>
 
             <section id="section-wrapper-6" class="w-full h-[100vh]">
-              <PagesMainSixSectionView />
+              <PagesMainSixSectionView data-speed="1.1" />
             </section>
 
             <section id="section-wrapper-7" class="w-full min-h-[110vh]">
-              <PagesMainSevenSectionView />
+              <PagesMainSevenSectionView data-speed="1.2" />
             </section>
 
             <section id="section-wrapper-8" class="w-full min-h-[110vh]">
@@ -79,9 +73,9 @@ onMounted((): void => {
   ScrollSmoother.create({
     wrapper: '.smooth-wrapper',
     content: '.smooth-content',
-    smooth: 1.5,
+    smooth: 1.2,
     effects: true,
-    speed: 0.6,
+    speed: 0.8,
   });
 });
 
