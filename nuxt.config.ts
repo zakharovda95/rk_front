@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     transpile: ['gsap'],
   },
 
-  css: ['~/assets/styles/main.css', 'locomotive-scroll/dist/locomotive-scroll.css'],
+  css: ['~/assets/styles/main.css'],
 
   modules: ['@pinia/nuxt'],
 });
