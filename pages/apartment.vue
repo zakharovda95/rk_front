@@ -33,7 +33,7 @@
         </div>
 
         <div class="w-[60%] flex flex-col justify-around items-center">
-          <div class="flex items-center justify-center relative bottom-[40px] gap-5 mt-[150px]">
+          <div class="flex items-center justify-center relative bottom-[20px] gap-5 mt-[150px]">
             <div>
               <img
                 alt="img"

@@ -2,7 +2,6 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: 'Римского Корсакова, 22',
-      script: [{ src: 'helpers/plugins/ScrollSmoother.min.js', defer: true }],
     },
   },
 
@@ -17,7 +16,7 @@ export default defineNuxtConfig({
     transpile: ['gsap'],
   },
 
-  css: ['~/assets/styles/main.css'],
+  css: ['~/assets/styles/main.css', 'locomotive-scroll/dist/locomotive-scroll.css'],
 
   modules: ['@pinia/nuxt'],
 });
