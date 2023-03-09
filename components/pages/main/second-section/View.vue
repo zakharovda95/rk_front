@@ -40,25 +40,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 onMounted((): void => {
   gsap.to('#section2img', {
-    y: '-10vh',
-    duration: 3,
+    y: '-35vh',
+    duration: 2,
     scrollTrigger: {
       trigger: '#section2img',
-      start: 'top 40%',
+      start: 'top 70%',
       markers: true,
-    },
-  });
-
-  gsap.to('#section2img-1', {
-    left: 0,
-    top: 0,
-    width: '100vw',
-    height: '100vh',
-    duration: 3,
-    scrollTrigger: {
-      trigger: '#section2img-1',
-      start: 'center center',
-      scrub: true,
+      scrub: 2,
     },
   });
 
@@ -68,16 +56,30 @@ onMounted((): void => {
       endTrigger: '#section-wrapper-3',
       start: 'top top',
       end: 'bottom center',
-      scrub: true,
+      scrub: 2,
       pin: true,
     },
   });
+
+  tl.to('#section2img-1', {
+    left: 0,
+    top: 0,
+    width: '100vw',
+    height: '100vh',
+    duration: 3,
+    // scrollTrigger: {
+    //   trigger: '#section2img-1',
+    //   start: 'center center',
+    //   scrub: true,
+    // },
+  });
+
   tl.fromTo(
     '#section2text',
     { opacity: 0 },
     {
       opacity: 1,
-      duration: 0.5,
+      duration: 1,
     },
   );
 
@@ -86,7 +88,7 @@ onMounted((): void => {
     { opacity: 0 },
     {
       opacity: 1,
-      duration: 0.5,
+      duration: 1,
     },
   );
 });

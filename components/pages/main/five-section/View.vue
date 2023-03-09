@@ -40,7 +40,7 @@ onMounted((): void => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '#section-wrapper-5',
-      scrub: true,
+      scrub: 3,
       pin: '#section5textcontainer',
       start: 'top 30%',
       endTrigger: '#section5dates',
@@ -57,7 +57,7 @@ onMounted((): void => {
       scrollTrigger: {
         trigger: 'section5dates',
         start: 'top 10%',
-        scrub: true,
+        scrub: 2,
       },
     },
   );

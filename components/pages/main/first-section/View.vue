@@ -60,7 +60,7 @@ onMounted(() => {
       start: 'top top',
       endTrigger: '#section-wrapper-2',
       end: 'bottom top',
-      scrub: 1,
+      scrub: 2,
     },
   });
 
@@ -74,7 +74,7 @@ onMounted(() => {
         trigger: '#section-wrapper-1',
         start: 'top 0.2%',
         end: 'bottom 50%',
-        scrub: 0.2,
+        scrub: 1,
       },
     },
   );

@@ -35,7 +35,7 @@
         </div>
         <div
           id="section4imgwrapper"
-          class="2xl:w-[45%] 2xl:h-[70%] xl:w-[40%] xl:h-[80%] relative top-0 overflow-hidden"
+          class="2xl:w-[45%] 2xl:h-[60%] xl:w-[40%] xl:h-[80%] relative top-0 overflow-hidden"
         >
           <img id="section4img" class="w-full h-auto" alt="img" src="/img/images/section4img.png" />
         </div>
@@ -58,11 +58,11 @@ onMounted((): void => {
       trigger: '#section-wrapper-4',
       start: 'top top',
       end: 'bottom 20%',
-      scrub: true,
+      scrub: 2,
       pin: true,
     },
   });
 
-  tl.to('#section4img', { x: 0, y: '-20%', duration: 2 });
+  tl.to('#section4img', { x: 0, y: '-50%', duration: 2 });
 });
 </script>

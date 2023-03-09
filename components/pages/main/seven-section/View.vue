@@ -2,11 +2,13 @@
   <div class="w-full h-full flex justify-between relative p-5">
     <div class="map w-full max-w-[1499px] h-full flex" style="margin: 0 auto">
       <div id="section7text" class="w-[30%] xl:ml-10 xl:text-[calc(1vh+1vw*2)]">
-        <UIText tag="h1" class="font-trajan text-black text-[46px]">Окружение</UIText>
-        <UIText tag="p" class="font-helvetica text-black text-[18px]">
-          Коломна — исторический район Санкт-Петербурга, один из уникальных мест, откуда быстро и
-          просто можно добраться до любой точки исторического центра города на Неве.
-        </UIText>
+        <div class="relative top-[30%]">
+          <UIText tag="h1" class="font-trajan text-black text-[46px]">Окружение</UIText>
+          <UIText tag="p" class="font-helvetica text-black text-[18px]">
+            Коломна — исторический район Санкт-Петербурга, один из уникальных мест, откуда быстро и
+            просто можно добраться до любой точки исторического центра города на Неве.
+          </UIText>
+        </div>
       </div>
 
       <div id="section7values" class="w-[70%] flex justify-around items-start">
@@ -42,22 +44,47 @@ onMounted((): void => {
   // gsap.timeline({
   //   scrollTrigger: {
   //     trigger: '.section6image',
-  //     scrub: true,
-  //     pin: '#section-wrapper-7',
+  //     scrub: 2,
   //     start: 'top center',
   //     end: 'bottom top',
-  //     markers: true,
+  //   },
+  // });
+  //
+  // gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: '#section7text',
+  //     pin: '#section7text',
+  //     start: 'center 80%',
+  //     endTrigger: '#section7values',
+  //     end: 'bottom center',
+  //     scrub: 3,
   //   },
   // });
 
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#section7text',
+      start: 'center bottom',
+      endTrigger: '#section7values',
+      end: 'bottom center',
+      scrub: 2,
+    },
+  });
+
+  tl.to('#section7value', {
+    y: '-50vh',
+    duration: 2,
+  });
+
   gsap.timeline({
+    paused: true,
     scrollTrigger: {
       trigger: '#section-wrapper-7',
-      scrub: true,
-      pin: ['#section7text', '#section-wrapper-8'],
-      start: 'top 40%',
+      scrub: 2,
+      pin: '#section-wrapper-8',
+      start: 'top 20%',
       endTrigger: '#section7values',
-      end: 'bottom top',
+      end: 'bottom 70%',
     },
   });
 });

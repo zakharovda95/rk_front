@@ -57,21 +57,13 @@
           </div>
 
           <div class="mb-20">
-            <img alt="img" src="/img/components/plan/plan-empty.png" v-if="isEmptyPlan" />
-            <img alt="img" src="/img/components/plan/plan-full.png" v-if="!isEmptyPlan" />
+            <img alt="img" src="/img/components/flat2.png" v-if="isEmptyPlan" />
+            <img alt="img" src="/img/components/flat1.png" v-if="!isEmptyPlan" />
           </div>
 
           <div class="flex gap-5 mt-20">
-            <img
-              alt="img"
-              src="/img/icons/pdf.svg"
-              class="cursor-pointer hover:scale-[1.1] transition-[0.5s]"
-            />
-            <img
-              alt="img"
-              src="/img/icons/book.svg"
-              class="cursor-pointer hover:scale-[1.1] transition-[0.5s]"
-            />
+            <img alt="img" src="/img/icons/pdf.svg" class="cursor-pointer" />
+            <img alt="img" src="/img/icons/book.svg" class="cursor-pointer" />
           </div>
         </div>
 
