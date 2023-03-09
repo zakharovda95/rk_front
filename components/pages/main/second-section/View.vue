@@ -45,7 +45,6 @@ onMounted((): void => {
     scrollTrigger: {
       trigger: '#section2img',
       start: 'top 70%',
-      markers: true,
       scrub: 2,
     },
   });

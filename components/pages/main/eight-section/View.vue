@@ -70,7 +70,6 @@ onMounted((): void => {
       duration: 1,
       scrollTrigger: {
         trigger: '#section8text',
-        start: 'top center',
       },
     },
   );
@@ -80,7 +79,7 @@ onMounted((): void => {
     duration: 0.1,
     scrollTrigger: {
       trigger: '#section8text',
-      start: 'top 60%',
+      start: 'top 30%',
       scrub: 1,
     },
   });
@@ -90,7 +89,7 @@ onMounted((): void => {
     duration: 0.1,
     scrollTrigger: {
       trigger: '#section8text',
-      start: 'top 60%',
+      start: 'top 30%',
       scrub: 1,
     },
   });

@@ -25,12 +25,28 @@ gsap.registerPlugin(ScrollTrigger);
 
 onMounted((): void => {
   const tl = gsap.timeline({
+    paused: true,
     scrollTrigger: {
       trigger: '#section-wrapper-11',
-      start: 'top 20%',
-      end: 'top top',
+      start: 'top 15%',
+      end: 'bottom 95%',
+      pin: true,
+      scrub: 5,
     },
   });
+
+  tl.fromTo(
+    '#s11block',
+    {
+      x: 0,
+      y: 0,
+    },
+    {
+      x: 0,
+      y: 0,
+      duration: 3,
+    },
+  );
 
   tl.fromTo(
     '#section11addressimg',
@@ -41,13 +57,13 @@ onMounted((): void => {
     {
       x: 0,
       y: 0,
-      duration: 0.5,
+      duration: 1,
     },
   );
 
   tl.to('#section11addressnumber', {
     color: 'white',
-    duration: 0.5,
+    duration: 1,
   });
 });
 </script>

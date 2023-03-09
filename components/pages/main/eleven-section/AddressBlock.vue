@@ -1,6 +1,7 @@
 <template>
   <div class="flex flex-col justify-center items-center">
     <div
+      id="s11block"
       class="w-[380px] h-[380px] flex justify-center items-center bg-[#F1F0EE] relative top-0 left-0 overflow-hidden"
     >
       <img
