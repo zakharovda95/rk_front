@@ -17,7 +17,7 @@ onMounted((): void => {
       pin: '#section-wrapper-6',
       scrub: 2,
       start: 'top 50%',
-      end: 'bottom top',
+      end: 'bottom 20%',
     },
   });
 

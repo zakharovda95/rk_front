@@ -44,7 +44,7 @@ onMounted((): void => {
       pin: '#section5textcontainer',
       start: 'top 30%',
       endTrigger: '#section5dates',
-      end: 'bottom 15%',
+      end: 'bottom 68%',
     },
   });
 

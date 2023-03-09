@@ -57,7 +57,7 @@
           </div>
 
           <div class="mb-20">
-            <img alt="img" src="/img/components/flat2.png" v-if="isEmptyPlan" />
+            <img alt="img" src="/img/components/plan/plan-empty.png" v-if="isEmptyPlan" />
             <img alt="img" src="/img/components/flat1.png" v-if="!isEmptyPlan" />
           </div>
 
