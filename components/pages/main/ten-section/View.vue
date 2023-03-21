@@ -7,20 +7,20 @@
       <div is="section10textwrapper" class="w-full flex flex-col justify-around mt-10">
         <UIText
           id="section10text1"
-          class="font-trajan text-black 2xl:text-[46px] xl:text-[calc(1vh+1vw*2)] xl:ml-10 text-left"
+          class="font-trajan text-black text-[calc(1vh+1vw*2)] md:ml-10 text-left"
         >
           Высокотехнологичное оснащение
         </UIText>
         <UIText
           id="section10text2"
-          class="font-trajan text-black 2xl:text-[46px] xl:text-[calc(1vh+1vw*2)] xl:mr-10 text-right"
+          class="font-trajan text-black text-[calc(1vh+1vw*2)] md:mr-10 text-right"
         >
           для комфортной жизни
         </UIText>
       </div>
 
       <div class="flex items-center text-center max-w-[800px] mt-10">
-        <UIText class="font-helvetica text-black text-[18px]">
+        <UIText class="font-helvetica text-black text-[calc(1vh+1vw*0.7)] mx-5">
           Клубный проект «Римского-Корсакова, 22», вдохновленный утонченной концепцией бутикового
           жилья, предлагает жителям максимум комфорта и удобств. Апартаменты оснащены современными
           технологиями, что обеспечивает высокое качество жизни и безопасность для всех жителей.
@@ -90,7 +90,7 @@ onMounted(() => {
   gsap.fromTo(
     '#section10text1',
     {
-      x: '-3vw',
+      x: '-2vw',
     },
     {
       x: 0,
@@ -107,7 +107,7 @@ onMounted(() => {
   gsap.fromTo(
     '#section10text2',
     {
-      x: '3vw',
+      x: '2vw',
     },
     {
       x: 0,

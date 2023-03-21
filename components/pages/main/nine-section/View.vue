@@ -4,20 +4,20 @@
       class="map w-full max-w-[1499px] h-full flex flex-col justify-around"
       style="margin: 0 auto"
     >
-      <div class="flex w-[70%] h-[10%] gap-[5vw] xl:ml-10 relative top-[40px]" id="section9header">
-        <UIText tag="h1" class="font-trajan text-[white] text-[46px]">Service</UIText>
-        <UIText tag="p" class="font-helvetica text-[white] text-[18px]">
+      <div class="flex w-[70%] h-[10%] gap-[5vw] md:ml-10 relative top-[100px]" id="section9header">
+        <UIText tag="h1" class="font-trajan text-[white] text-[calc(1vw+1vh*2.1)]">Service</UIText>
+        <UIText tag="p" class="font-helvetica text-[white] text-[calc(1vw+1vh*0.7)]">
           Высочайший стандарт сервиса создает уровень комфорта, наполняющий атмосферой роскошного
           жизненного пространства.
         </UIText>
       </div>
 
-      <div id="section9nav" class="flex items-end w-[80%] h-[50%] xl:ml-10">
-        <div class="flex flex-col h-full justify-end w-[35%]">
+      <div id="section9nav" class="flex items-end w-[90%] h-[70%] md:ml-10">
+        <div class="flex flex-col h-full min-h-[500px] justify-end w-[35%]">
           <UIText
             v-for="el in data"
             :key="data.id"
-            class="font-helvetica text-[white] text-[32px] opacity-[0.7] cursor-pointer hover:translate-y-[-2px] transition-[0.2s] my-2"
+            class="font-helvetica text-[white] text-[calc(1vw+1vh*1.5)] opacity-[0.7] cursor-pointer hover:translate-y-[-2px] transition-[0.2s] my-2"
             :style="{ opacity: el.text === activeText ? 1 : 0.7 }"
             tag="h3"
             @click="activeText = el.text"
@@ -26,7 +26,9 @@
           </UIText>
         </div>
 
-        <UIText class="relative left-10 font-trajan text-[white] text-[26px]">
+        <UIText
+          class="relative lg:left-10 md:left-0 font-trajan text-[white] text-[calc(1vw+1vh*1.1)]"
+        >
           {{ activeText }}
         </UIText>
       </div>

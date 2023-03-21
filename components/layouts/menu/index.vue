@@ -4,7 +4,17 @@
     <LayoutsMenuSidebar class="sidebar" />
 
     <div class="max-w-[1399px] relative z-[90] p-5" style="margin: 0 auto">
-      <LayoutsMenuPhoneBadge class="phone-badge absolute left-[30vw] top-[90vh] z-[95]" />
+      <div>
+        <UIText
+          class="font-helvetica text-[white] lg:text-[1.1rem] md:visible lg:hidden absolute top-[85vh]"
+        >
+          +7&nbsp;812&nbsp;242&nbsp;52&nbsp;10
+        </UIText>
+      </div>
+
+      <LayoutsMenuPhoneBadge
+        class="phone-badge absolute left-[30vw] top-[90vh] z-[95] md:hidden lg:block"
+      />
       <SharedAddressBadge class="address-badge absolute top-[90vh] z-[95]" />
       <LayoutsMenuLinks class="links absolute top-[32vh]" />
     </div>

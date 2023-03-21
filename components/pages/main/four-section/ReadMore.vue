@@ -1,7 +1,7 @@
 <template>
   <div class="read-more flex cursor-pointer" @click="readMore">
     <div class="elem w-[30px] h-[3px] rotate-90 mt-1" />
-    <span class="font-helvetica text-[calc(1vh+1vw*0.8)]"> {{ text }} </span>
+    <span class="font-helvetica text-[calc(1vh+1vw*0.7)]"> {{ text }} </span>
   </div>
 </template>
 

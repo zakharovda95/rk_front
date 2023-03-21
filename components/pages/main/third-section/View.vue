@@ -4,7 +4,7 @@
       <UIText
         tag="h1"
         id="section3text"
-        class="absolute z-[50] left-0 top-[100px] font-trajan text-black 2xl:text-[46px] w-[45%] lg:text-[calc(1vh+1vw*2.1)] lg:ml-10"
+        class="absolute z-[50] left-0 top-[100px] font-trajan text-black w-[45%] text-[calc(1vh+1vw*2.1)] md:ml-10"
       >
         Атмосфера локации в историческом центре
       </UIText>

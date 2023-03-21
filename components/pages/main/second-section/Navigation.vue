@@ -2,7 +2,10 @@
   <div id="section2navigation" class="flex gap-2">
     <div class="flex flex-col">
       <div v-for="elem in data" :key="data.id" class="flex mb-3 items-center gap-5">
-        <UIText tag="p" class="font-helvetica text-[calc(1vh+1vw*1.2)] text-[white] cursor-pointer">
+        <UIText
+          tag="p"
+          class="font-helvetica lg:text-[calc(1vh+1vw*1.2)] md:text-[calc(1vh+1vw*1.5)] text-[white] cursor-pointer"
+        >
           {{ elem.name }}
         </UIText>
 
@@ -14,7 +17,10 @@
             class="cursor-pointer"
             :class="{ 'link-active': el.id === 1 }"
           >
-            <UIText tag="p" class="font-helvetica text-[calc(1vh+1vw*1.1)] text-[white]">
+            <UIText
+              tag="p"
+              class="font-helvetica lg:text-[calc(1vh+1vw*1.1)] md:text-[calc(1vh+1vw*1.3)] text-[white]"
+            >
               {{ el.name }}
             </UIText>
           </component>

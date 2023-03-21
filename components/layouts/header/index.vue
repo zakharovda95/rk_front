@@ -4,16 +4,18 @@
       class="w-full h-full max-w-[1599px] flex justify-between flex-nowrap"
       style="margin: 0 auto"
     >
-      <div class="h-full flex justify-between items-center flex-nowrap w-[15%]">
+      <div class="h-full flex justify-between items-center flex-nowrap lg:w-[15%] md:w-[400%]">
         <LayoutsHeaderBurger class="p-2" />
       </div>
 
       <div
-        class="flex justify-around h-full justify-end items-center 2xl:w-[20%] w-[30%] flex-nowrap"
+        class="flex justify-around h-full justify-end items-center 2xl:w-[20%] lg:w-[30%] md:w-[40%] flex-nowrap"
       >
         <LayoutsHeaderPlay id="play" v-if="!isBurgerOpen" />
         <LayoutsHeaderBooklet id="plans" v-if="isBurgerOpen"> планировки </LayoutsHeaderBooklet>
-        <LayoutsHeaderBooklet> получить&nbsp;буклет </LayoutsHeaderBooklet>
+        <LayoutsHeaderBooklet class="md:hidden lg:block">
+          получить&nbsp;буклет
+        </LayoutsHeaderBooklet>
       </div>
     </div>
   </div>

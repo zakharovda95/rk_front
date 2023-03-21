@@ -5,13 +5,13 @@
       style="margin: 0 auto"
     >
       <div>
-        <UIText class="font-trajan text-titleBrown text-[56px]">Римского</UIText>
+        <UIText class="font-trajan text-titleBrown text-[calc(1vw+1vh*4)]">Римского</UIText>
       </div>
       <div>
         <PagesMainElevenSectionAddressBlock id="section11address" />
       </div>
       <div>
-        <UIText class="font-trajan text-titleBrown text-[56px]">Корсакова</UIText>
+        <UIText class="font-trajan text-titleBrown text-[calc(1vw+1vh*4)]">Корсакова</UIText>
       </div>
     </div>
   </div>

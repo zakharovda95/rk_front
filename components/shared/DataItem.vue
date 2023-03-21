@@ -1,12 +1,21 @@
 <template>
   <div class="flex flex-col relative">
-    <div class="flex items-center">
-      <UIText class="font-trajan text-titleBrown text-[128px]">{{ itemData.count }}</UIText>
-      <UIText v-if="itemData.small" class="font-trajan text-titleBrown text-[36px] mt-6">
+    <div class="flex items-center mb-1">
+      <UIText
+        tag="h1"
+        class="font-trajan text-titleBrown lg:text-[calc(1vh+1vw*8)] md:text-[calc(1vh+1vw*12)]"
+      >
+        {{ itemData.count }}
+      </UIText>
+      <UIText
+        tag="p"
+        v-if="itemData.small"
+        class="font-trajan text-titleBrown text-[calc(1vh+1vw*1.1)] mt-6"
+      >
         {{ itemData.small }}
       </UIText>
     </div>
-    <UIText class="relative bottom-[50px] font-helvetica text-black text-[24px]">
+    <UIText tag="p" class="relative bottom-[50px] font-helvetica text-black text-[calc(1vh+1vw*1)]">
       {{ itemData.text }}
     </UIText>
   </div>

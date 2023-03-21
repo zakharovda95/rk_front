@@ -5,17 +5,21 @@
         <UIText
           tag="h1"
           id="section4text"
-          class="w-full text-black font-trajan 2xl:text-[46px] mt-[100px] lg:text-[calc(1vh+1vw*2)] lg:ml-10"
+          class="w-full text-black font-trajan mt-[100px] text-[calc(1vh+1vw*2.1)] md:ml-10"
         >
           Апартаменты <br />
-          <span class="text-titleBrown"> Римского-Корсакова, 22:</span> <br>
-          вдохновение историей <br/> императорских яхт.
+          <span class="text-titleBrown"> Римского-Корсакова, 22:</span> <br />
+          вдохновение историей <br />
+          императорских яхт.
         </UIText>
       </div>
 
       <div class="h-full flex w-full justify-between mt-2">
-        <div class="w-[45%] lg:ml-10">
-          <UIText tag="p" class="w-full text-black font-helvetica text-[calc(1vh+1vw*0.8)] mt-5 mr-5">
+        <div class="w-[45%] md:ml-10">
+          <UIText
+            tag="p"
+            class="w-full text-black font-helvetica text-[calc(1vh+1vw*0.7)] mt-5 mr-5"
+          >
             Более 100 лет по этому адресу размещался штаб Императорского флотского экипажа — самого
             привилегированного формирования, офицеры которого несли службу в царских резиденциях и
             на императорских яхтах.
@@ -26,7 +30,7 @@
           <UIText
             tag="p"
             v-if="isReadMore"
-            class="w-full text-black font-helvetica text-[calc(1vh+1vw*0.8)] mt-5 mr-5"
+            class="w-full text-black font-helvetica text-[calc(1vh+1vw*0.7)] mt-5 mr-5"
           >
             Более 100 лет по этому адресу размещался штаб Императорского флотского экипажа — самого
             привилегированного формирования, офицеры которого несли службу в царских резиденциях и
@@ -35,7 +39,7 @@
         </div>
         <div
           id="section4imgwrapper"
-          class="2xl:w-[40%] 2xl:h-[80%] xl:w-[40%] xl:h-[80%] lg:w-[40%] lg:h-[70%] relative top-0 overflow-hidden"
+          class="2xl:w-[40%] 2xl:h-[80%] xl:w-[40%] xl:h-[80%] lg:w-[40%] lg:h-[70%] md:w-[45%] md:h-[70%] relative bottom-[50px] overflow-hidden"
         >
           <img id="section4img" class="w-full h-auto" alt="img" src="/img/images/section4img.png" />
         </div>
@@ -58,8 +62,8 @@ onMounted((): void => {
       trigger: '#section-wrapper-4',
       start: 'top 20%',
       end: 'bottom 80%',
-      scrub: 2,
-      pin: '#section-wrapper-5'
+      scrub: 3,
+      pin: '#section-wrapper-5',
     },
   });
 

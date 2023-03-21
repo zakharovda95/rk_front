@@ -17,10 +17,12 @@
           >
             РЕКОНСТРУКЦИЯ С БЕРЕЖНЫМ ОТНОШЕНИЕМ К ИСТОРИИ ГОРОДА
           </UIText>
-          <UIText tag="p" class="font-helvetica text-[calc(1vh+1vw*0.8)] text-black">
+          <UIText tag="p" class="font-helvetica text-[calc(1vh+1vw*0.7)] text-black">
             Реконструированное 6-этажное здание казармгвардейского экипажа начала XVIII века, в
             котором будут располагаться частные апартаменты и отель с расширенной инфраструктурой и
-            безупречным сервисом.
+            безупречным сервисом. Реконструированное 6-этажное здание казармгвардейского экипажа
+            начала XVIII века, в котором будут располагаться частные апартаменты и отель с
+            расширенной инфраструктурой и безупречным сервисом.
           </UIText>
         </div>
       </div>
@@ -38,6 +40,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const data = ref(SECTION_5_CONSTANTS);
 
+const { widthX } = usePageWidthWatcher();
+
 onMounted((): void => {
   const tl = gsap.timeline({
     scrollTrigger: {
@@ -46,31 +50,54 @@ onMounted((): void => {
       pin: true,
       start: 'top 30%',
       endTrigger: '#section5dates',
-      end: 'bottom 120%',
-      markers: true
+      end: 'bottom 50%',
+      markers: true,
     },
   });
 
-  tl.fromTo(
-    '#section5dates',
-    { x: 0, y: 0 },
-    {
-      x: 0,
-      y: '-59.5vh',
-      duration: 10,
-    },
-  );
-});
-
-const { widthX } = usePageWidthWatcher();
-
-const endResponsive = (): string => {
-  if (widthX.value >= 1024) {
-    return 'bottom 50%';
+  if (widthX.value >= 768 && widthX.value < 1024) {
+    tl.fromTo(
+      '#section5dates',
+      {
+        x: 0,
+        y: '-20vh',
+      },
+      {
+        x: 0,
+        y: '-60vh',
+        duration: 5,
+      },
+    );
   }
+
+  if (widthX.value >= 1024 && widthX.value < 1224) {
+    tl.fromTo(
+      '#section5dates',
+      {
+        x: 0,
+        y: '20vh',
+      },
+      {
+        x: 0,
+        y: '-63vh',
+        duration: 5,
+      },
+    );
+  }
+
   if (widthX.value >= 1224) {
-    return 'bottom 40%';
+    tl.fromTo(
+      '#section5dates',
+      {
+        x: 0,
+        y: '40vh',
+      },
+      {
+        x: 0,
+        y: '-50vh',
+        duration: 10,
+      },
+    );
   }
-  return '';
-};
+});
 </script>

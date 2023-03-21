@@ -1,11 +1,11 @@
 <template>
   <div class="w-full h-[100vh] bg-[white] relative">
     <div
-      class="w-full h-full max-w-[1499px] 2xl:pt-36 lg:pt-[120px]"
+      class="w-full h-full max-w-[1499px] 2xl:pt-36 lg:pt-[120px] md:pt-[120px]"
       style="margin: 0 auto"
     >
       <UIText
-        class="font-trajan text-black text-[calc(1vh+1vw*0.8)] 2xl:w-full xl:w-4/5 lg:ml-10"
+        class="font-trajan text-black lg:text-[calc(1vh+1vw*0.8)] md:text-[1.1rem] 2xl:w-full xl:w-4/5 lg:mx-10 md:mx-10"
       >
         В самом центре Санкт-Петербурга на месте пересечения канала Грибоедова и Крюкова мы создали
         уникальный проект реновации, сочетающий архитектуру 18 века и современные концепции
@@ -21,18 +21,20 @@
         id="section2img-1"
         src="/img/images/section2img.png"
         alt="img2"
-        class="2xl:w-[550px] 2xl:h-[430px] lg:w-[450px] lg:h-[350px] absolute z-[30] m-auto top-0 bottom-0 left-0 right-0 2xl:top-[25%] xl:top-[10%]"
+        class="2xl:w-[550px] 2xl:h-[430px] lg:w-[450px] lg:h-[350px] md:w-[350px] md:h-[270px] absolute z-[30] m-auto top-0 bottom-0 left-0 right-0 2xl:top-[25%] xl:top-[10%]"
       />
 
       <UIText
         id="section2text"
         tag="h1"
-        class="absolute bottom-[30px] z-[35] font-trajan text-[46px] text-[white] w-[50%] 2xl:text-[46px] text-[calc(1vh+1vw*2.1)] lg:ml-10"
+        class="absolute bottom-[30px] z-[35] font-trajan text-[46px] text-[white] w-[50%] 2xl:text-[46px] text-[calc(1vh+1vw*2.1)] lg:ml-10 md:mx-10"
       >
         Выберете свою идеальную планировку
       </UIText>
 
-      <PagesMainSecondSectionNavigation class="absolute z-[35] right-0 bottom-[30px] w-[30%]" />
+      <PagesMainSecondSectionNavigation
+        class="absolute z-[35] right-0 bottom-[30px] w-[30%] md:mx-10"
+      />
     </div>
   </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <div class="el flex items-center gap-3 cursor-pointer">
     <span class="line" />
-    <UIText class="font-helvetica font-[18px]" :class="textClass">
+    <UIText class="font-helvetica lg:text-[0.9rem]" :class="textClass">
       <slot />
     </UIText>
   </div>

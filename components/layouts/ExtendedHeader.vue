@@ -7,7 +7,11 @@
       <div class="h-full flex justify-between items-center flex-nowrap w-[30%]">
         <LayoutsHeaderBurger class="p-2" />
 
-        <UIText id="phone" v-if="!isBurgerOpen" class="font-helvetica text-[white] text-[18px]">
+        <UIText
+          id="phone"
+          v-if="!isBurgerOpen"
+          class="font-helvetica text-[white] lg:text-[1.1rem] md:hidden"
+        >
           +7&nbsp;812&nbsp;242&nbsp;52&nbsp;10
         </UIText>
       </div>
@@ -16,13 +20,17 @@
         <SharedAddressBadge
           @click="$router.push('/')"
           id="address-badge"
-          class="relative top-[10%]"
+          class="relative lg:top-[15%] md:top-[20%]"
           v-if="!isBurgerOpen"
         />
       </div>
 
-      <div class="flex justify-around h-full justify-end items-center w-[30%] flex-nowrap">
-        <LayoutsHeaderBooklet @click="$router.push('/floor')"> планировки </LayoutsHeaderBooklet>
+      <div
+        class="flex justify-around h-full justify-end items-center lg:w-[33%] md:w-[40%] flex-nowrap gap-5"
+      >
+        <LayoutsHeaderBooklet class="md:hidden" @click="$router.push('/floor')">
+          планировки
+        </LayoutsHeaderBooklet>
         <LayoutsHeaderBooklet> получить&nbsp;буклет </LayoutsHeaderBooklet>
       </div>
     </div>
