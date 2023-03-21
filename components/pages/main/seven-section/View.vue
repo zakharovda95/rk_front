@@ -68,7 +68,7 @@ onMounted(() => {
 
   if (widthX.value >= 1224) {
     tl.to('#section7values', {
-      y: '-770px',
+      y: '-90vh',
       duration: 5,
     });
   }

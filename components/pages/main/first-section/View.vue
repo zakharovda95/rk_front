@@ -20,9 +20,9 @@
                 Клубный проект
               </UIText>
               <UIText tag="h2" class="font-trajan text-[white] text-[calc(1vh+1vw*0.9)]">
-                12 коллекционных резиденций,
+                69 клубных резиденций
                 <br />
-                включая 4 двухуровневых апартамента
+                с сервисом 5-звездочного бутик-отеля
               </UIText>
             </div>
             <div id="section1img" class="img mt-10" :style="imgSizes" />
