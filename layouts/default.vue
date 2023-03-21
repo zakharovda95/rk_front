@@ -1,8 +1,6 @@
 <template>
-  <LayoutsHeader
-    v-if="(!isThereOffset && $route.name === 'index') || ($route.name !== 'index' && isBurgerOpen)"
-  />
-  <LayoutsExtendedHeader v-if="isThereOffset || ($route.name !== 'index' && !isBurgerOpen)" />
+  <LayoutsHeader v-if="!isThereOffset || isBurgerOpen" />
+  <LayoutsExtendedHeader v-if="!isBurgerOpen" />
   <LayoutsMenu v-if="isBurgerOpen" />
   <slot />
 </template>

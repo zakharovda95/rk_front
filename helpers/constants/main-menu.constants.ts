@@ -4,22 +4,22 @@ export const MENU_CONSTANTS: MainMenuElemType[] = [
   {
     id: 1,
     name: 'Локация',
-    url: '/',
+    url: '#section-wrapper-4',
   },
   {
     id: 2,
     name: 'История',
-    url: '/',
+    url: '#section-wrapper-5',
   },
   {
     id: 3,
     name: 'Окружение',
-    url: '/',
+    url: '#section-wrapper-7',
   },
   {
     id: 4,
     name: 'Технологии',
-    url: '/',
+    url: '#section-wrapper-10',
   },
 ];
 

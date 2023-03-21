@@ -5,17 +5,17 @@
         <UIText
           tag="h1"
           id="section4text"
-          class="w-full text-black font-trajan 2xl:text-[46px] mt-[100px] xl:text-[calc(1vh+1vw*2)] xl:ml-10"
+          class="w-full text-black font-trajan 2xl:text-[46px] mt-[100px] lg:text-[calc(1vh+1vw*2)] lg:ml-10"
         >
           Апартаменты <br />
-          <span class="text-titleBrown"> Римского-Корсакова, 22:</span>
-          вдохновение историей императорских яхт.
+          <span class="text-titleBrown"> Римского-Корсакова, 22:</span> <br>
+          вдохновение историей <br/> императорских яхт.
         </UIText>
       </div>
 
       <div class="h-full flex w-full justify-between mt-2">
-        <div class="w-[45%] xl:ml-10">
-          <UIText tag="p" class="w-full text-black font-helvetica text-[19px] mt-5 mr-5">
+        <div class="w-[45%] lg:ml-10">
+          <UIText tag="p" class="w-full text-black font-helvetica text-[calc(1vh+1vw*0.8)] mt-5 mr-5">
             Более 100 лет по этому адресу размещался штаб Императорского флотского экипажа — самого
             привилегированного формирования, офицеры которого несли службу в царских резиденциях и
             на императорских яхтах.
@@ -26,7 +26,7 @@
           <UIText
             tag="p"
             v-if="isReadMore"
-            class="w-full text-black font-helvetica text-[19px] mt-5 mr-5"
+            class="w-full text-black font-helvetica text-[calc(1vh+1vw*0.8)] mt-5 mr-5"
           >
             Более 100 лет по этому адресу размещался штаб Императорского флотского экипажа — самого
             привилегированного формирования, офицеры которого несли службу в царских резиденциях и
@@ -35,7 +35,7 @@
         </div>
         <div
           id="section4imgwrapper"
-          class="2xl:w-[45%] 2xl:h-[60%] xl:w-[40%] xl:h-[80%] relative top-0 overflow-hidden"
+          class="2xl:w-[40%] 2xl:h-[80%] xl:w-[40%] xl:h-[80%] lg:w-[40%] lg:h-[70%] relative top-0 overflow-hidden"
         >
           <img id="section4img" class="w-full h-auto" alt="img" src="/img/images/section4img.png" />
         </div>
@@ -56,13 +56,13 @@ onMounted((): void => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '#section-wrapper-4',
-      start: 'top top',
-      end: 'bottom 20%',
+      start: 'top 20%',
+      end: 'bottom 80%',
       scrub: 2,
-      pin: true,
+      pin: '#section-wrapper-5'
     },
   });
 
-  tl.to('#section4img', { x: 0, y: '-50%', duration: 2 });
+  tl.to('#section4img', { x: 0, y: '-20%', duration: 2 });
 });
 </script>

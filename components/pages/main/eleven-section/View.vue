@@ -31,7 +31,7 @@ onMounted((): void => {
       start: 'top 15%',
       end: 'bottom 95%',
       pin: true,
-      scrub: 5,
+      scrub: 3,
     },
   });
 
@@ -44,7 +44,7 @@ onMounted((): void => {
     {
       x: 0,
       y: 0,
-      duration: 3,
+      duration: 10,
     },
   );
 
@@ -57,13 +57,18 @@ onMounted((): void => {
     {
       x: 0,
       y: 0,
-      duration: 1,
+      duration: 10,
     },
   );
 
   tl.to('#section11addressnumber', {
     color: 'white',
     duration: 1,
+  });
+
+  tl.to('#section11addressimg', {
+    x: 0,
+    duration: 10,
   });
 });
 </script>

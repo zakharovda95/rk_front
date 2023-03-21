@@ -58,7 +58,6 @@ onMounted(() => {
       pin: true,
       trigger: '#section-wrapper-1',
       start: 'top top',
-      endTrigger: '#section-wrapper-2',
       end: 'bottom top',
       scrub: 2,
     },
@@ -69,12 +68,12 @@ onMounted(() => {
     { opacity: 0 },
     {
       opacity: 1,
-      duration: 0.1,
+      duration: 3,
+      paused: true,
       scrollTrigger: {
-        trigger: '#section-wrapper-1',
-        start: 'top 0.2%',
-        end: 'bottom 50%',
-        scrub: 1,
+        trigger: '#section1img',
+        start: 'top 140%',
+        end: 'top 120%',
       },
     },
   );
@@ -85,17 +84,38 @@ onMounted(() => {
     {
       y: 0,
       x: 0,
-      duration: 3,
+      duration: 10,
     },
   );
+
+  tl.to('#section1img', {
+    y: 0,
+    x: 0,
+    duration: 5,
+  });
 
   tl.to('#section1img', {
     x: 0,
     y: 0,
     height: '100vh',
     width: '100vw',
-    duration: 2,
+    duration: 10,
   });
+
+  tl.fromTo(
+    '#header',
+    { y: '-100px' },
+    {
+      y: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: '#section1img',
+        start: 'top 120%',
+        end: 'top 100%',
+        scrub: 1,
+      },
+    },
+  );
 
   tl.fromTo(
     '#section1img',
@@ -103,7 +123,7 @@ onMounted(() => {
     {
       x: 0,
       y: 0,
-      duration: 2,
+      duration: 5,
     },
   );
 });

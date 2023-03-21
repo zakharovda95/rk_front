@@ -4,7 +4,7 @@
       class="map w-full max-w-[1499px] h-full flex flex-col justify-around"
       style="margin: 0 auto"
     >
-      <div class="flex w-[70%] h-[10%] gap-[5vw] xl:ml-10">
+      <div class="flex w-[70%] h-[10%] gap-[5vw] xl:ml-10 relative top-[40px]" id="section9header">
         <UIText tag="h1" class="font-trajan text-[white] text-[46px]">Service</UIText>
         <UIText tag="p" class="font-helvetica text-[white] text-[18px]">
           Высочайший стандарт сервиса создает уровень комфорта, наполняющий атмосферой роскошного
@@ -47,7 +47,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 onMounted((): void => {
   gsap.timeline({
-    paused: true,
     scrollTrigger: {
       trigger: '#section-wrapper-8',
       scrub: true,
@@ -58,10 +57,9 @@ onMounted((): void => {
   });
 
   gsap.timeline({
-    paused: true,
     scrollTrigger: {
       trigger: '#section-wrapper-9',
-      scrub: true,
+      scrub: 1,
       pin: '#section-wrapper-10',
       start: 'top top',
       end: 'center 20%',
@@ -71,11 +69,14 @@ onMounted((): void => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '.section9image',
-      start: 'top 20%',
+      start: 'top top',
+      scrub: 2,
+      pin: '#section-wrapper-9',
     },
   });
-
-  tl.fromTo('#section9nav', { opacity: 0 }, { opacity: 1, duration: 0.5 });
+  tl.fromTo('#section9header', { opacity: 0 }, { opacity: 1, duration: 1 });
+  tl.fromTo('#section9nav', { opacity: 0 }, { opacity: 1, duration: 1 });
+  tl.fromTo('#section9nav', { x: 0, y: 0 }, { x: 0, y: 0, duration: 5 });
 });
 </script>
 

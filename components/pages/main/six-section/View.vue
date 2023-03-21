@@ -16,8 +16,8 @@ onMounted((): void => {
       trigger: '#section5text',
       pin: '#section-wrapper-6',
       scrub: 2,
-      start: 'top 50%',
-      end: 'bottom 20%',
+      start: 'top top',
+      end: 'bottom bottom',
     },
   });
 

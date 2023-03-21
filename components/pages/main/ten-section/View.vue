@@ -90,16 +90,16 @@ onMounted(() => {
   gsap.fromTo(
     '#section10text1',
     {
-      x: '-2vw',
+      x: '-3vw',
     },
     {
       x: 0,
       duration: 2,
       scrollTrigger: {
         trigger: '#section10text1',
-        start: 'top 20%',
+        start: 'top 40%',
         end: 'top top',
-        scrub: true,
+        scrub: 3,
       },
     },
   );
@@ -107,16 +107,16 @@ onMounted(() => {
   gsap.fromTo(
     '#section10text2',
     {
-      x: '2vw',
+      x: '3vw',
     },
     {
       x: 0,
       duration: 2,
       scrollTrigger: {
         trigger: '#section10text1',
-        start: 'top 20%',
+        start: 'top 40%',
         end: 'top top',
-        scrub: true,
+        scrub: 3,
       },
     },
   );

@@ -9,7 +9,7 @@
           <img
             id="s8img1"
             data-speed="1.1"
-            class="w-full h-full my-3"
+            class="w-[130%] h-full my-3"
             src="/img/images/section8img1.png"
             alt="img"
           />
@@ -19,7 +19,7 @@
           <img
             id="s8img2"
             data-speed="1.1"
-            class="w-full h-full my-3"
+            class="w-[130%] h-full my-3"
             src="/img/images/section8img2.png"
             alt="img"
           />
@@ -54,10 +54,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted((): void => {
-  const tl = gsap.timeline({
+  gsap.timeline({
     scrollTrigger: {
       trigger: '#section8text',
-      start: 'top 70%',
+      start: 'top 80%',
       scrub: 1,
     },
   });
@@ -67,31 +67,39 @@ onMounted((): void => {
     { opacity: 0 },
     {
       opacity: 1,
-      duration: 1,
+      duration: 0.1,
       scrollTrigger: {
         trigger: '#section8text',
       },
     },
   );
 
-  gsap.to('#s8img1', {
-    x: '2vw',
-    duration: 0.1,
-    scrollTrigger: {
-      trigger: '#section8text',
-      start: 'top 30%',
-      scrub: 1,
+  gsap.fromTo(
+    '#s8img1',
+    { x: '-1vw' },
+    {
+      x: '1vw',
+      duration: 0.1,
+      scrollTrigger: {
+        trigger: '#section8text',
+        start: 'top 80%',
+        scrub: 3,
+      },
     },
-  });
+  );
 
-  gsap.to('#s8img2', {
-    x: '2vw',
-    duration: 0.1,
-    scrollTrigger: {
-      trigger: '#section8text',
-      start: 'top 30%',
-      scrub: 1,
+  gsap.fromTo(
+    '#s8img2',
+    { x: '1vw' },
+    {
+      x: '-1vw',
+      duration: 0.1,
+      scrollTrigger: {
+        trigger: '#section8text',
+        start: 'top 60%',
+        scrub: 1,
+      },
     },
-  });
+  );
 });
 </script>

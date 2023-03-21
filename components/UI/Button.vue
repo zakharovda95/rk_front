@@ -24,9 +24,9 @@ const props = defineProps({
     default: () => 'large',
   },
   color: {
-    type: String as PropType<'beige' | 'gray'>,
+    type: String as PropType<'beige' | 'gray' | 'transparent'>,
     required: false,
-    default: () => 'white',
+    default: () => 'beige',
   },
   border: {
     type: String as PropType<'white'>,
@@ -34,7 +34,7 @@ const props = defineProps({
     default: () => 'white',
   },
   effect: {
-    type: Boolean,
+    type: [Boolean, String],
     required: false,
     default: () => false,
   },
@@ -88,6 +88,8 @@ const color: Ref<string> = computed(() => {
       return '#E3BC98';
     case 'gray':
       return '#F1F0EE';
+    case 'transparent':
+      return 'transparent';
     default:
       return 'white';
   }
@@ -97,10 +99,16 @@ const fontColor: Ref<string> = computed(() => {
   switch (props.color) {
     case 'beige':
       return 'black';
+    case 'transparent':
+      return 'white';
     default:
       return 'black';
   }
 });
+
+const effectBg: Ref<string> = computed(() =>
+  props.effect && typeof props.effect === 'string' ? props.effect : 'gray',
+);
 </script>
 
 <style scoped lang="scss">
@@ -111,7 +119,7 @@ const fontColor: Ref<string> = computed(() => {
   left: 0;
   width: 0;
   height: 100%;
-  background: gray;
+  background: v-bind(effectBg);
   transition: all 1s ease;
   z-index: 100;
   opacity: 0;

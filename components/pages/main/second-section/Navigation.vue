@@ -2,7 +2,7 @@
   <div id="section2navigation" class="flex gap-2">
     <div class="flex flex-col">
       <div v-for="elem in data" :key="data.id" class="flex mb-3 items-center gap-5">
-        <UIText tag="p" class="font-helvetica text-[26px] text-[white] cursor-pointer">
+        <UIText tag="p" class="font-helvetica text-[calc(1vh+1vw*1.2)] text-[white] cursor-pointer">
           {{ elem.name }}
         </UIText>
 
@@ -14,7 +14,7 @@
             class="cursor-pointer"
             :class="{ 'link-active': el.id === 1 }"
           >
-            <UIText tag="p" class="font-helvetica text-[26px] text-[white]">
+            <UIText tag="p" class="font-helvetica text-[calc(1vh+1vw*1.1)] text-[white]">
               {{ el.name }}
             </UIText>
           </component>
@@ -25,10 +25,10 @@
     <UIButton
       id="section2button"
       tag="button"
-      size="large"
+      :size="widthX > 1024 ? 'large' : 'medium'"
       color="beige"
       type="round"
-      class="w-[91px] h-[91px] ml-10"
+      class="w-[91px] h-[91px] lg:w-[80px] lg:h-[80px] xl:ml-10 lg:ml-5"
     >
       <img
         alt="arrow"
@@ -42,8 +42,10 @@
 <script setup lang="ts">
 import { Section2NavigationType } from '~/helpers/types/constants/section-2.type';
 import { SECTION_2_NAVIGATION_CONSTANTS } from '~/helpers/constants/section-2.constants';
+import { usePageWidthWatcher } from '~/composables/usePageWidthWatcher';
 
 const data: Ref<Section2NavigationType[]> = ref(SECTION_2_NAVIGATION_CONSTANTS);
+const { widthX } = usePageWidthWatcher();
 </script>
 
 <style scoped lang="scss">
