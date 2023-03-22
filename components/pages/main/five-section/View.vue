@@ -17,7 +17,7 @@
           >
             РЕКОНСТРУКЦИЯ С БЕРЕЖНЫМ ОТНОШЕНИЕМ К ИСТОРИИ ГОРОДА
           </UIText>
-          <UIText tag="p" class="font-helvetica text-[calc(1vh+1vw*0.7)] text-black">
+          <UIText tag="p" class="font-helvetica text-[1.2rem] h-[80vh] text-black">
             Реконструированное 6-этажное здание казармгвардейского экипажа начала XVIII века, в
             котором будут располагаться частные апартаменты и отель с расширенной инфраструктурой и
             безупречным сервисом.
@@ -33,12 +33,14 @@ import { SECTION_5_CONSTANTS } from '~/helpers/constants/section-5.constants';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { usePageWidthWatcher } from '~/composables/usePageWidthWatcher';
+import { usePageHeightWatcher } from '~/composables/usePageHeightWatcker';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const data = ref(SECTION_5_CONSTANTS);
 
 const { widthX } = usePageWidthWatcher();
+const { heightY } = usePageHeightWatcher();
 
 onMounted((): void => {
   const tl = gsap.timeline({

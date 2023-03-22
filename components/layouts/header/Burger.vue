@@ -8,7 +8,7 @@
       <span class="el el2 w-[50px] h-[2px] bg-[white] my-1" :class="{ open: isBurgerOpen }" />
     </div>
     <UIText
-      class="el3 font-helvetica text-[white] text-[18px] relative top-[-2px]"
+      class="el3 font-helvetica text-[white] text-[18px] relative top-[-2px] hidden md:inline"
       :class="{ open: isBurgerOpen }"
     >
       {{ burgerText }}

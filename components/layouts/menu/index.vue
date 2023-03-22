@@ -1,7 +1,7 @@
 <template>
   <div class="menu fixed w-full h-[100vh] overflow-hidden z-[900]">
     <SharedBackground class="absolute z-[80]" />
-    <LayoutsMenuSidebar class="sidebar" />
+    <LayoutsMenuSidebar class="sidebar hidden md:inline" />
 
     <div class="max-w-[1399px] relative z-[90] p-5" style="margin: 0 auto">
       <div>
@@ -13,9 +13,10 @@
       </div>
 
       <LayoutsMenuPhoneBadge
-        class="phone-badge absolute left-[30vw] top-[90vh] z-[95] md:hidden lg:block"
+        class="phone-badge absolute left-[30vw] top-[90vh] z-[95] hidden lg:inline"
       />
-      <SharedAddressBadge class="address-badge absolute top-[90vh] z-[95]" />
+      <SharedAddressBadge class="address-badge absolute top-[90vh] z-[95] hidden lg:inline" />
+      <PagesMainFirstSectionBrand class="absolute top-[92vh] inline lg:hidden" />
       <LayoutsMenuLinks class="links absolute top-[32vh]" />
     </div>
   </div>
