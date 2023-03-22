@@ -28,7 +28,7 @@
         <UIText
           id="section2text"
           tag="h1"
-          class="absolute md:bottom-[30px] top-[150px] z-[35] font-trajan text-[46px] text-[white] w-[50%] 2xl:text-[46px] md:text-[calc(1vh+1vw*2.1)] text-[30px] lg:ml-10 md:mx-10 mx-5"
+          class="absolute md:bottom-[30px] top-[150px] z-[35] font-trajan text-[46px] text-[white] w-[50%] 2xl:text-[46px] md:text-[calc(1vh+1vw*2.1)] text-[1.8rem] lg:ml-10 md:mx-10 mx-5"
         >
           Выберете свою идеальную планировку
         </UIText>

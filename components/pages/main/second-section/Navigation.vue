@@ -1,5 +1,5 @@
 <template>
-  <div id="section2navigation" class="flex gap-2">
+  <div id="section2navigation" class="flex gap-5 md:justify-start justify-between">
     <div class="flex flex-col">
       <div v-for="elem in data" :key="data.id" class="flex mb-3 items-center gap-5">
         <UIText
@@ -9,7 +9,7 @@
           {{ elem.name }}
         </UIText>
 
-        <div class="flex gap-2">
+        <div class="flex gap-5">
           <component
             :is="el.url ? 'NuxtLink' : 'div'"
             v-for="el in elem.values"
@@ -34,7 +34,7 @@
       :size="widthX > 1024 ? 'large' : 'medium'"
       color="beige"
       type="round"
-      class="w-[91px] h-[91px] lg:w-[80px] lg:h-[80px] xl:ml-10 lg:ml-5"
+      class="xl:w-[91px] xl:h-[91px] w-[80px] h-[80px] xl:mx-10 lg:ml-5"
     >
       <img
         alt="arrow"

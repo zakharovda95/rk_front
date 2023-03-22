@@ -78,17 +78,17 @@ onMounted(() => {
 
   scrollBarWidth.value = innerWidth - clientWidth;
 
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      pin: true,
-      trigger: '#section-wrapper-1',
-      start: 'top top',
-      end: 'bottom top',
-      scrub: 2,
-    },
-  });
-
   if (widthX.value <= 768) {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        pin: true,
+        trigger: '#section-wrapper-1',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 2,
+      },
+    });
+
     tl.fromTo(
       '#section1text',
       { opacity: 0 },
@@ -111,9 +111,9 @@ onMounted(() => {
         y: 0,
         duration: 1,
         scrollTrigger: {
-          trigger: '#section1img',
-          start: 'top 120%',
-          end: 'top 100%',
+          trigger: '#section-wrapper-2',
+          start: 'top bottom',
+          end: 'bottom 10%',
           scrub: 1,
         },
       },
@@ -121,6 +121,16 @@ onMounted(() => {
   }
 
   if (widthX.value > 768) {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        pin: true,
+        trigger: '#section-wrapper-1',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 2,
+      },
+    });
+
     tl.fromTo(
       '#section1text',
       { opacity: 0 },

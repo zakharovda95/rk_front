@@ -1,15 +1,15 @@
 <template>
   <div class="map w-full h-[100vh]">
-    <div class="relative w-full max-w-[1499px]" style="margin: 0 auto">
+    <div class="w-full max-w-[1499px] flex flex-col justify-center" style="margin: 0 auto">
       <UIText
         tag="h1"
         id="section3text"
-        class="absolute z-[50] left-0 top-[100px] font-trajan text-black w-[45%] text-[calc(1vh+1vw*2.1)] md:ml-10"
+        class="absolute z-[50] left-0 top-[100px] font-trajan text-black md:w-[45%] w-[90%] md:text-[calc(1vh+1vw*2.1)] text-[1.8rem] md:ml-10 mx-5"
       >
         Атмосфера локации в историческом центре
       </UIText>
       <UIButton
-        class="absolute flex z-[50] items-center gap-2 top-[90vh] left-[40%]"
+        class="absolute flex flex-row z-[50] items-center gap-2 top-[90vh] left-[40%] hidden md:flex"
         type="rounded"
         color="gray"
         size="large"
@@ -19,12 +19,28 @@
         <img alt="img" src="/img/icons/play2.svg" />
         Видео обзор локации
       </UIButton>
+      <UIButton
+        class="absolute flex z-[50] items-center justify-center gap-2 top-[85vh] left-[70%] inline md:hidden w-[80px] h-[80px]"
+        type="rounded"
+        color="gray"
+        size="large"
+        border="white"
+      >
+        <img
+          alt="img"
+          src="/img/icons/play2.svg"
+          width="30"
+          height="30"
+          class="relative left-[5px]"
+        />
+      </UIButton>
     </div>
-    <img
-      alt="map"
-      src="/img/components/map-clear.svg"
-      class="w-[100vw] h-[100vh] relative z-[40] top-0 left-0 m-auto object-cover"
-    />
+    <!--    <img-->
+    <!--      alt="map"-->
+    <!--      src="/img/components/map-clear.svg"-->
+    <!--      class="w-[100vw] h-[100vh] relative z-[40] top-0 left-0 m-auto object-cover"-->
+    <!--    />-->
+    <PagesMainThirdSectionMap />
   </div>
 </template>
 
@@ -55,3 +71,18 @@ onMounted((): void => {
   );
 });
 </script>
+
+<style scoped lang="scss">
+@keyframes rotate {
+  25% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+}
+img:hover {
+  animation: rotate;
+  animation-duration: 1.5s;
+}
+</style>

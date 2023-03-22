@@ -1,11 +1,11 @@
 <template>
   <div class="w-full h-[100vh]">
     <div class="map w-full max-w-[1499px] h-full flex flex-col" style="margin: 0 auto">
-      <div class="w-[70%]">
+      <div class="md:w-[70%] w-full">
         <UIText
           tag="h1"
           id="section4text"
-          class="w-full text-black font-trajan mt-[100px] text-[calc(1vh+1vw*2.1)] md:ml-10"
+          class="w-full text-black font-trajan mt-[100px] md:text-[calc(1vh+1vw*2.1)] text-[1.8rem] md:mx-10 mx-5"
         >
           Апартаменты <br />
           <span class="text-titleBrown"> Римского-Корсакова, 22:</span> <br />
@@ -14,11 +14,11 @@
         </UIText>
       </div>
 
-      <div class="h-full flex w-full justify-between mt-2">
-        <div class="w-[45%] md:ml-10">
+      <div class="h-full flex w-full justify-between md:flex-row flex-col mt-2">
+        <div class="md:w-[45%] md:mx-10 mx-5 w-[80%]">
           <UIText
             tag="p"
-            class="w-full text-black font-helvetica text-[calc(1vh+1vw*0.7)] mt-5 mr-5"
+            class="w-full text-black font-helvetica md:text-[calc(1vh+1vw*0.7)] text-[1.1rem] text mt-5 mr-5"
           >
             Более 100 лет по этому адресу размещался штаб Императорского флотского экипажа — самого
             привилегированного формирования, офицеры которого несли службу в царских резиденциях и
@@ -30,16 +30,17 @@
           <UIText
             tag="p"
             v-if="isReadMore"
-            class="w-full text-black font-helvetica text-[calc(1vh+1vw*0.7)] mt-5 mr-5"
+            class="w-full text-black font-helvetica md:text-[calc(1vh+1vw*0.7)] text-[1.1rem] text mt-5 mr-5"
           >
             Более 100 лет по этому адресу размещался штаб Императорского флотского экипажа — самого
             привилегированного формирования, офицеры которого несли службу в царских резиденциях и
             на императорских яхтах.
           </UIText>
         </div>
+
         <div
           id="section4imgwrapper"
-          class="2xl:w-[40%] 2xl:h-[80%] xl:w-[40%] xl:h-[80%] lg:w-[40%] lg:h-[70%] md:w-[45%] md:h-[70%] relative bottom-[50px] overflow-hidden"
+          class="2xl:w-[40%] 2xl:h-[80%] xl:w-[40%] xl:h-[80%] lg:w-[40%] lg:h-[70%] md:w-[45%] md:h-[70%] w-[90%] h-[350px] relative md:bottom-[50px] bottom-[-50px] overflow-hidden"
         >
           <img id="section4img" class="w-full h-auto" alt="img" src="/img/images/section4img.png" />
         </div>
@@ -51,22 +52,38 @@
 <script setup lang="ts">
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { usePageWidthWatcher } from '~/composables/usePageWidthWatcher';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const isReadMore: Ref<boolean> = ref(false);
+const { widthX } = usePageWidthWatcher();
 
 onMounted((): void => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#section-wrapper-4',
-      start: 'top 20%',
-      end: 'bottom 80%',
-      scrub: 3,
-      pin: '#section-wrapper-5',
-    },
-  });
+  if (widthX.value > 768) {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#section-wrapper-4',
+        start: 'top 20%',
+        end: 'bottom 80%',
+        scrub: 3,
+        pin: '#section-wrapper-5',
+      },
+    });
+    tl.to('#section4img', { x: 0, y: '-20%', duration: 2 });
+  }
 
-  tl.to('#section4img', { x: 0, y: '-20%', duration: 2 });
+  if (widthX.value <= 768) {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#section-wrapper-4',
+        start: 'top 50%',
+        end: 'bottom 80%',
+        scrub: 3,
+        pin: '#section-wrapper-5',
+      },
+    });
+    tl.fromTo('#section4img', { x: '80vw', y: 0 }, { x: 0, y: 0, duration: 10 });
+  }
 });
 </script>

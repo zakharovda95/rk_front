@@ -1,9 +1,9 @@
 <template>
-  <div class="flex flex-col relative">
-    <div class="flex items-center mb-1">
+  <div class="flex flex-col justify-center items-center relative">
+    <div class="flex items-center mb-1 justify-center">
       <UIText
         tag="h1"
-        class="font-trajan text-titleBrown lg:text-[calc(1vh+1vw*8)] md:text-[calc(1vh+1vw*12)]"
+        class="font-trajan text-titleBrown lg:text-[calc(1vh+1vw*8)] md:text-[calc(1vh+1vw*12)] text-[9rem]"
       >
         {{ itemData.count }}
       </UIText>
@@ -15,7 +15,10 @@
         {{ itemData.small }}
       </UIText>
     </div>
-    <UIText tag="p" class="relative bottom-[50px] font-helvetica text-black text-[calc(1vh+1vw*1)]">
+    <UIText
+      tag="p"
+      class="relative bottom-[50px] font-helvetica text-black md:text-[calc(1vh+1vw*1)] text-[1.1rem]"
+    >
       {{ itemData.text }}
     </UIText>
   </div>
