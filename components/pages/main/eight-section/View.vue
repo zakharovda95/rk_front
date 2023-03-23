@@ -1,7 +1,7 @@
 <template>
   <div class="w-full h-full flex justify-between items-center p-5">
     <div
-      class="map w-full max-w-[1499px] h-full flex lg:flex-row flex-col-reverse items-center justify-around"
+      class="map w-full max-w-[1499px] h-full flex lg:flex-row flex-col items-center justify-around"
       style="margin: 0 auto"
     >
       <div
@@ -32,16 +32,18 @@
       <div
         data-speed="1.3"
         id="section8text"
-        class="lg:w-1/2 md:w-3/4 w-full h-full flex flex-col justify-center items-center p-[24px] relative bottom-[10vh]"
+        class="lg:w-1/2 md:w-3/4 w-full h-full flex flex-col justify-center items-center p-[24px] relative md:bottom-[10vh] bottom-0"
       >
         <UIText
           tag="h1"
           id="section8text1"
-          class="font-trajan md:text-[calc(1vw+1vh*2.1)] text-[2rem] text-black"
+          class="font-trajan md:text-[calc(1vw+1vh*2.1)] text-[2rem] text-black max-[400px]:text-[1.5rem]"
         >
           Апартаменты
         </UIText>
-        <UIText class="font-helvetica md:text-[calc(1vw+1vh*0.7)] text-1.1rem text-black">
+        <UIText
+          class="font-helvetica md:text-[calc(1vw+1vh*0.7)] text-1.1rem text-black max-[400px]:text-[0.9rem]"
+        >
           «Римского-Корсакова, 22» — симбиоз роскошных гостевых апартаментов и уникальных частных
           резиденций. Пересечение архитектурного духа конца 18 века с передовыми коммуникациями и
           инженерией в окружении сервиса высочайших стандартов.
@@ -70,14 +72,14 @@ onMounted((): void => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '#section-wrapper-8',
-        start: 'top 20%',
+        start: 'top 80%',
         endTrigger: '#section-wrapper-8',
-        end: 'bottom top',
-        scrub: 3,
+        end: 'bottom center',
+        scrub: 1,
       },
     });
 
-    tl.fromTo('#section8img', { x: '80vw' }, { x: '-80vw', duration: 10 });
+    tl.fromTo('#section8img', { x: '80vw' }, { x: '-80vw', duration: 3 });
   }
 
   if (widthX.value >= 768 && widthX.value <= 1024) {

@@ -3,7 +3,7 @@
     <div class="flex items-center mb-1 justify-center">
       <UIText
         tag="h1"
-        class="font-trajan text-titleBrown lg:text-[calc(1vh+1vw*8)] md:text-[calc(1vh+1vw*12)] text-[9rem]"
+        class="font-trajan text-titleBrown lg:text-[calc(1vh+1vw*8)] md:text-[calc(1vh+1vw*12)] text-[9rem] max-[400px]:text-[7rem]"
       >
         {{ itemData.count }}
       </UIText>
@@ -17,7 +17,7 @@
     </div>
     <UIText
       tag="p"
-      class="relative bottom-[50px] font-helvetica text-black md:text-[calc(1vh+1vw*1)] text-[1.1rem]"
+      class="relative bottom-[50px] font-helvetica text-black md:text-[calc(1vh+1vw*1)] text-[1.1rem] max-[400px]:text-[0.9rem] text-center"
     >
       {{ itemData.text }}
     </UIText>

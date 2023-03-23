@@ -8,6 +8,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@vant/nuxt": "^1.0.0",
     "autoprefixer": "^10.4.13",
     "nuxt": "^3.2.2",
     "postcss": "^8.4.21",
@@ -19,6 +20,7 @@
     "pinia": "^2.0.32",
     "prettier": "^2.8.4",
     "sass": "^1.58.3",
+    "vant": "^4.1.1",
     "vue-the-mask": "^0.11.1"
   }
 }

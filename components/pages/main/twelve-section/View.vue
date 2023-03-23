@@ -1,6 +1,6 @@
 <template>
   <div class="w-full h-[calc(100vh-90px)] flex">
-    <div class="w-[70%] h-full bg-[#483738]">
+    <div class="lg:w-[70%] w-full h-full bg-[#483738]">
       <div class="px-[10%] py-[5%] flex flex-col justify-around h-full">
         <div>
           <UIText tag="h1" class="font-trajan text-[white] text-[calc(1vh+1vw*1.8)]">
@@ -8,7 +8,7 @@
             больше
           </UIText>
 
-          <div class="flex justify-between">
+          <div class="flex md:flex-row flex-col justify-between">
             <UIText tag="p" class="font-trajan text-[white] text-[calc(1vh+1vw*0.3)]">
               Закажите обратный звонок, и <br />
               персональный менеджер свяжется с вами, <br />
@@ -27,12 +27,16 @@
         <PagesMainTwelveSectionForm />
 
         <div class="flex justify-between">
-          <SharedAddressBadge />
+          <SharedAddressBadge class="lg:flex hidden" />
           <PagesMainTwelveSectionLinks />
         </div>
       </div>
     </div>
-    <div @mouseenter="show" @mouseleave="hide" class="w-[30%] h-full bg-[#E3BC98] overflow-hidden">
+    <div
+      @mouseenter="show"
+      @mouseleave="hide"
+      class="w-[30%] h-full bg-[#E3BC98] overflow-hidden lg:inline hidden"
+    >
       <img
         id="footerImg"
         alt="img"

@@ -3,7 +3,7 @@
     class="flex flex-col items-center p-5 max-w-[350px] cursor-default hover:translate-y-[-2px] transition-[0.5s]"
   >
     <img alt="img" src="/img/components/section10item-element.svg" class="mb-3" />
-    <UIText class="font-helvetica text-[calc(1vw+1vh*0.5)] text-black text-center">
+    <UIText class="font-helvetica md:text-[calc(1vw+1vh*0.5)] text-[0.7rem] text-black text-center">
       <slot />
     </UIText>
   </div>

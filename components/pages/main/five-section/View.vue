@@ -1,14 +1,16 @@
 <template>
-  <div class="w-full h-[100vh] flex justify-between relative md:mt-0 mt-10">
+  <div
+    class="w-full h-[100vh] flex justify-between relative md:mt-0 mt-10 max-[400px]:mt-[240px] max-[400px]:mb-[300px]"
+  >
     <div
       class="map w-full max-w-[1499px] h-full flex md:flex-row flex-col-reverse items-end justify-around p-5"
       style="margin: 0 auto"
     >
       <div
         id="section5dates"
-        class="flex flex-col md:mx-10 mx-5 relative md:top-[5vh] top-[-50vh] md:left-0 left-[-10vw]"
+        class="flex flex-col justify-center items-center md:mx-10 mx-5 relative md:top-[5vh] top-[-50vh] md:my-10"
       >
-        <SharedDataItem v-for="el in data" :key="el.id" :item-data="el" />
+        <SharedDataItem class="max-[400px]:mr-5" v-for="el in data" :key="el.id" :item-data="el" />
       </div>
 
       <div class="flex flex-col md:w-1/2 w-full h-full relative top-0">
@@ -16,11 +18,14 @@
           <UIText
             tag="h1"
             id="section5text"
-            class="font-trajan md:text-[calc(1vh+1vw*2.1)] text-[1.5rem] text-black"
+            class="font-trajan md:text-[calc(1vh+1vw*2.1)] text-[1.5rem] max-[400px]:text-[1.3rem] text-black"
           >
             РЕКОНСТРУКЦИЯ С БЕРЕЖНЫМ ОТНОШЕНИЕМ К ИСТОРИИ ГОРОДА
           </UIText>
-          <UIText tag="p" class="font-helvetica md:text-[1.2rem] text-[1.1rem] h-[80vh] text-black">
+          <UIText
+            tag="p"
+            class="font-helvetica md:text-[1.2rem] text-[1.1rem] max-[400px]:text-[0.9rem] h-[80vh] text-black"
+          >
             Реконструированное 6-этажное здание казармгвардейского экипажа начала XVIII века, в
             котором будут располагаться частные апартаменты и отель с расширенной инфраструктурой и
             безупречным сервисом.
