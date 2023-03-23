@@ -1,5 +1,5 @@
 <template>
-  <div id="header" class="fixed h-[90px] w-full z-[950] flex items-center px-2">
+  <div id="header" class="fixed h-[10vh] min-h-[60px] w-full z-[950] flex items-center px-2">
     <div
       class="w-full h-full max-w-[1599px] flex justify-between flex-nowrap items-center"
       style="margin: 0 auto"
@@ -10,7 +10,7 @@
         <UIText
           id="phone"
           v-if="!isBurgerOpen"
-          class="font-helvetica text-[white] lg:text-[1.1rem] hidden lg:block"
+          class="font-helvetica text-[white] text-[1.1rem] hidden lg:block"
         >
           +7&nbsp;812&nbsp;242&nbsp;52&nbsp;10
         </UIText>

@@ -5,16 +5,10 @@
       style="margin: 0 auto"
     >
       <div id="section7textcontainer" class="md:w-[25%] md:h-[300px] mx-5">
-        <UIText
-          tag="h1"
-          class="font-trajan text-black md:text-[calc(1vw+1vh*2.1)] text-[1.5rem] max-[400px]:text-[1.5rem]"
-        >
+        <UIText tag="h1" class="font-trajan text-black md:text-[calc(1vw+1vh*2.5)]">
           Окружение
         </UIText>
-        <UIText
-          tag="p"
-          class="font-helvetica text-black md:text-[calc(1vw+1vh*0.7)] md:text-[1.1rem] max-[400px]:text-[0.9rem]"
-        >
+        <UIText tag="p" class="font-helvetica text-black text-[calc(1vw+1vh*0.9)]">
           Коломна — исторический район Санкт-Петербурга, один из уникальных мест, откуда быстро и
           просто можно добраться до любой точки исторического центра города на Неве.
         </UIText>
@@ -47,11 +41,13 @@ import {
   SECTION_7_WALK_CONSTANTS,
 } from '~/helpers/constants/section-7.constants';
 import { usePageWidthWatcher } from '~/composables/usePageWidthWatcher';
+import { usePageHeightWatcher } from '~/composables/usePageHeightWatcker';
 
 const carData: Ref<Section7Type[]> = ref(SECTION_7_CAR_CONSTANTS);
 const walkData: Ref<Section7Type[]> = ref(SECTION_7_WALK_CONSTANTS);
 
 const { widthX } = usePageWidthWatcher();
+const { heightY } = usePageHeightWatcher();
 
 onMounted(() => {
   gsap.registerPlugin(ScrollTrigger);
@@ -82,21 +78,28 @@ onMounted(() => {
 
     if (widthX.value >= 768 && widthX.value < 1024) {
       tl.to('#section7values', {
-        y: '-60vh',
+        y: heightY.value >= 800 ? '-60vh' : '-90vh',
         duration: 5,
       });
     }
 
     if (widthX.value >= 1024 && widthX.value < 1224) {
       tl.to('#section7values', {
-        y: '-75vh',
+        y: heightY.value > 800 ? '-70vh' : '-125vh',
         duration: 5,
       });
     }
 
     if (widthX.value >= 1224) {
       tl.to('#section7values', {
-        y: '-90vh',
+        y: heightY.value > 800 ? '-95vh' : '-140vh',
+        duration: 5,
+      });
+    }
+
+    if (widthX.value >= 1600) {
+      tl.to('#section7values', {
+        y: heightY.value > 800 ? '-120vh' : '-140vh',
         duration: 5,
       });
     }

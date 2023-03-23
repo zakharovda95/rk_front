@@ -1,7 +1,7 @@
 <template>
   <div id="address-block" class="flex flex-col items-center">
     <UIText
-      class="lg:text-[calc(1vh+1vw*2.5)] md:text-[calc(1vh+1vw*4.5)] mx-1 text-titleBrown font-trajan"
+      class="lg:text-[calc(1vh+1vw*2.5)] text-[calc(1vh+1vw*1.95)] mx-1 text-titleBrown font-trajan text-center"
       tag="h1"
     >
       Римского<br />Корсакова
@@ -11,7 +11,7 @@
       ref="address"
       class="flex items-center justify-center w-[40vh] h-[40vh] max-w-[380px] max-h-[380px] bg-[white] mt-10"
     >
-      <UIText class="lg:text-[calc(1vh+1vw*10)] md:text-[calc(1vh+1vw*20)] font-helvetica" tag="h1">
+      <UIText class="lg:text-[calc(1vh+1vw*10)] text-[calc(1vh+1vw*13)] font-helvetica" tag="h1">
         22
       </UIText>
     </div>

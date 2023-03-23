@@ -8,11 +8,11 @@
       v-if="!isBurgerOpen"
     >
       <PagesMainFirstSectionBrand
-        class="absolute top-[92vh] z-[500] hidden md:inline"
+        class="absolute top-[calc(1vw+1vh*89)] z-[500] hidden md:inline"
         v-if="!isThereOffset"
       />
       <PagesMainFirstSectionScroll
-        class="absolute top-[80vh] z-[500] hidden md:inline"
+        class="absolute top-[calc(1vw+1vh*72)] z-[500] hidden md:inline"
         v-if="!isThereOffset"
       />
     </div>

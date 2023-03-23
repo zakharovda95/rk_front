@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed h-[90px] w-full z-[950] flex items-center px-2">
+  <div class="fixed h-[10vh] min-h-[60px] w-full z-[950] flex items-center px-2">
     <div
       class="w-full h-full max-w-[1599px] flex justify-between flex-nowrap items-center"
       style="margin: 0 auto"
