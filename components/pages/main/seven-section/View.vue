@@ -76,16 +76,20 @@ onMounted(() => {
       },
     });
 
+    gsap.timeline({
+      scrollTrigger: {},
+    });
+
     if (widthX.value >= 768 && widthX.value < 1024) {
       tl.to('#section7values', {
-        y: heightY.value >= 800 ? '-60vh' : '-90vh',
+        y: `-${(widthX.value / 100 + heightY.value / 100) * 2.9}vh`,
         duration: 5,
       });
     }
 
     if (widthX.value >= 1024 && widthX.value < 1224) {
       tl.to('#section7values', {
-        y: heightY.value > 800 ? '-70vh' : '-125vh',
+        y: `-${widthX.value / 100 + (heightY.value / 100) * 6.5}vh`,
         duration: 5,
       });
     }

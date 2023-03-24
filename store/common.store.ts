@@ -6,7 +6,7 @@ export const useCommonStore = defineStore('common', {
     ({
       isBurgerOpen: false,
       isThereOffset: false,
-      isHideCommonElements: false,
       addressBlockSizes: null,
+      aspectRatio: 0,
     } as CommonStoreType),
 });

@@ -61,32 +61,21 @@
 <script setup lang="ts">
 import usePageOffsetWatcher from '~/composables/usePageOffsetWatcher';
 import { useCommonStore } from '~/store/common.store';
-// import { gsap } from 'gsap';
-
-// gsap.registerPlugin(ScrollSmoother);
+import { usePageHeightWatcher } from '~/composables/usePageHeightWatcker';
+import { usePageWidthWatcher } from '~/composables/usePageWidthWatcher';
 
 const commonStore = useCommonStore();
 const offset = usePageOffsetWatcher();
 
-const isBurgerOpen: Ref<boolean> = computed(() => commonStore.isBurgerOpen);
-
-onMounted((): void => {
-  // setTimeout(async () => {
-  //   const LocomotiveScroll = await import('locomotive-scroll');
-  //   scroll.value = new LocomotiveScroll.default({
-  //     el: document.querySelector('.smooth-wrapper') as HTMLElement,
-  //     smooth: true,
-  //   });
-  // }, 100);
-  // const smoother = ScrollSmoother.create({
-  //   wrapper: '.smooth-wrapper',
-  //   content: '.smooth-content',
-  //   smooth: 1.2,
-  //   effects: true,
-  // });
-  //
-  // smoother.effects('#section4img', { speed: 'auto' });
-});
+const { widthX } = usePageWidthWatcher();
+const { heightY } = usePageHeightWatcher();
+watch(
+  [widthX, heightY],
+  () => {
+    commonStore.aspectRatio = widthX.value / 100 + heightY.value / 100;
+  },
+  { immediate: true, deep: true },
+);
 
 watch(
   offset,

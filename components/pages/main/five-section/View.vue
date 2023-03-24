@@ -22,7 +22,11 @@
           >
             РЕКОНСТРУКЦИЯ С БЕРЕЖНЫМ ОТНОШЕНИЕМ К ИСТОРИИ ГОРОДА
           </UIText>
-          <UIText tag="p" class="font-helvetica text-[calc(1vh+1vw*0.9)] h-[80vh] text-black">
+          <UIText
+            tag="p"
+            id="section5endtext"
+            class="font-helvetica text-[calc(1vh+1vw*0.9)] h-[80vh] text-black"
+          >
             Реконструированное 6-этажное здание казармгвардейского экипажа начала XVIII века, в
             котором будут располагаться частные апартаменты и отель с расширенной инфраструктурой и
             безупречным сервисом.
@@ -39,10 +43,11 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { usePageWidthWatcher } from '~/composables/usePageWidthWatcher';
 import { usePageHeightWatcher } from '~/composables/usePageHeightWatcker';
+import { Section5Type } from '~/helpers/types/constants/section-5.type';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const data = ref(SECTION_5_CONSTANTS);
+const data: Ref<Section5Type[]> = ref(SECTION_5_CONSTANTS);
 
 const { widthX } = usePageWidthWatcher();
 const { heightY } = usePageHeightWatcher();
@@ -82,7 +87,7 @@ onMounted((): void => {
         },
         {
           x: 0,
-          y: heightY.value >= 800 ? '-60vh' : '-50vh',
+          y: `-${widthX.value / 100 + (heightY.value / 100) * 5.4}vh`,
           duration: 5,
         },
       );
@@ -97,13 +102,13 @@ onMounted((): void => {
         },
         {
           x: 0,
-          y: heightY.value >= 800 ? '-50vh' : '-45vh',
+          y: `-${(widthX.value / 100 + heightY.value / 100) * 2.7}vh`,
           duration: 5,
         },
       );
     }
 
-    if (widthX.value >= 1224) {
+    if (widthX.value >= 1224 && widthX.value < 1500) {
       tl.fromTo(
         '#section5dates',
         {
@@ -112,8 +117,38 @@ onMounted((): void => {
         },
         {
           x: 0,
-          y: heightY.value >= 800 ? '-40vh' : '-35vh',
+          y: `-${widthX.value / 100 + (heightY.value / 100) * 3.5}vh`,
           duration: 10,
+        },
+      );
+    }
+
+    if (widthX.value >= 1500 && widthX.value < 1600) {
+      tl.fromTo(
+        '#section5dates',
+        {
+          x: 0,
+          y: '40vh',
+        },
+        {
+          x: 0,
+          y: `-${(widthX.value / 100 + heightY.value / 100) * 2}vh`,
+          duration: 5,
+        },
+      );
+    }
+
+    if (widthX.value >= 1600) {
+      tl.fromTo(
+        '#section5dates',
+        {
+          x: 0,
+          y: '40vh',
+        },
+        {
+          x: 0,
+          y: `-${(widthX.value / 100 + heightY.value / 100) * 1.5}vh`,
+          duration: 5,
         },
       );
     }
