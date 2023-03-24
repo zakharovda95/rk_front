@@ -26,7 +26,8 @@
 </template>
 
 <script lang="ts">
-import { mask } from 'vue-the-mask';
+import pkg from 'vue-the-mask';
+const { mask } = pkg;
 
 export default {
   directives: { mask },
