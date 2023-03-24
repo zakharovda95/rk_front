@@ -19,4 +19,10 @@ export default defineNuxtConfig({
   css: ['~/assets/styles/main.css'],
 
   modules: ['@pinia/nuxt', '@vant/nuxt'],
+
+  runtimeConfig: {
+    public: {
+      BACK_API: '',
+    },
+  },
 });

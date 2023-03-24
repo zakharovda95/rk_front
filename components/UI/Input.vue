@@ -1,6 +1,6 @@
 <template>
   <input
-    class="bg-[transparent] border-b-2 border-[lightgray] h-[60px] min-w-[380px] outline-none text-[white] text-[1.2rem] font-thin"
+    class="bg-[transparent] border-b-2 border-[lightgray] h-[60px] w-full outline-none text-[white] text-[1.2rem] font-thin"
     v-bind="$attrs"
     type="text"
     :value="modelValueProxy"

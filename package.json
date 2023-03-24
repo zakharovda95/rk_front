@@ -8,6 +8,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@types/vue-the-mask": "^0.11.1",
     "@vant/nuxt": "^1.0.0",
     "autoprefixer": "^10.4.13",
     "nuxt": "^3.2.2",
