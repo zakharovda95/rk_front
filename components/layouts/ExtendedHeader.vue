@@ -30,7 +30,7 @@
       <div
         class="flex justify-around h-full justify-end items-center lg:w-[33%] md:w-[40%] flex-nowrap gap-5"
       >
-        <LayoutsHeaderBooklet class="hidden lg:inline" @click="$router.push('/floor')">
+        <LayoutsHeaderBooklet class="hidden lg:inline" @click="$router.push('/corpus-1/floor-1')">
           планировки
         </LayoutsHeaderBooklet>
         <LayoutsHeaderBooklet class="hidden md:inline"> получить&nbsp;буклет </LayoutsHeaderBooklet>

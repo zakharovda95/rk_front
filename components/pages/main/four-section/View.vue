@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-[100vh]">
+  <div class="w-full h-[100vh] mt-[100px]">
     <div class="map w-full max-w-[1499px] h-full flex flex-col" style="margin: 0 auto">
       <div class="md:w-[70%] w-full">
         <UIText
@@ -66,7 +66,7 @@ onMounted((): void => {
         trigger: '#section-wrapper-4',
         start: 'top 20%',
         end: 'bottom 80%',
-        scrub: 3,
+        scrub: 1,
         pin: '#section-wrapper-5',
       },
     });

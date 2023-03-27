@@ -2,7 +2,7 @@ import { defineStore } from 'pinia';
 import { useAsyncData } from '#app';
 import { CallFormData } from '~/helpers/types/pages/index-page.type';
 
-export const useMainPageStore = defineStore('main', {
+export const useFloorPageStore = defineStore('floor', {
   actions: {
     async call(body: CallFormData) {
       try {

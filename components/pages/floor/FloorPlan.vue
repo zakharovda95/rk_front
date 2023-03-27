@@ -1,26 +1,49 @@
 <template>
-  <div class="relative">
-    <img alt="plan" class="plan w-[862px] h-[232px]" src="/img/components/floor/floor.jpg" />
-
-    <div class="w-full absolute z-[100] top-0 left-0">
-      <img
-        alt="mask"
-        v-if="isFlatVisible"
-        class="mask absolute"
-        src="/img/components/floor/30.svg"
-      />
-    </div>
-    <UIText
-      @click="$router.push('/apartment')"
-      @mouseenter="isFlatVisible = true"
-      @mouseleave="isFlatVisible = false"
-      class="number absolute z-[110] font-helvetica text-[26px] w-[100px] h-[100px] flex justify-center items-center left-[180px] top-[10px] cursor-pointer"
-    >
-      30
-    </UIText>
-  </div>
+  <component :is="componentByTag" class="w-full" />
 </template>
 
-<script setup>
-const isFlatVisible = ref(false);
+<script setup lang="ts">
+import Corpus2Floor2 from '~/components/pages/floor/floor-svgs/Corpus2Floor2.vue';
+import { PropType } from '@vue/runtime-core';
+
+const props = defineProps({
+  tag: {
+    type: String as PropType<'c2f2'>,
+    required: true,
+  },
+});
+
+const componentByTag = computed(() => {
+  switch (props.tag) {
+    case 'c2f2':
+      return Corpus2Floor2;
+  }
+});
+
+const maskContainer: Ref<Element | null> = ref(null);
+const masks: Ref<Element[] | null> = ref(null);
+
+onMounted((): void => {
+  maskContainer.value = document.querySelector(`#${props.tag}`);
+
+  if (maskContainer.value) {
+    masks.value = Array.from(document.querySelectorAll('.flat-group'));
+
+    masks.value.forEach(el => {
+      el.addEventListener('click', (e: Event) => {
+        const currentTarget = (e.target as HTMLElement).closest('.flat-group');
+        if (currentTarget) {
+          console.log(currentTarget.id);
+        }
+      });
+    });
+  }
+});
+
+const hoverFlat = (e: Event): void => {
+  const target: EventTarget | null = e.currentTarget;
+  if (target) {
+    console.log(target);
+  }
+};
 </script>

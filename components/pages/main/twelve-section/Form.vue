@@ -8,7 +8,6 @@
     />
     <UIInput
       placeholder="Номер телефона"
-      v-mask="'+7 (###) ### ## ##'"
       class="my-2"
       :model-value="body.phone"
       @custom:update-model-value="body.phone = $event"
@@ -26,12 +25,12 @@
 </template>
 
 <script lang="ts">
-import pkg from 'vue-the-mask';
-const { mask } = pkg;
-
-export default {
-  directives: { mask },
-};
+// import pkg from 'vue-the-mask';
+// const { mask } = pkg;
+//
+// export default {
+//   directives: { mask },
+// };
 </script>
 
 <script setup lang="ts">
