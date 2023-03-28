@@ -3,6 +3,10 @@ import { useAsyncData } from '#app';
 import { CallFormData } from '~/helpers/types/pages/index-page.type';
 
 export const useFloorPageStore = defineStore('floor', {
+  state: (floorData: any = null) => ({
+    floorData: floorData,
+  }),
+
   actions: {
     async call(body: CallFormData) {
       try {

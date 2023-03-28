@@ -4,36 +4,11 @@
     id="svg2"
     viewBox="0 0 1920 1200"
     preserveAspectRatio="xMinYMin slice"
-    sodipodi:docname="floor-side.svg"
-    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
-    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns="http://www.w3.org/2000/svg"
-    xmlns:svg="http://www.w3.org/2000/svg"
   >
     <defs id="defs6" />
-    <sodipodi:namedview
-      id="namedview4"
-      pagecolor="#ffffff"
-      bordercolor="#000000"
-      borderopacity="0.25"
-      inkscape:showpageshadow="2"
-      inkscape:pageopacity="0.0"
-      inkscape:pagecheckerboard="0"
-      inkscape:deskcolor="#d1d1d1"
-      showgrid="false"
-      inkscape:zoom="0.7125"
-      inkscape:cx="277.19298"
-      inkscape:cy="704.5614"
-      inkscape:window-width="1920"
-      inkscape:window-height="1009"
-      inkscape:window-x="-8"
-      inkscape:window-y="-8"
-      inkscape:window-maximized="1"
-      inkscape:current-layer="g697"
-    />
-    <g inkscape:groupmode="layer" inkscape:label="Image" id="g8">
+    <g id="g8">
       <image
         width="448"
         height="1200"
@@ -5007,13 +4982,16 @@ gg==
         id="image10"
       />
     </g>
-    <g inkscape:groupmode="layer" id="side-menu-svg" inkscape:label="side-menu">
-      <g ref="s2" data-floor="2" class="sidebar-mask">
+    <g id="side-menu-svg">
+      <g
+        :class="{ 'sidebar-mask-active': currentFloor === '2' }"
+        data-floor="2"
+        class="sidebar-mask"
+      >
         <path
           style="opacity: 0.5; fill: #ffffff"
           d="M 0.29063517,856.14033 361.40347,857.54384 361.98482,990.21798 -1.2758444,986.66665 Z"
           id="path294-5"
-          sodipodi:nodetypes="ccccc"
           class="sidebar-fill"
         />
         <text
@@ -5024,15 +5002,18 @@ gg==
           id="text566-3"
           class="sidebar-link"
         >
-          <tspan sodipodi:role="line" id="tspan564-90" x="120.35266" y="944.724">2 этаж</tspan>
+          <tspan id="tspan564-90" x="120.35266" y="944.724">2 этаж</tspan>
         </text>
       </g>
-      <g ref="s1" data-floor="1" class="sidebar-mask">
+      <g
+        :class="{ 'sidebar-mask-active': currentFloor === '1' }"
+        data-floor="1"
+        class="sidebar-mask"
+      >
         <path
           style="fill: white; opacity: 0.5"
           d="m 0.74700154,1010.0618 361.60905846,1.8997 0.0851,122.0202 -361.60905157,1.6516 z"
           id="path294-5-3"
-          sodipodi:nodetypes="ccccc"
           class="sidebar-fill"
         />
         <text
@@ -5047,12 +5028,15 @@ gg==
           <tspan x="121.75616" y="1099.1099" id="tspan721">1 этаж</tspan>
         </text>
       </g>
-      <g ref="s3" data-floor="3" class="sidebar-mask">
+      <g
+        :class="{ 'sidebar-mask-active': currentFloor === '3' }"
+        data-floor="3"
+        class="sidebar-mask"
+      >
         <path
           style="fill: white; opacity: 0.5"
           d="M 0.37577293,713.47866 362.48104,714.88217 361.82185,838.88716 0.46090976,839.9185 Z"
           id="path294-3"
-          sodipodi:nodetypes="ccccc"
           class="sidebar-fill"
         />
         <text
@@ -5063,15 +5047,18 @@ gg==
           id="text566-4"
           class="sidebar-link"
         >
-          <tspan sodipodi:role="line" id="tspan564-9" x="120.35265" y="787.53101">3 этаж</tspan>
+          <tspan id="tspan564-9" x="120.35265" y="787.53101">3 этаж</tspan>
         </text>
       </g>
-      <g ref="s4" data-floor="4" class="sidebar-mask">
+      <g
+        :class="{ 'sidebar-mask-active': currentFloor === '4' }"
+        data-floor="4"
+        class="sidebar-mask"
+      >
         <path
           style="fill: white; opacity: 0.5"
           d="M 0.53513205,572.75563 363.50877,574.03509 363.09769,696.79954 0.49621529,698.94737 Z"
           id="path294"
-          sodipodi:nodetypes="ccccc"
           class="sidebar-fill"
         />
         <text
@@ -5082,12 +5069,12 @@ gg==
           id="text566"
           class="sidebar-link"
         >
-          <tspan sodipodi:role="line" id="tspan564" x="115.08772" y="651.22809">4 этаж</tspan>
+          <tspan id="tspan564" x="115.08772" y="651.22809">4 этаж</tspan>
         </text>
       </g>
       <g
-        v-if="currentCorpus === '3'"
-        ref="s5"
+        v-if="currentCorpus === '2'"
+        :class="{ 'sidebar-mask-active': currentFloor === '5' }"
         data-floor="5"
         class="sidebar-mask"
         transform="translate(-0.94986063,-141.81641)"
@@ -5096,7 +5083,6 @@ gg==
           style="opacity: 0.5; fill: #ffffff"
           d="M 0.53513205,572.75563 363.50877,574.03509 363.09769,696.79954 0.49621529,698.94737 Z"
           id="path294-2"
-          sodipodi:nodetypes="ccccc"
           class="sidebar-fill"
         />
         <text
@@ -5107,7 +5093,7 @@ gg==
           id="text566-46"
           class="sidebar-link"
         >
-          <tspan sodipodi:role="line" id="tspan564-1" x="115.08772" y="651.22809">5 этаж</tspan>
+          <tspan id="tspan564-1" x="115.08772" y="651.22809">5 этаж</tspan>
         </text>
       </g>
     </g>
@@ -5131,17 +5117,6 @@ const props = defineProps({
 
 <style scoped lang="scss">
 #side-menu-svg {
-  .sidebar-mask-active {
-    .sidebar-fill {
-      opacity: 0.5 !important;
-      transition: 0.2s;
-    }
-
-    .sidebar-link {
-      fill: #303030 !important;
-    }
-  }
-
   .sidebar-mask {
     cursor: pointer;
     .sidebar-fill {
@@ -5156,6 +5131,17 @@ const props = defineProps({
   }
 
   .sidebar-mask:hover {
+    .sidebar-fill {
+      opacity: 0.5 !important;
+      transition: 0.2s;
+    }
+
+    .sidebar-link {
+      fill: #303030 !important;
+    }
+  }
+
+  .sidebar-mask-active {
     .sidebar-fill {
       opacity: 0.5 !important;
       transition: 0.2s;

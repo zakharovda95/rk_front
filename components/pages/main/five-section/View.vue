@@ -18,14 +18,14 @@
           <UIText
             tag="h1"
             id="section5text"
-            class="font-trajan text-[calc(1vh+1vw*2.3)] text-black"
+            class="font-trajan md:text-[calc(1vh+1vw*2.3)] text-[calc(1vh+1vw*3.2)] max-[400px]:text-[1.5rem] text-black"
           >
             РЕКОНСТРУКЦИЯ С БЕРЕЖНЫМ ОТНОШЕНИЕМ К ИСТОРИИ ГОРОДА
           </UIText>
           <UIText
             tag="p"
             id="section5endtext"
-            class="font-helvetica text-[calc(1vh+1vw*0.9)] h-[80vh] text-black"
+            class="font-helvetica md:text-[calc(1vh+1vw*0.9)] text-[calc(1vh+1vw*2)] max-[400px]:text-[1rem] h-[80vh] text-black"
           >
             Реконструированное 6-этажное здание казармгвардейского экипажа начала XVIII века, в
             котором будут располагаться частные апартаменты и отель с расширенной инфраструктурой и

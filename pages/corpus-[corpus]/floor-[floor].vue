@@ -7,7 +7,7 @@
 
       <div class="w-[65%] h-full flex mb-10 flex-col-reverse items-center justify-around">
         <div class="flex w-full items-center ml-10">
-          <PagesFloorInfo />
+          <!--          <PagesFloorInfo />-->
 
           <div class="flex ml-10 mb-10">
             <UIText class="text-[gray] text-[calc(1vw+1vh*0.8)]">
@@ -25,7 +25,7 @@
         </div>
 
         <div style="margin: 0 auto" class="w-full">
-          <PagesFloorPlan class="w-[100%] h-auto" tag="c2f2" />
+          <PagesFloorPlan class="w-[100%] h-auto" :tag="tag" />
         </div>
 
         <div
@@ -65,4 +65,6 @@ const router = useRouter();
 const route = useRoute();
 const currentFloor = computed(() => route.params.floor);
 const currentCorpus = computed(() => route.params.corpus);
+
+const tag = computed(() => `c${currentCorpus.value}f${currentFloor.value}`);
 </script>
