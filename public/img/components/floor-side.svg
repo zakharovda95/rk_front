@@ -24,15 +24,16 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
-     inkscape:zoom="0.7125"
-     inkscape:cx="276.49123"
-     inkscape:cy="704.5614"
+     inkscape:zoom="2.0152543"
+     inkscape:cx="139.93271"
+     inkscape:cy="462.96886"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="side-menu-svg" />
+     inkscape:current-layer="g8"
+     inkscape:lockguides="false" />
   <g
      inkscape:groupmode="layer"
      inkscape:label="Image"
@@ -53,7 +54,7 @@
        class="sidebar-mask">
       <path
          style="opacity:0.5;fill:#ffffff"
-         d="M 0.29063517,856.14033 361.40347,857.54384 361.98482,990.21798 -1.2758444,986.66665 Z"
+         d="M 0.29063517,859.11762 361.40347,857.54384 361.98482,990.21798 0.12766437,990.5263 Z"
          id="path294-5"
          sodipodi:nodetypes="ccccc"
          class="sidebar-fill" />
@@ -73,8 +74,8 @@
        id="g697"
        class="sidebar-mask">
       <path
-         style="fill:white;opacity:0.5"
-         d="m 0.74700154,1010.0618 361.60905846,1.8997 0.0851,122.0202 -361.60905157,1.6516 z"
+         style="opacity:0.5;fill:#ffffff"
+         d="m -0.30563004,1012.1671 362.66169004,-0.2056 0.0851,122.0202 -361.60905157,1.3007 z"
          id="path294-5-3"
          sodipodi:nodetypes="ccccc"
          class="sidebar-fill" />
@@ -88,14 +89,14 @@
          class="sidebar-link"><tspan
            x="121.75616"
            y="1099.1099"
-           id="tspan368">1 этаж</tspan></text>
+           id="tspan3191">1 этаж</tspan></text>
     </g>
     <g
        id="g687"
        class="sidebar-mask">
       <path
-         style="fill:white;opacity:0.5"
-         d="M 0.37577293,713.47866 362.48104,714.88217 361.82185,838.88716 0.46090976,839.9185 Z"
+         style="opacity:0.5;fill:#ffffff"
+         d="M 0.37577293,713.47866 362.48104,714.88217 361.82185,838.39094 -0.03530553,839.9185 Z"
          id="path294-3"
          sodipodi:nodetypes="ccccc"
          class="sidebar-fill" />
@@ -115,8 +116,8 @@
        id="g682"
        class="sidebar-mask">
       <path
-         style="fill:white;opacity:0.5"
-         d="M 0.53513205,572.75563 363.50877,574.03509 363.09769,696.79954 0.49621529,698.94737 Z"
+         style="opacity:0.5;fill:#ffffff"
+         d="M 0.53513205,572.75563 363.50877,574.03509 363.09769,696.79954 0.49621529,696.84211 Z"
          id="path294"
          sodipodi:nodetypes="ccccc"
          class="sidebar-fill" />

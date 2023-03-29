@@ -5006,29 +5006,6 @@ gg==
         </text>
       </g>
       <g
-        :class="{ 'sidebar-mask-active': currentFloor === '1' }"
-        data-floor="1"
-        class="sidebar-mask"
-      >
-        <path
-          style="fill: white; opacity: 0.5"
-          d="m 0.74700154,1010.0618 361.60905846,1.8997 0.0851,122.0202 -361.60905157,1.6516 z"
-          id="path294-5-3"
-          class="sidebar-fill"
-        />
-        <text
-          xml:space="preserve"
-          style="font-size: 32px; white-space: pre; inline-size: 141.45; fill: #303030"
-          x="121.75616"
-          y="1099.1099"
-          id="text566-0"
-          transform="translate(0,-5.6140351)"
-          class="sidebar-link"
-        >
-          <tspan x="121.75616" y="1099.1099" id="tspan721">1 этаж</tspan>
-        </text>
-      </g>
-      <g
         :class="{ 'sidebar-mask-active': currentFloor === '3' }"
         data-floor="3"
         class="sidebar-mask"
@@ -5073,7 +5050,6 @@ gg==
         </text>
       </g>
       <g
-        v-if="currentCorpus === '2'"
         :class="{ 'sidebar-mask-active': currentFloor === '5' }"
         data-floor="5"
         class="sidebar-mask"

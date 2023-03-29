@@ -14,6 +14,7 @@ import Corpus3Floor3 from '~/components/pages/floor/floor-svgs/Corpus3Floor3.vue
 import Corpus3Floor4 from '~/components/pages/floor/floor-svgs/Corpus3Floor4.vue';
 
 import { PropType } from '@vue/runtime-core';
+import { useFloorPageStore } from '~/store/floor-page.store';
 
 const props = defineProps({
   tag: {
@@ -22,7 +23,21 @@ const props = defineProps({
     >,
     required: true,
   },
+  currentFloor: {
+    type: String as PropType<'1' | '2' | '3' | '4' | '5'>,
+    required: true,
+  },
+  currentCorpus: {
+    type: String as PropType<'2' | '3'>,
+    required: true,
+  },
+  apartments: {
+    type: Array,
+    required: true,
+  },
 });
+
+console.log(123123, props.apartments);
 
 const componentByTag = computed(() => {
   switch (props.tag) {
@@ -47,30 +62,56 @@ const componentByTag = computed(() => {
   }
 });
 
-const maskContainer: Ref<Element | null> = ref(null);
-const masks: Ref<Element[] | null> = ref(null);
+const router = useRouter();
+const store = useFloorPageStore();
 
-onMounted((): void => {
-  maskContainer.value = document.querySelector(`#${props.tag}`);
+const initMasks = (): void => {
+  const maskContainer = document.querySelector(`#${props.tag}`);
 
-  if (maskContainer.value) {
-    masks.value = Array.from(document.querySelectorAll('.flat-group'));
+  if (maskContainer) {
+    const masks = Array.from(document.querySelectorAll('.flat-group'));
 
-    masks.value.forEach(el => {
-      el.addEventListener('click', (e: Event) => {
-        const currentTarget = (e.target as HTMLElement).closest('.flat-group');
-        if (currentTarget) {
-          console.log(currentTarget.id);
+    if (masks && masks.length && props.apartments.length) {
+      const setListener = (el: Element) => {
+        el.addEventListener('click', (e: Event) => {
+          const currentTarget = (e.target as HTMLElement).closest('.flat-group');
+          if (currentTarget) {
+            router.push(
+              `/corpus-${props.currentCorpus}/floor-${props.currentFloor}/apartment-${currentTarget.id}`,
+            );
+          }
+        });
+      };
+
+      const forListener = props.apartments.map(el => {
+        if (masks && masks.length) {
+          return masks.find(elem => String(el) === elem.id);
+        } else return [];
+      });
+
+      const forHidden = masks.filter(
+        el =>
+          !forListener.some(elem => {
+            if (elem) {
+              return el.id === elem!.id;
+            }
+          }),
+      );
+
+      forListener.forEach(elem => {
+        if (elem) {
+          setListener(elem as HTMLElement);
         }
       });
-    });
-  }
-});
-
-const hoverFlat = (e: Event): void => {
-  const target: EventTarget | null = e.currentTarget;
-  if (target) {
-    console.log(target);
+      //
+      // forHidden.forEach(elem => {
+      //   elem.classList.add('flat-mask-hidden');
+      // });
+    }
   }
 };
+
+onMounted(() => {
+  initMasks();
+});
 </script>

@@ -8,7 +8,10 @@
         <UIText tag="h1" class="font-trajan text-black md:text-[calc(1vw+1vh*2.5)]">
           Окружение
         </UIText>
-        <UIText tag="p" class="font-helvetica text-black text-[calc(1vw+1vh*0.9)]">
+        <UIText
+          tag="p"
+          class="font-helvetica text-black text-[calc(1vw+1vh*0.9)] 2xl:text-[1.3rem]"
+        >
           Коломна — исторический район Санкт-Петербурга, один из уникальных мест, откуда быстро и
           просто можно добраться до любой точки исторического центра города на Неве.
         </UIText>
@@ -82,14 +85,14 @@ onMounted(() => {
 
     if (widthX.value >= 768 && widthX.value < 1024) {
       tl.to('#section7values', {
-        y: `-${(widthX.value / 100 + heightY.value / 100) * 2.9}vh`,
+        y: `-${(widthX.value / 100 + heightY.value / 100) * 2.7}vh`,
         duration: 5,
       });
     }
 
     if (widthX.value >= 1024 && widthX.value < 1224) {
       tl.to('#section7values', {
-        y: `-${widthX.value / 100 + (heightY.value / 100) * 6.5}vh`,
+        y: `-${widthX.value / 100 + (heightY.value / 100) * 6}vh`,
         duration: 5,
       });
     }
@@ -103,7 +106,7 @@ onMounted(() => {
 
     if (widthX.value >= 1600) {
       tl.to('#section7values', {
-        y: heightY.value > 800 ? '-120vh' : '-140vh',
+        y: heightY.value > 800 ? '-130vh' : '-140vh',
         duration: 5,
       });
     }
