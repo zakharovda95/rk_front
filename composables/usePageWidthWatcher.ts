@@ -3,10 +3,10 @@ import { onBeforeUnmount, ref, onMounted, Ref } from 'vue';
 export function usePageWidthWatcher(): { widthX: Ref<number> } {
   const widthX: Ref<number> = ref(0);
 
-  const watchSize = (): number => (widthX.value = window.innerWidth);
+  const watchSize = (): number => (widthX.value = screen.width);
 
   onMounted((): void => {
-    widthX.value = window.innerWidth;
+    widthX.value = screen.width;
     window.addEventListener('resize', watchSize);
   });
 

@@ -5050,6 +5050,7 @@ gg==
         </text>
       </g>
       <g
+        v-if="currentCorpus === '2'"
         :class="{ 'sidebar-mask-active': currentFloor === '5' }"
         data-floor="5"
         class="sidebar-mask"

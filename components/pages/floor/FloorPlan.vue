@@ -3,12 +3,10 @@
 </template>
 
 <script setup lang="ts">
-import Corpus2Floor1 from '~/components/pages/floor/floor-svgs/Corpus2Floor1.vue';
 import Corpus2Floor2 from '~/components/pages/floor/floor-svgs/Corpus2Floor2.vue';
 import Corpus2Floor3 from '~/components/pages/floor/floor-svgs/Corpus2Floor3.vue';
 import Corpus2Floor4 from '~/components/pages/floor/floor-svgs/Corpus2Floor4.vue';
 import Corpus2Floor5 from '~/components/pages/floor/floor-svgs/Corpus2Floor5.vue';
-import Corpus3Floor1 from '~/components/pages/floor/floor-svgs/Corpus3Floor1.vue';
 import Corpus3Floor2 from '~/components/pages/floor/floor-svgs/Corpus3Floor2.vue';
 import Corpus3Floor3 from '~/components/pages/floor/floor-svgs/Corpus3Floor3.vue';
 import Corpus3Floor4 from '~/components/pages/floor/floor-svgs/Corpus3Floor4.vue';
@@ -37,12 +35,8 @@ const props = defineProps({
   },
 });
 
-console.log(123123, props.apartments);
-
 const componentByTag = computed(() => {
   switch (props.tag) {
-    case 'c2f1':
-      return Corpus2Floor1;
     case 'c2f2':
       return Corpus2Floor2;
     case 'c2f3':
@@ -51,8 +45,6 @@ const componentByTag = computed(() => {
       return Corpus2Floor4;
     case 'c2f5':
       return Corpus2Floor5;
-    case 'c3f1':
-      return Corpus3Floor1;
     case 'c3f2':
       return Corpus3Floor2;
     case 'c3f3':
@@ -71,47 +63,35 @@ const initMasks = (): void => {
   if (maskContainer) {
     const masks = Array.from(document.querySelectorAll('.flat-group'));
 
-    if (masks && masks.length && props.apartments.length) {
-      const setListener = (el: Element) => {
-        el.addEventListener('click', (e: Event) => {
-          const currentTarget = (e.target as HTMLElement).closest('.flat-group');
-          if (currentTarget) {
-            router.push(
-              `/corpus-${props.currentCorpus}/floor-${props.currentFloor}/apartment-${currentTarget.id}`,
-            );
-          }
-        });
-      };
+    masks.forEach(el => {
+      setListener(el);
+    });
 
-      const forListener = props.apartments.map(el => {
-        if (masks && masks.length) {
-          return masks.find(elem => String(el) === elem.id);
-        } else return [];
-      });
+    const isVisible = props.apartments.map(el => masks.find(elem => String(el) === elem.id));
+    const forHidden = masks.filter(el => !isVisible.some(elem => el.id === elem!.id));
 
-      const forHidden = masks.filter(
-        el =>
-          !forListener.some(elem => {
-            if (elem) {
-              return el.id === elem!.id;
-            }
-          }),
-      );
-
-      forListener.forEach(elem => {
-        if (elem) {
-          setListener(elem as HTMLElement);
-        }
-      });
-      //
-      // forHidden.forEach(elem => {
-      //   elem.classList.add('flat-mask-hidden');
-      // });
-    }
+    forHidden.forEach(elem => {
+      elem.classList.add('flat-mask-hidden');
+    });
   }
 };
 
+const setListener = (el: Element) => {
+  el.addEventListener('click', (e: Event) => {
+    const currentTarget = (e.target as HTMLElement).closest('.flat-group');
+    if (currentTarget) {
+      router.push(
+        `/corpus-${props.currentCorpus}/floor-${props.currentFloor}/apartment-${currentTarget.id}`,
+      );
+    }
+  });
+};
+
 onMounted(() => {
-  initMasks();
+  try {
+    initMasks();
+  } catch (e) {
+    console.log(e);
+  }
 });
 </script>

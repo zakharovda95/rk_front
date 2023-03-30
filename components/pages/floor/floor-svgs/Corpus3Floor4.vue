@@ -79,7 +79,7 @@
           y="150"
           id="text6845"
         >
-          <tspan sodipodi:role="line" x="90.363838" y="140" id="tspan6851">18</tspan>
+          <tspan sodipodi:role="line" x="90.363838" y="110" id="tspan6851">18</tspan>
         </text>
       </g>
       <g id="17" class="flat-group">
@@ -97,7 +97,7 @@
           y="150"
           id="text6857"
         >
-          <tspan sodipodi:role="line" x="274.38947" y="140" id="tspan6859">17</tspan>
+          <tspan sodipodi:role="line" x="274.38947" y="110" id="tspan6859">17</tspan>
         </text>
       </g>
       <g id="19" class="flat-group">
@@ -121,7 +121,7 @@
           y="150"
           id="text6865"
         >
-          <tspan sodipodi:role="line" id="tspan6863" x="594.9502" y="140">19</tspan>
+          <tspan sodipodi:role="line" id="tspan6863" x="594.9502" y="110">19</tspan>
         </text>
       </g>
       <g id="20" class="flat-group">
@@ -145,7 +145,7 @@
           y="150"
           id="345768"
         >
-          <tspan sodipodi:role="line" x="787.55054" y="140" id="tspan6902">20</tspan>
+          <tspan sodipodi:role="line" x="787.55054" y="110" id="tspan6902">20</tspan>
         </text>
       </g>
     </g>
@@ -159,6 +159,8 @@
 
 tspan {
   fill: #e3bc98 !important;
+  font-family: Trajan, sans-serif;
+  font-size: 1.3rem;
 }
 .flat-group:hover {
   cursor: pointer;

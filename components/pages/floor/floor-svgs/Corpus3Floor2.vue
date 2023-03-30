@@ -76,7 +76,7 @@
         y="150"
         id="text1090"
       >
-        <tspan sodipodi:role="line" id="tspan1088" x="277.59515" y="150">9</tspan>
+        <tspan sodipodi:role="line" id="tspan1088" x="277.59515" y="130">9</tspan>
       </text>
     </g>
     <g id="11" class="flat-group">
@@ -95,7 +95,7 @@
         y="150"
         id="text1094"
       >
-        <tspan sodipodi:role="line" id="tspan1092" x="600.90411" y="150.39166">11</tspan>
+        <tspan sodipodi:role="line" id="tspan1092" x="600.90411" y="130">11</tspan>
       </text>
     </g>
     <g id="10" class="flat-group">
@@ -151,6 +151,8 @@
 
 tspan {
   fill: #e3bc98 !important;
+  font-family: Trajan, sans-serif;
+  font-size: 1.3rem;
 }
 .flat-group:hover {
   cursor: pointer;

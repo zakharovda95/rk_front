@@ -20,11 +20,6 @@ export const SECTION_2_NAVIGATION_CONSTANTS: Section2NavigationType[] = [
     name: 'этаж',
     values: [
       {
-        id: 1,
-        name: '1',
-        url: '/',
-      },
-      {
         id: 2,
         name: '2',
         url: '/',
@@ -37,6 +32,11 @@ export const SECTION_2_NAVIGATION_CONSTANTS: Section2NavigationType[] = [
       {
         id: 4,
         name: '4',
+        url: '/',
+      },
+      {
+        id: 5,
+        name: '5',
         url: '/',
       },
     ],

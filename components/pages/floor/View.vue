@@ -2,10 +2,10 @@
   <div class="w-full h-[100vh] flex items-end bg-[#FCF9F4] overflow-hidden">
     <div class="w-[20%] h-[calc(100vh-10vh)]">
       <PagesFloorSidebar
-        v-if="!isLoadingCorpus"
+        v-if="!isLoading.corpus"
         :current-corpus="currentCorpus"
         :current-floor="currentFloor"
-        :corpus-data="corpusData"
+        :available-floors="availableFloors"
       />
     </div>
 
@@ -30,7 +30,7 @@
 
       <div style="margin: 0 auto" class="w-full overflow-scroll min-h-[calc(1vw+1vh*35)]">
         <PagesFloorPlan
-          v-if="!isLoadingFloor"
+          v-if="!isLoading.floor"
           class="w-[100%] h-auto"
           :tag="tag"
           :current-floor="currentFloor"
@@ -70,43 +70,37 @@
 </template>
 
 <script setup lang="ts">
-import { useFloorPageStore } from '~/store/floor-page.store';
 import { FloorInfoType } from '~/helpers/types/pages/floor-page.type';
-import { useCorpusPageStore } from '~/store/corpus.store';
 
-const router = useRouter();
-const route = useRoute();
-
-const floorStore = useFloorPageStore();
-const corpusStore = useCorpusPageStore();
-const currentFloor: Ref<string> = computed(() => route.params.floor) as Ref<string>;
-const currentCorpus: Ref<string> = computed(() => route.params.corpus) as Ref<string>;
-const isLoadingCorpus = computed(() => corpusStore.isLoadingCorpus);
-const isLoadingFloor = computed(() => floorStore.isLoadingFloor);
-
-const corpusData = computed(() => corpusStore.corpusData);
-
-const availableFloors = computed(() =>
-  currentCorpus.value === '2' ? corpusData.value.c2 : corpusData.value.c3,
-);
-
-const tag: Ref<string> = computed(() => `c${currentCorpus.value}f${currentFloor.value}`);
-
-const floorData = computed(() => floorStore.floorData);
-const apartments = computed(() => floorStore.apartments);
-const availableApartments = computed(() => floorStore.availableApartments);
-
-const floorInfo: Ref<FloorInfoType | null> = computed(() => {
-  if (floorData.value) {
-    return {
-      corpus: currentCorpus.value,
-      floor: currentFloor.value,
-      maxArea: floorData.value.data.total_space,
-      freeAparts: String(apartments.value.length),
-      rangeAreas: floorData.value.data.space,
-    };
-  } else {
-    return null;
-  }
+const props = defineProps({
+  isLoading: {
+    type: Object as PropType<{ corpus: boolean; floor: boolean }>,
+    required: true,
+  },
+  currentFloor: {
+    type: String as PropType<'1' | '2' | '3' | '4' | '5'>,
+    required: true,
+  },
+  currentCorpus: {
+    type: String as PropType<'2' | '3'>,
+    required: true,
+  },
+  availableApartments: {
+    type: Array,
+    required: true,
+  },
+  availableFloors: {
+    type: Array as PropType<string[]>,
+    required: true,
+  },
+  tag: {
+    type: String as PropType<
+      'c2f1' | 'c2f2' | 'c2f3' | 'c2f4' | 'c2f5' | 'c3f1' | 'c3f2' | 'c3f3' | 'c3f4'
+    >,
+  },
+  floorInfo: {
+    type: Object as PropType<FloorInfoType | null>,
+    required: true,
+  },
 });
 </script>

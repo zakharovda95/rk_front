@@ -16,9 +16,9 @@ export default defineNuxtConfig({
     transpile: ['gsap'],
   },
 
-  css: ['~/assets/styles/main.css'],
+  css: ['~/assets/styles/main.css', 'vue-final-modal/style.css'],
 
-  modules: ['@pinia/nuxt', '@vant/nuxt'],
+  modules: ['@pinia/nuxt'],
 
   runtimeConfig: {
     public: {

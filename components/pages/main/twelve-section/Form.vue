@@ -16,6 +16,7 @@
       @click.prevent="call"
       class="max-w-[200px] w-[80%] my-2"
       color="transparent"
+      font-color="white"
       type="rounded"
       effect="gray"
     >

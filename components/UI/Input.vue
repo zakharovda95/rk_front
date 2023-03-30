@@ -1,6 +1,7 @@
 <template>
   <input
     class="bg-[transparent] border-b-2 border-[lightgray] h-[60px] w-full outline-none text-[white] text-[1.2rem] font-thin"
+    :class="classes"
     v-bind="$attrs"
     type="text"
     :value="modelValueProxy"
@@ -20,6 +21,16 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  border: {
+    type: String,
+    required: false,
+    default: () => 'lightgray',
+  },
+  color: {
+    type: String,
+    required: false,
+    default: () => 'white',
+  },
 });
 
 const emit = defineEmits(['custom:update-model-value']);
@@ -33,4 +44,21 @@ const modelValueProxy: Ref<string> = computed({
     emit('custom:update-model-value', value);
   },
 });
+
+const classes = computed(() => {
+  return {
+    'border-lightGray': props.border === 'lightgray',
+    'border-titleBrown': props.border === 'beige',
+    'text-[white]': props.color === 'white',
+    'text-black': props.color === 'black',
+  };
+});
+
+const placeholder = computed(() => (props.border === 'beige' ? '#8F6C51' : 'lightgray'));
 </script>
+
+<style scoped lang="scss">
+input::placeholder {
+  color: v-bind(placeholder);
+}
+</style>

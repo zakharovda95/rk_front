@@ -118,7 +118,7 @@
         y="150"
         id="text6390"
       >
-        <tspan sodipodi:role="line" id="tspan6388" x="73.555252" y="145.72064">14</tspan>
+        <tspan sodipodi:role="line" id="tspan6388" x="73.555252" y="125">14</tspan>
       </text>
     </g>
     <g id="13" class="flat-group">
@@ -137,7 +137,7 @@
         y="150"
         id="text6394"
       >
-        <tspan sodipodi:role="line" id="tspan6392" x="269.28699" y="143.47394">13</tspan>
+        <tspan sodipodi:role="line" id="tspan6392" x="269.28699" y="125">13</tspan>
       </text>
     </g>
     <g id="16" class="flat-group">
@@ -156,7 +156,7 @@
         y="150"
         id="text6398"
       >
-        <tspan sodipodi:role="line" id="tspan6396" x="779.18695" y="145.22725">16</tspan>
+        <tspan sodipodi:role="line" id="tspan6396" x="779.18695" y="125">16</tspan>
       </text>
     </g>
     <g id="15" class="flat-group">
@@ -175,7 +175,7 @@
         y="150"
         id="text6402"
       >
-        <tspan sodipodi:role="line" id="tspan6400" x="589.68866" y="145">15</tspan>
+        <tspan sodipodi:role="line" id="tspan6400" x="600" y="125">15</tspan>
       </text>
     </g>
   </svg>
@@ -188,6 +188,8 @@
 
 tspan {
   fill: #e3bc98 !important;
+  font-family: Trajan, sans-serif;
+  font-size: 1.3rem;
 }
 .flat-group:hover {
   cursor: pointer;

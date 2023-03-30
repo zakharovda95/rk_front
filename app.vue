@@ -6,5 +6,5 @@
 import { useCorpusPageStore } from '~/store/corpus.store';
 
 const corpusStore = useCorpusPageStore();
-corpusStore.setCorpuses();
+corpusStore.getCorpus();
 </script>

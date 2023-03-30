@@ -8,20 +8,22 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@types/node": "^18.15.11",
     "@types/vue-the-mask": "^0.11.1",
     "@vant/nuxt": "^1.0.0",
     "autoprefixer": "^10.4.13",
     "nuxt": "^3.2.2",
     "postcss": "^8.4.21",
+    "prettier": "^2.8.4",
+    "sass": "^1.58.3",
     "tailwindcss": "^3.2.7"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.7",
     "gsap": "^3.11.4",
     "pinia": "^2.0.32",
-    "prettier": "^2.8.4",
-    "sass": "^1.58.3",
-    "vant": "^4.1.1",
+    "vant": "^4.1.2",
+    "vue-final-modal": "^4.1.2",
     "vue-the-mask": "^0.11.1"
   }
 }
