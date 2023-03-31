@@ -2,13 +2,13 @@
   <swiper :slides-per-view="1">
     <swiper-slide v-for="slide in data" :key="slide.id">
       <div
-        class="w-[70%] h-[200px] flex flex-col items-center justify-center text-center"
+        class="w-[70%] h-[400px] flex flex-col items-center justify-center text-center"
         style="margin: auto"
       >
-        <UIText class="font-helvetica text-[1.5rem] text-[white] mb-5">
+        <UIText class="font-helvetica text-[1.3rem] text-[white] mb-5">
           {{ slide.title }}
         </UIText>
-        <UIText class="font-helvetica text-[1.2rem] text-[white] mb-5">
+        <UIText class="font-helvetica text-[0.8rem] text-[white] mb-5">
           {{ slide.text }}
         </UIText>
       </div>

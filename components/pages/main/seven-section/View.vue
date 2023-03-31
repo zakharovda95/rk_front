@@ -7,14 +7,11 @@
       <div id="section7textcontainer" class="md:w-[25%] md:h-[300px] mx-5">
         <UIText
           tag="h1"
-          class="font-trajan text-black text-[calc(1vh+1vw*4.5)] md:text-[calc(1vw+1vh*2.5)]"
+          class="font-trajan text-black mb-10 text-[calc(1vh+1vw*4.5)] md:text-[40px]"
         >
           Окружение
         </UIText>
-        <UIText
-          tag="p"
-          class="font-helvetica text-black text-[calc(1vh+1vw*2)] md:text-[calc(1vw+1vh*0.9)] 2xl:text-[1.3rem]"
-        >
+        <UIText tag="p" class="font-helvetica text-black text-[calc(1vh+1vw*2)] md:text-[16px]">
           Коломна — исторический район Санкт-Петербурга, один из уникальных мест, откуда быстро и
           просто можно добраться до любой точки исторического центра города на Неве.
         </UIText>
