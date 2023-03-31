@@ -5,4 +5,5 @@ export interface CommonStoreType {
   isThereOffset: boolean;
   addressBlockSizes: AddressBlockSizesType | null;
   aspectRatio: number;
+  booklet: string;
 }

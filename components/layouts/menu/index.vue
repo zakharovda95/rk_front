@@ -22,6 +22,15 @@
   </div>
 </template>
 
+<script setup lang="ts">
+defineProps({
+  corpusData: {
+    type: Object,
+    required: true,
+  },
+});
+</script>
+
 <style scoped lang="scss">
 .sidebar {
   animation: anim 0.5s forwards;

@@ -16,11 +16,11 @@
               <PagesMainThirdSectionView />
             </section>
 
-            <section id="section-wrapper-4" class="w-full h-[100vh]">
+            <section id="section-wrapper-4" class="w-full h-auto md:h-[100vh]">
               <PagesMainFourSectionView />
             </section>
 
-            <section id="section-wrapper-5" class="w-full h-[100vh]">
+            <section id="section-wrapper-5" class="w-full h-auto md:h-[100vh]">
               <PagesMainFiveSectionView />
             </section>
 

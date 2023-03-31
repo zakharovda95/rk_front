@@ -1,16 +1,19 @@
 <template>
-  <div class="w-full h-full flex justify-around">
+  <div class="w-full h-full flex justify-around md:mt-0 mt-10">
     <div
       class="map w-full max-w-[1499px] h-full flex md:flex-row flex-col justify-around"
       style="margin: 0 auto"
     >
       <div id="section7textcontainer" class="md:w-[25%] md:h-[300px] mx-5">
-        <UIText tag="h1" class="font-trajan text-black md:text-[calc(1vw+1vh*2.5)]">
+        <UIText
+          tag="h1"
+          class="font-trajan text-black text-[calc(1vh+1vw*4.5)] md:text-[calc(1vw+1vh*2.5)]"
+        >
           Окружение
         </UIText>
         <UIText
           tag="p"
-          class="font-helvetica text-black text-[calc(1vw+1vh*0.9)] 2xl:text-[1.3rem]"
+          class="font-helvetica text-black text-[calc(1vh+1vw*2)] md:text-[calc(1vw+1vh*0.9)] 2xl:text-[1.3rem]"
         >
           Коломна — исторический район Санкт-Петербурга, один из уникальных мест, откуда быстро и
           просто можно добраться до любой точки исторического центра города на Неве.
@@ -62,8 +65,7 @@ onMounted(() => {
         start: 'top 60%',
         pin: '#section-wrapper-8',
         scrub: 2,
-        endTrigger: '#section7values',
-        end: 'bottom bottom',
+        end: '+=500',
       },
     });
   }
@@ -85,7 +87,7 @@ onMounted(() => {
 
     if (widthX.value >= 768 && widthX.value < 1024) {
       tl.to('#section7values', {
-        y: `-${(widthX.value / 100 + heightY.value / 100) * 2.7}vh`,
+        y: `-${(widthX.value / 100 + heightY.value / 100) * 3.8}vh`,
         duration: 5,
       });
     }
@@ -99,14 +101,14 @@ onMounted(() => {
 
     if (widthX.value >= 1224) {
       tl.to('#section7values', {
-        y: heightY.value > 800 ? '-95vh' : '-140vh',
+        y: heightY.value > 800 ? '-100vh' : '-140vh',
         duration: 5,
       });
     }
 
     if (widthX.value >= 1600) {
       tl.to('#section7values', {
-        y: heightY.value > 800 ? '-130vh' : '-140vh',
+        y: heightY.value > 800 ? '-126vh' : '-140vh',
         duration: 5,
       });
     }

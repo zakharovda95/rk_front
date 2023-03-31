@@ -8,39 +8,39 @@
       >
         Атмосфера локации в историческом центре
       </UIText>
-      <UIButton
-        class="absolute flex flex-row z-[50] items-center gap-2 top-[calc(1vw+1vh*85)] left-[40%] hidden md:flex"
-        type="rounded"
-        color="gray"
-        size="large"
-        effect
-        border="white"
-      >
-        <img alt="img" src="/img/icons/play2.svg" />
-        Видео обзор локации
-      </UIButton>
-      <UIButton
-        class="absolute flex z-[50] items-center justify-center gap-2 top-[calc(1vw+1vh*80)] left-[75%] inline md:hidden w-[80px] h-[80px]"
-        type="rounded"
-        color="gray"
-        size="large"
-        border="white"
-      >
-        <img
-          alt="img"
-          src="/img/icons/play2.svg"
-          width="30"
-          height="30"
-          class="relative left-[5px]"
-        />
-      </UIButton>
+      <!--      <UIButton-->
+      <!--        class="absolute flex flex-row z-[50] items-center gap-2 top-[calc(1vw+1vh*85)] left-[40%] hidden md:flex"-->
+      <!--        type="rounded"-->
+      <!--        color="gray"-->
+      <!--        size="large"-->
+      <!--        effect-->
+      <!--        border="white"-->
+      <!--      >-->
+      <!--        <img alt="img" src="/img/icons/play2.svg" />-->
+      <!--        Видео обзор локации-->
+      <!--      </UIButton>-->
+      <!--      <UIButton-->
+      <!--        class="absolute flex z-[50] items-center justify-center gap-2 top-[calc(1vw+1vh*80)] left-[75%] inline md:hidden w-[80px] h-[80px]"-->
+      <!--        type="rounded"-->
+      <!--        color="gray"-->
+      <!--        size="large"-->
+      <!--        border="white"-->
+      <!--      >-->
+      <!--        <img-->
+      <!--          alt="img"-->
+      <!--          src="/img/icons/play2.svg"-->
+      <!--          width="30"-->
+      <!--          height="30"-->
+      <!--          class="relative left-[5px]"-->
+      <!--        />-->
+      <!--      </UIButton>-->
     </div>
     <!--    <img-->
     <!--      alt="map"-->
     <!--      src="/img/components/map-clear.svg"-->
     <!--      class="w-[100vw] h-[100vh] relative z-[40] top-0 left-0 m-auto object-cover"-->
     <!--    />-->
-    <PagesMainThirdSectionMap />
+    <PagesMainThirdSectionMap class="w-[100vw] h-[100vh]" />
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full flex justify-between items-center p-5">
+  <div class="w-full h-full flex justify-between items-center mt-10 md:mt-0 p-5">
     <div
       class="map w-full max-w-[1499px] h-full flex lg:flex-row flex-col items-center justify-around"
       style="margin: 0 auto"
@@ -32,12 +32,18 @@
       <div
         data-speed="1.3"
         id="section8text"
-        class="lg:w-1/2 md:w-3/4 w-full h-full flex flex-col justify-center items-center p-[24px] relative md:bottom-[10vh] bottom-0"
+        class="lg:w-1/2 md:w-3/4 w-full h-full flex flex-col justify-center items-center p-[24px] relative md:bottom-[10vh] bottom-0 max-[400px]:mt-[120px]"
       >
-        <UIText tag="h1" id="section8text1" class="font-trajan text-[calc(1vw+1vh*2.3)] text-black">
+        <UIText
+          tag="h1"
+          id="section8text1"
+          class="font-trajan text-[calc(1vh+1vw*5)] mb-10 md:mb-0 md:text-[calc(1vw+1vh*2.3)] text-black"
+        >
           Апартаменты
         </UIText>
-        <UIText class="font-helvetica text-[calc(1vw+1vh*0.9)] text-black">
+        <UIText
+          class="font-helvetica text-[calc(1vh+1vw*2)] md:text-[calc(1vw+1vh*0.9)] text-black"
+        >
           «Римского-Корсакова, 22» — симбиоз роскошных гостевых апартаментов и уникальных частных
           резиденций. Пересечение архитектурного духа конца 18 века с передовыми коммуникациями и
           инженерией в окружении сервиса высочайших стандартов.

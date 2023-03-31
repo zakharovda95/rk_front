@@ -9,6 +9,7 @@
           <UIText class="font-helvetica text-[18px] text-black mb-3">{{ link.name }}</UIText>
 
           <NuxtLink
+            :to="elem.url"
             v-for="elem in link.elems"
             :key="elem.id"
             class="cursor-pointer hover:translate-y-[-1px] transition-[0.2s]"

@@ -99,4 +99,6 @@ const info = computed(() => [
     value: props.data.data.floor,
   },
 ]);
+
+const config = useRuntimeConfig();
 </script>

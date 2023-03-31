@@ -46,7 +46,6 @@ const body: Ref<CallFormData> = ref({
 });
 
 const call = (): void => {
-  console.log(body.value);
   mainPageStore.call(body.value);
 };
 </script>

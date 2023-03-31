@@ -1,12 +1,10 @@
 <template>
-  <div class="el flex items-center gap-3 cursor-pointer">
+  <NuxtLink class="el flex items-center gap-3 cursor-pointer">
     <span class="line" />
-    <NuxtLink>
-      <UIText tag="p" class="font-helvetica font-[calc(1vw+1vh*1)]" :style="{ color }">
-        <slot />
-      </UIText>
-    </NuxtLink>
-  </div>
+    <UIText tag="p" class="font-helvetica font-[calc(1vw+1vh*1)]" :style="{ color }">
+      <slot />
+    </UIText>
+  </NuxtLink>
 </template>
 
 <script setup lang="ts">
@@ -30,13 +28,24 @@ const color: Ref<string> = computed(() => {
       return 'white';
   }
 });
+
+const bg: Ref<string> = computed(() => {
+  switch (props.color) {
+    case 'beige':
+      return '#f1f0ee';
+    case 'black':
+      return '#919191';
+    case 'white':
+      return '#737373';
+  }
+});
 </script>
 
 <style scoped lang="scss">
 .line {
   width: 62px;
   height: 2px;
-  background: #f1f0ee;
+  background: v-bind(bg);
   position: relative;
   top: 2px;
 }

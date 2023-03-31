@@ -1,6 +1,6 @@
 <template>
-  <van-swipe class="flex flex-col" autoplay="3000" indicator-color="white" style="margin: 0 auto">
-    <van-swipe-item v-for="slide in data" :key="slide.id">
+  <swiper :slides-per-view="1">
+    <swiper-slide v-for="slide in data" :key="slide.id">
       <div
         class="w-[70%] h-[200px] flex flex-col items-center justify-center text-center"
         style="margin: auto"
@@ -12,13 +12,16 @@
           {{ slide.text }}
         </UIText>
       </div>
-    </van-swipe-item>
-  </van-swipe>
+    </swiper-slide>
+  </swiper>
 </template>
 
 <script setup lang="ts">
 import { PropType } from '@vue/runtime-core';
 import { Section9Type } from '~/helpers/types/constants/section-9.type';
+
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
 
 defineProps({
   data: {

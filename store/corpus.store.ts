@@ -24,8 +24,6 @@ export const useCorpusPageStore = defineStore('corpus', {
           }),
         )) as any;
 
-        console.log(data.value);
-
         const corpusData2 = Object.entries(data.value.data['2']);
         const corpusData3 = Object.entries(data.value.data['3']);
 
@@ -33,6 +31,8 @@ export const useCorpusPageStore = defineStore('corpus', {
           two: data.value.data['2'].is_active,
           three: data.value.data['3'].is_active,
         };
+
+        console.log(data);
 
         const format = (arr: any) => {
           return arr

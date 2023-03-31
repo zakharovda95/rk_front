@@ -30,10 +30,26 @@
       <div
         class="flex justify-around h-full justify-end items-center lg:w-[33%] md:w-[40%] flex-nowrap gap-5"
       >
-        <LayoutsHeaderBooklet class="hidden lg:inline" @click="$router.push('/corpus-2/floor-2')">
+        <UIAnimatedLink
+          class="hidden lg:flex"
+          @click="
+            $router.push(
+              `/corpus-${availableCorpusAndFloor.corpus}/floor-${availableCorpusAndFloor.floor}`,
+            )
+          "
+          color="white"
+        >
           планировки
-        </LayoutsHeaderBooklet>
-        <LayoutsHeaderBooklet class="hidden md:inline"> получить&nbsp;буклет </LayoutsHeaderBooklet>
+        </UIAnimatedLink>
+        <UIAnimatedLink
+          :href="booklet"
+          download="booklet.pdf"
+          target="_blank"
+          class="hidden md:flex"
+          color="white"
+        >
+          получить&nbsp;буклет
+        </UIAnimatedLink>
       </div>
     </div>
   </div>
@@ -41,11 +57,24 @@
 
 <script setup lang="ts">
 import { useCommonStore } from '~/store/common.store';
+import { PropType } from '@vue/runtime-core';
 
 const commonStore = useCommonStore();
 
 const isBurgerOpen: Ref<boolean> = computed(() => commonStore.isBurgerOpen);
-const isThereOffset: Ref<boolean> = computed(() => commonStore.isThereOffset);
+
+defineProps({
+  availableCorpusAndFloor: {
+    type: Object as PropType<{ corpus: string; floor: string }>,
+    required: true,
+  },
+  // booklet: {
+  //   type: String,
+  //   required: true,
+  // },
+});
+
+const booklet = ref('http://185.26.120.121:8085/upload/booklet/1/641d72a8cf460.pdf');
 </script>
 
 <style scoped lang="scss">

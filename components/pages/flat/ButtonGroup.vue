@@ -129,7 +129,7 @@ const body = ref({
 
 const flatStore = useFlatPageStore();
 
-const isSuccess = ref(true);
+const isSuccess = ref(false);
 const book = async () => {
   const res = await flatStore.book(body.value);
   isSuccess.value = res!.success;

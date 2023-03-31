@@ -7,8 +7,11 @@
 <script setup lang="ts">
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { usePageWidthWatcher } from '~/composables/usePageWidthWatcher';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const { widthX } = usePageWidthWatcher();
 
 onMounted((): void => {
   gsap.timeline({
@@ -33,15 +36,17 @@ onMounted((): void => {
 
   tl.to('.section6image', { x: 0, y: '-30%', duration: 2 });
 
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: '#section5text',
-      pin: '#section-wrapper-7',
-      scrub: 2,
-      start: 'top center',
-      end: 'top 30%',
-    },
-  });
+  if (widthX.value >= 768) {
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '#section5text',
+        pin: '#section-wrapper-7',
+        scrub: 2,
+        start: 'top center',
+        end: 'top 30%',
+      },
+    });
+  }
 });
 </script>
 

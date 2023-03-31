@@ -61,26 +61,49 @@ const { widthX } = usePageWidthWatcher();
 
 onMounted((): void => {
   if (widthX.value > 768) {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '#section-wrapper-4',
-        start: 'top 50%',
-        end: 'top 30%',
-        scrub: true,
-        pin: '#section-wrapper-5',
-      },
-    });
-    tl.to('#section4img', {
-      x: 0,
-      y: '-20%',
-      duration: 2,
-      scrollTrigger: {
-        trigger: '#section-wrapper-4',
-        start: 'top 20%',
-        end: 'bottom 80%',
-        scrub: 1,
-      },
-    });
+    if (widthX.value > 1224) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#section-wrapper-4',
+          start: () => 'top 50%',
+          end: () => 'top 30%',
+          scrub: true,
+          pin: '#section-wrapper-5',
+        },
+      });
+      tl.to('#section4img', {
+        x: 0,
+        y: '-20%',
+        duration: 2,
+        scrollTrigger: {
+          trigger: '#section-wrapper-4',
+          start: 'top 20%',
+          end: 'bottom 80%',
+          scrub: 2,
+        },
+      });
+    } else {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#section-wrapper-4',
+          start: () => 'top 50%',
+          end: () => 'top 30%',
+          scrub: true,
+          pin: false,
+        },
+      });
+      tl.to('#section4img', {
+        x: 0,
+        y: '-20%',
+        duration: 2,
+        scrollTrigger: {
+          trigger: '#section-wrapper-4',
+          start: 'top 20%',
+          end: 'bottom 80%',
+          scrub: 2,
+        },
+      });
+    }
   }
 
   if (widthX.value <= 768) {
@@ -88,8 +111,9 @@ onMounted((): void => {
       scrollTrigger: {
         trigger: '#section-wrapper-4',
         start: 'top 50%',
-        end: 'bottom 80%',
+        end: 'bottom bottom',
         scrub: 1,
+        pin: '#section-wrapper-5',
       },
     });
     tl.fromTo('#section4img', { x: '80vw', y: 0 }, { x: 0, y: 0, duration: 10 });

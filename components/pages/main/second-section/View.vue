@@ -31,7 +31,7 @@
         </UIText>
 
         <PagesMainSecondSectionNavigation
-          class="absolute z-[35] right-0 bottom-[30px] md:w-[30%] w-80% mx-10"
+          class="absolute z-[35] right-0 bottom-[30px] md:w-[40%] w-80% mx-10"
         />
       </div>
     </div>

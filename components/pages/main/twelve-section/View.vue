@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-[calc(100vh-90px)] flex">
+  <div class="w-full h-[90vh] flex">
     <div class="lg:w-[70%] w-full h-full bg-[#483738]">
       <div class="px-[10%] py-[5%] flex flex-col justify-around h-full">
         <div>

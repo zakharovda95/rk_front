@@ -29,24 +29,24 @@ export const MAIN_MENU_CONSTANTS: MainMenuType[] = [
     name: 'КОРПУС 2',
     elems: [
       {
-        id: 1,
-        name: '1 этаж',
-        url: '/',
-      },
-      {
         id: 2,
         name: '2 этаж',
-        url: '/',
+        url: '/corpus-2/floor-2',
       },
       {
         id: 3,
         name: '3 этаж',
-        url: '/',
+        url: '/corpus-2/floor-3',
       },
       {
         id: 4,
         name: '4 этаж',
-        url: '/',
+        url: '/corpus-2/floor-4',
+      },
+      {
+        id: 4,
+        name: '5 этаж',
+        url: '/corpus-2/floor-5',
       },
     ],
   },
@@ -56,24 +56,19 @@ export const MAIN_MENU_CONSTANTS: MainMenuType[] = [
     name: 'КОРПУС 3',
     elems: [
       {
-        id: 1,
-        name: '1 этаж',
-        url: '/',
-      },
-      {
         id: 2,
         name: '2 этаж',
-        url: '/',
+        url: '/corpus-3/floor-2',
       },
       {
         id: 3,
         name: '3 этаж',
-        url: '/',
+        url: '/corpus-3/floor-3',
       },
       {
         id: 4,
         name: '4 этаж',
-        url: '/',
+        url: '/corpus-3/floor-4',
       },
     ],
   },

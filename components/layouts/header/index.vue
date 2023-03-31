@@ -13,13 +13,41 @@
       <SharedDownloadBooklet class="inline md:hidden" />
 
       <div
-        class="flex justify-around h-full justify-end items-center 2xl:w-[20%] lg:w-[30%] md:w-[40%] flex-nowrap"
+        class="flex justify-around h-full gap-5 justify-end items-center 2xl:w-[20%] lg:w-[30%] md:w-[40%] flex-nowrap"
       >
-        <LayoutsHeaderPlay class="hidden lg:inline" id="play" v-if="!isBurgerOpen" />
-        <LayoutsHeaderBooklet class="hidden lg:inline" id="plans" v-if="isBurgerOpen">
+        <!--        <LayoutsHeaderPlay class="hidden lg:inline" id="play" v-if="!isBurgerOpen" />-->
+        <UIAnimatedLink
+          class="hidden lg:flex"
+          @click="
+            $router.push(
+              `/corpus-${availableCorpusAndFloor.corpus}/floor-${availableCorpusAndFloor.floor}`,
+            )
+          "
+          v-if="isBurgerOpen"
+          color="black"
+        >
           планировки
-        </LayoutsHeaderBooklet>
-        <LayoutsHeaderBooklet class="hidden lg:inline"> получить&nbsp;буклет </LayoutsHeaderBooklet>
+        </UIAnimatedLink>
+        <UIAnimatedLink
+          :href="booklet"
+          download="booklet.pdf"
+          target="_blank"
+          class="hidden lg:flex"
+          v-if="isBurgerOpen"
+          color="black"
+        >
+          получить&nbsp;буклет
+        </UIAnimatedLink>
+        <UIAnimatedLink
+          :href="booklet"
+          download="booklet.pdf"
+          target="_blank"
+          class="hidden lg:flex"
+          v-if="!isBurgerOpen"
+          color="white"
+        >
+          получить&nbsp;буклет
+        </UIAnimatedLink>
       </div>
     </div>
   </div>
@@ -27,9 +55,22 @@
 
 <script setup lang="ts">
 import { useCommonStore } from '~/store/common.store';
+import { PropType } from '@vue/runtime-core';
 
 const commonStore = useCommonStore();
 
 const isBurgerOpen: Ref<boolean> = computed(() => commonStore.isBurgerOpen);
-const isThereOffset: Ref<boolean> = computed(() => commonStore.isThereOffset);
+
+defineProps({
+  availableCorpusAndFloor: {
+    type: Object as PropType<{ corpus: string; floor: string }>,
+    required: true,
+  },
+  // booklet: {
+  //   type: String,
+  //   required: true,
+  // },
+});
+
+const booklet = ref('http://185.26.120.121:8085/upload/booklet/1/641d72a8cf460.pdf');
 </script>

@@ -24,8 +24,8 @@
       </div>
 
       <div id="section9nav" class="flex items-end w-[90%] h-[70%] md:ml-10 mx-5">
-        <PagesMainNineSectionNavigation class="hidden md:flex" :data="data" />
-        <PagesMainNineSectionMobileNavigation class="flex md:hidden" :data="data" />
+        <PagesMainNineSectionNavigation v-if="widthX > 768" :data="data" />
+        <PagesMainNineSectionMobileNavigation v-if="widthX <= 768" :data="data" />
       </div>
     </div>
   </div>
