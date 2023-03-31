@@ -6,11 +6,12 @@
     preserveAspectRatio="xMinYMin slice"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns="http://www.w3.org/2000/svg"
+    width="600"
   >
     <defs id="defs6" />
     <g id="g8">
       <image
-        width="448"
+        width="450"
         height="1200"
         preserveAspectRatio="none"
         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVAAAAOECAYAAAD32GnJAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA

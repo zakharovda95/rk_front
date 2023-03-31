@@ -8,47 +8,88 @@
       >
         Атмосфера локации в историческом центре
       </UIText>
-      <!--      <UIButton-->
-      <!--        class="absolute flex flex-row z-[50] items-center gap-2 top-[calc(1vw+1vh*85)] left-[40%] hidden md:flex"-->
-      <!--        type="rounded"-->
-      <!--        color="gray"-->
-      <!--        size="large"-->
-      <!--        effect-->
-      <!--        border="white"-->
-      <!--      >-->
-      <!--        <img alt="img" src="/img/icons/play2.svg" />-->
-      <!--        Видео обзор локации-->
-      <!--      </UIButton>-->
-      <!--      <UIButton-->
-      <!--        class="absolute flex z-[50] items-center justify-center gap-2 top-[calc(1vw+1vh*80)] left-[75%] inline md:hidden w-[80px] h-[80px]"-->
-      <!--        type="rounded"-->
-      <!--        color="gray"-->
-      <!--        size="large"-->
-      <!--        border="white"-->
-      <!--      >-->
-      <!--        <img-->
-      <!--          alt="img"-->
-      <!--          src="/img/icons/play2.svg"-->
-      <!--          width="30"-->
-      <!--          height="30"-->
-      <!--          class="relative left-[5px]"-->
-      <!--        />-->
-      <!--      </UIButton>-->
+      <UIButton
+        @click="options.modelValue = true"
+        class="absolute flex flex-row z-[50] items-center gap-2 top-[calc(1vw+1vh*85)] left-[40%] hidden md:flex w-[250px]"
+        type="rounded"
+        color="gray"
+        size="large"
+        effect
+        border="white"
+      >
+        <img alt="img" src="/img/icons/play2.svg" />
+        Видео обзор локации
+      </UIButton>
+      <UIButton
+        @click="options.modelValue = true"
+        class="absolute flex z-[50] items-center justify-center gap-2 top-[calc(1vw+1vh*80)] left-[75%] inline md:hidden w-[80px] h-[80px]"
+        type="rounded"
+        color="gray"
+        size="large"
+        border="white"
+      >
+        <img
+          alt="img"
+          src="/img/icons/play2.svg"
+          width="30"
+          height="30"
+          class="relative left-[5px]"
+        />
+      </UIButton>
     </div>
-    <!--    <img-->
-    <!--      alt="map"-->
-    <!--      src="/img/components/map-clear.svg"-->
-    <!--      class="w-[100vw] h-[100vh] relative z-[40] top-0 left-0 m-auto object-cover"-->
-    <!--    />-->
+
     <PagesMainThirdSectionMap class="w-[100vw] h-[100vh]" />
+
+    <VueFinalModal
+      v-model="options.modelValue"
+      :teleport-to="options.teleportTo"
+      :display-directive="options.displayDirective"
+      :hide-overlay="options.hideOverlay"
+      :overlay-transition="options.overlayTransition"
+      :content-transition="options.contentTransition"
+      :click-to-close="options.clickToClose"
+      :esc-to-close="options.escToClose"
+      :background="options.background"
+      :lock-scroll="options.lockScroll"
+      :swipe-to-close="options.swipeToClose"
+      class="flex justify-center items-center"
+    >
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/QUS9drYS5v8?controls=0"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </VueFinalModal>
+
+    <ModalsContainer />
   </div>
 </template>
 
 <script setup lang="ts">
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ModalsContainer, VueFinalModal } from 'vue-final-modal';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const getInitialValues = () => ({
+  teleportTo: 'body',
+  modelValue: false,
+  displayDirective: 'if',
+  hideOverlay: false,
+  overlayTransition: 'vfm-fade',
+  contentTransition: 'vfm-fade',
+  clickToClose: true,
+  escToClose: true,
+  background: 'non-interactive',
+  lockScroll: true,
+  swipeToClose: 'none',
+});
+const options = ref(getInitialValues());
 
 onMounted((): void => {
   const tl = gsap.timeline({

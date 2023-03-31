@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full h-[100vh] flex justify-between md:mt-0 mt-[calc(1vw+1vh*30)] max-[400px]:mt-[240px] max-[400px]:mb-[300px]"
+    class="w-full h-[100vh] flex justify-between md:mt-0 min-[600px]:pt-[100px] max-[400px]:mt-[150px] max-[400px]:mb-[300px]"
   >
     <div
       class="map w-full max-w-[1499px] h-full flex md:flex-row flex-col-reverse md:items-end items-center justify-around p-5"
@@ -18,7 +18,7 @@
           <UIText
             tag="h1"
             id="section5text"
-            class="font-trajan md:text-[calc(1vh+1vw*2.3)] text-[calc(1vh+1vw*3.2)] max-[400px]:text-[1.5rem] text-black"
+            class="font-trajan md:text-[calc(1vh+1vw*2.2)] text-[calc(1vh+1vw*3.2)] max-[400px]:text-[1.5rem] text-black"
           >
             РЕКОНСТРУКЦИЯ С БЕРЕЖНЫМ ОТНОШЕНИЕМ К ИСТОРИИ ГОРОДА
           </UIText>
@@ -54,7 +54,7 @@ const { heightY } = usePageHeightWatcher();
 
 onMounted((): void => {
   if (widthX.value < 768) {
-    const tl = gsap.timeline({
+    gsap.timeline({
       scrollTrigger: {
         trigger: '#section-wrapper-5',
         scrub: 2,
@@ -72,7 +72,7 @@ onMounted((): void => {
         trigger: '#section-wrapper-5',
         scrub: 2,
         pin: true,
-        start: 'top 30%',
+        start: 'top 20%',
         endTrigger: '#section5dates',
         end: 'bottom 50%',
       },
@@ -147,7 +147,7 @@ onMounted((): void => {
         },
         {
           x: 0,
-          y: `-${(widthX.value / 100 + heightY.value / 100) * 1.1}vh`,
+          y: `-${widthX.value / 100 + heightY.value / 100}vh`,
           duration: 5,
         },
       );

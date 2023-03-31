@@ -21,6 +21,10 @@ export const useMainPageStore = defineStore('main', {
             body: urlencoded,
           }),
         );
+
+        console.log(data);
+
+        return data.value;
       } catch (err) {
         console.log(err);
       }

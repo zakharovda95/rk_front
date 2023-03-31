@@ -1,6 +1,6 @@
 <template>
   <div class="bg-[#FCF9F4] w-full h-[100vh] overflow-hidden">
-    <div class="max-w-[1499px] md:p-10 flex w-full h-full" style="margin: 0 auto">
+    <div class="max-w-[1799px] md:p-10 flex w-full h-full" style="margin: 0 auto">
       <div class="lg:w-[20%] w-[25%] h-full flex flex-col justify-between items-center xl:ml-10">
         <UIAnimatedLink
           class="mt-[calc(1vw+1vh*10)]"
@@ -32,14 +32,15 @@
       </div>
 
       <div class="w-[60%] flex flex-col justify-start items-center">
-        <div class="flex items-center justify-center gap-5 mt-[calc(1vw+1vh*10)]">
-          <div>
-            <UIRadio
-              :disabled="!data.data.image_possible_layout"
-              @custom:radio-click="isEmptyPlan = $event"
-            />
+        <div class="flex items-center justify-center gap-5 mt-[calc(1vw+1vh*10)] min-h-[35px]">
+          <div v-if="data.data.image_possible_layout">
+            <UIRadio @custom:radio-click="isEmptyPlan = $event" />
           </div>
-          <UIText tag="p" class="text-titleBrown font-helvetica text-[calc(1vw+1vh*0.8)]">
+          <UIText
+            v-if="data.data.image_possible_layout"
+            tag="p"
+            class="text-titleBrown font-helvetica text-[calc(1vw+1vh*0.8)]"
+          >
             возможная планировка
           </UIText>
         </div>

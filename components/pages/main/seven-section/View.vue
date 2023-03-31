@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full flex justify-around md:mt-0 mt-10">
+  <div class="w-full h-full flex justify-around md:mt-0 mt-0">
     <div
       class="map w-full max-w-[1499px] h-full flex md:flex-row flex-col justify-around"
       style="margin: 0 auto"

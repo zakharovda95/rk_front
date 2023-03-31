@@ -72,5 +72,5 @@ defineProps({
   // },
 });
 
-const booklet = ref('http://185.26.120.121:8085/upload/booklet/1/641d72a8cf460.pdf');
+const booklet = ref('http://185.26.120.121:8085/upload/booklet/1/6426a6c000e89.pdf');
 </script>

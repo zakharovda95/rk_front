@@ -23,7 +23,7 @@
       size="medium"
       font-color="white"
       :style="{ width: mobile ? '280px' : 'auto' }"
-      gradient
+      effect
     >
       Забронировать
     </UIButton>

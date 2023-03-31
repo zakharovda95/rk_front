@@ -1,7 +1,7 @@
 <template>
   <div class="flex">
     <div
-      class="max-w-[150px] max-h-[150px] w-[100px] h-[100px] md:w-[calc(1vw+1vh*15)] md:h-[calc(1vw+1vh*15)] border border-titleBrown p-5"
+      class="max-w-[150px] max-h-[150px] w-[100px] h-[100px] md:w-[calc(1vw+1vh*15)] md:h-[calc(1vw+1vh*15)] border border-titleBrown p-2"
     >
       <UIText
         tag="p"
@@ -16,7 +16,7 @@
     </div>
 
     <div
-      class="max-w-[150px] max-h-[150px] w-[100px] h-[100px] md:w-[calc(1vw+1vh*15)] md:h-[calc(1vw+1vh*15)] border border-l-0 border-r-0 border-titleBrown p-5"
+      class="max-w-[150px] max-h-[150px] w-[100px] h-[100px] md:w-[calc(1vw+1vh*15)] md:h-[calc(1vw+1vh*15)] border border-l-0 border-r-0 border-titleBrown p-2"
     >
       <UIText class="font-trajan text-[20px] md:text-[calc(1vw+1vh*2)]">
         {{ floorInfo.floor }}
@@ -36,7 +36,7 @@
     </div>
 
     <div
-      class="max-w-[150px] max-h-[150px] w-[100px] h-[100px] md:w-[calc(1vw+1vh*15)] md:h-[calc(1vw+1vh*15)] border border-titleBrown p-5"
+      class="max-w-[150px] max-h-[150px] w-[100px] h-[100px] md:w-[calc(1vw+1vh*15)] md:h-[calc(1vw+1vh*15)] border border-titleBrown p-2"
     >
       <UIText class="font-trajan text-[20px] md:text-[calc(1vw+1vh*2)]">
         {{ floorInfo.freeAparts }}
@@ -45,7 +45,7 @@
       <UIText
         class="font-helvetica text-titleBrown text-[10px] md:text-[calc(1vw+1vh*0.1)] xl:text-[14px]"
       >
-        апартаментов
+        {{ text }}
       </UIText>
 
       <UIText
@@ -65,5 +65,21 @@ const props = defineProps({
     type: Object as PropType<FloorInfoType>,
     required: true,
   },
+});
+
+const text = computed(() => {
+  if (String(props.floorInfo.freeAparts) === String('1')) {
+    return 'апартамент';
+  }
+  if (
+    String(props.floorInfo.freeAparts) === '2' ||
+    String(props.floorInfo.freeAparts) === '3' ||
+    String(props.floorInfo.freeAparts) === '4'
+  ) {
+    return 'апартамента';
+  }
+  if (Number(props.floorInfo.freeAparts) >= 5) {
+    return 'апартаментов';
+  }
 });
 </script>

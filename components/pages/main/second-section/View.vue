@@ -16,7 +16,7 @@
 
       <img
         id="section2img-1"
-        src="/img/images/section2img.png"
+        src="/img/background/floor-3.png"
         alt="img2"
         class="2xl:w-[550px] object-cover 2xl:h-[430px] lg:w-[450px] lg:h-[350px] md:w-[350px] md:h-[270px] w-[55vw] h-[55vw] absolute z-[30] m-auto top-0 bottom-0 left-0 right-0 2xl:top-[25%] xl:top-[10%] top-[30%]"
       />
@@ -31,6 +31,7 @@
         </UIText>
 
         <PagesMainSecondSectionNavigation
+          @floor="test($event)"
           class="absolute z-[35] right-0 bottom-[30px] md:w-[40%] w-80% mx-10"
         />
       </div>
@@ -43,6 +44,33 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const floor = ref({});
+
+const test = ev => {
+  floor.value = ev;
+};
+
+const img = computed(() => {
+  if (floor.value.floor === 2) {
+    return 'floor-2';
+  }
+  if (floor.value.floor === 3) {
+    return 'floor-3';
+  }
+  if (floor.value.floor === 4) {
+    return 'floor-4';
+  }
+  if (floor.value.floor === 5) {
+    return 'floor-5';
+  }
+});
+
+console.log(img.value);
+
+const imageUrl = computed(() => new URL(`/img/background/${img.value}.png`, import.meta.url));
+
+console.log(imageUrl.value);
 
 onMounted((): void => {
   gsap.to('#section2img', {

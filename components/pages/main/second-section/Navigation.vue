@@ -58,12 +58,20 @@ const to = ref({
   floor: '2',
 });
 
+const emit = defineEmits(['floor']);
+
+onMounted(() => {
+  emit('floor', to.value);
+});
+
 const setValues = (val1: string, val2: string): void => {
   if (val1 === 'корпус') {
     to.value.corpus = val2;
   } else {
     to.value.floor = val2;
   }
+
+  emit('floor', to.value);
 };
 
 const router = useRouter();
