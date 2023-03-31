@@ -2,7 +2,7 @@
   <div class="w-full h-[100vh] bg-[white] relative">
     <div class="w-full h-full max-w-[1499px] pt-[12vh]" style="margin: 0 auto">
       <UIText
-        class="font-trajan text-black md:text-[calc(1vw+1vh*1.3)] text-[calc(1vw+1vh*1.5)] max-[400px]:text-[1rem] 2xl:w-full xl:w-4/5 lg:mx-10 mx-5"
+        class="font-trajan text-black xl:text-[26px] xl:leading-[40px] lg:text-[20px] lg:leading-[32px] md:text-[18px] md:leading-[32px] text-[16px] leading-[28px] max-[400px]:text-[1rem] 2xl:w-full xl:w-4/5 md :mx-10 mx-5"
       >
         В самом центре Санкт-Петербурга на месте пересечения канала Грибоедова и Крюкова мы создали
         уникальный проект реновации, сочетающий архитектуру 18 века и современные концепции
@@ -16,7 +16,7 @@
 
       <img
         id="section2img-1"
-        src="/img/background/floor-3.png"
+        :src="`/img/background/${img}.png`"
         alt="img2"
         class="2xl:w-[550px] object-cover 2xl:h-[430px] lg:w-[450px] lg:h-[350px] md:w-[350px] md:h-[270px] w-[55vw] h-[55vw] absolute z-[30] m-auto top-0 bottom-0 left-0 right-0 2xl:top-[25%] xl:top-[10%] top-[30%]"
       />
@@ -25,7 +25,7 @@
         <UIText
           id="section2text"
           tag="h1"
-          class="absolute top-[150px] z-[35] font-trajan text-[46px] text-[white] w-[50%] text-[calc(1vw+1vh*3.1)] lg:ml-10 md:mx-10 mx-5"
+          class="absolute top-[150px] z-[35] font-trajan text-[white] w-[50%] lg:ml-10 md:mx-10 mx-5 xl:text-[46px] lg:text-[40px] lg:leading-[55px] md:text-[24px] md:leading-[29px] text-[24px] max-[400px]:text-[24px] leading-[36px]"
         >
           Выберете свою идеальную планировку
         </UIText>
@@ -52,25 +52,17 @@ const test = ev => {
 };
 
 const img = computed(() => {
-  if (floor.value.floor === 2) {
-    return 'floor-2';
-  }
-  if (floor.value.floor === 3) {
-    return 'floor-3';
-  }
-  if (floor.value.floor === 4) {
-    return 'floor-4';
-  }
-  if (floor.value.floor === 5) {
-    return 'floor-5';
+  switch (floor.value.floor) {
+    case '2':
+      return 'floor-2';
+    case '3':
+      return 'floor-3';
+    case '4':
+      return 'floor-4';
+    case '5':
+      return 'floor-5';
   }
 });
-
-console.log(img.value);
-
-const imageUrl = computed(() => new URL(`/img/background/${img.value}.png`, import.meta.url));
-
-console.log(imageUrl.value);
 
 onMounted((): void => {
   gsap.to('#section2img', {

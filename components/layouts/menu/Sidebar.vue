@@ -9,7 +9,7 @@
           <UIText class="font-helvetica text-[18px] text-black mb-3">{{ link.name }}</UIText>
 
           <NuxtLink
-            :to="elem.url"
+            @click="go(elem.url)"
             v-for="elem in link.elems"
             :key="elem.id"
             class="cursor-pointer hover:translate-y-[-1px] transition-[0.2s]"
@@ -25,6 +25,14 @@
 <script setup lang="ts">
 import { MainMenuType } from '~/helpers/types/constants/main-menu.type';
 import { MAIN_MENU_CONSTANTS } from '~/helpers/constants/main-menu.constants';
+import { useCommonStore } from '~/store/common.store';
 
 const links: Ref<MainMenuType[]> = ref(MAIN_MENU_CONSTANTS);
+const store = useCommonStore();
+const router = useRouter();
+
+const go = url => {
+  router.push(url);
+  store.isBurgerOpen = false;
+};
 </script>

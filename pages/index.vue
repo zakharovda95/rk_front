@@ -44,7 +44,7 @@
               <PagesMainTenSectionView />
             </section>
 
-            <section id="section-wrapper-11" class="w-full h-[100vh]">
+            <section id="section-wrapper-11" class="w-full h-[100vh] md:mt-0 mt-[150px]">
               <PagesMainElevenSectionView />
             </section>
 
@@ -80,7 +80,7 @@ watch(
 watch(
   offset,
   () => {
-    commonStore.isThereOffset = offset.value > 400;
+    commonStore.isThereOffset = offset.value > 200;
   },
   { deep: true, immediate: true },
 );

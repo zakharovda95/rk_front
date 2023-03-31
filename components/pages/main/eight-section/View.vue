@@ -32,16 +32,18 @@
       <div
         data-speed="1.3"
         id="section8text"
-        class="lg:w-1/2 md:w-3/4 w-full h-full flex flex-col justify-center items-start p-[24px] relative md:bottom-[10vh] bottom-0 max-[400px]:mt-[120px]"
+        class="lg:w-[40%] md:w-3/4 w-full h-full flex flex-col justify-center items-start p-[24px] relative md:bottom-[10vh] top-[50px] lg:top-[-80px] bottom-0 max-[400px]:mt-[120px]"
       >
         <UIText
           tag="h1"
           id="section8text1"
-          class="font-trajan text-[calc(1vh+1vw*5)] mb-10 md:text-[40px] text-black"
+          class="font-trajan xl:text-[46px] lg:text-[40px] lg:leading-[55px] md:text-[24px] md:leading-[29px] text-[24px] max-[400px]:text-[24px] leading-[36px] mb-10 text-black"
         >
           Апартаменты
         </UIText>
-        <UIText class="font-helvetica text-[calc(1vh+1vw*2)] md:text-[16px] text-black">
+        <UIText
+          class="font-helvetica xl:text-[18px] lg:text-[16px] md:text-[16px] text-[16px] max-[400px]:text-[12px] leading-[25px] text-black"
+        >
           «Римского-Корсакова, 22» — симбиоз роскошных гостевых апартаментов и уникальных частных
           резиденций. Пересечение архитектурного духа конца 18 века с передовыми коммуникациями и
           инженерией в окружении сервиса высочайших стандартов.
@@ -89,7 +91,7 @@ onMounted((): void => {
       },
     });
 
-    tl.fromTo('#section8img', { x: '80vw' }, { x: '-80vw', duration: 10 });
+    tl.fromTo('#section8img', { x: '40vw' }, { x: '-40vw', duration: 10 });
   }
 
   if (widthX.value > 1024) {

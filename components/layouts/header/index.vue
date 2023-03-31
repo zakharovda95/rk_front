@@ -10,7 +10,9 @@
 
       <SharedAddressBadge class="inline md:hidden" />
 
-      <SharedDownloadBooklet class="inline md:hidden" />
+      <NuxtLink :href="booklet" download="booklet.pdf" target="_blank">
+        <SharedDownloadBooklet class="inline md:hidden" />
+      </NuxtLink>
 
       <div
         class="flex justify-around h-full gap-5 justify-end items-center 2xl:w-[20%] lg:w-[30%] md:w-[40%] flex-nowrap"

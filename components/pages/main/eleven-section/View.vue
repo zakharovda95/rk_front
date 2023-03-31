@@ -5,19 +5,28 @@
       style="margin: 0 auto"
     >
       <div class="hidden md:inline">
-        <UIText class="font-trajan text-titleBrown text-[calc(1vw+1vh*4)]">Римского</UIText>
+        <UIText
+          class="font-trajan text-titleBrown xl:text-[46px] lg:text-[40px] lg:leading-[55px] md:text-[24px] md:leading-[29px] text-[24px] max-[400px]:text-[24px] leading-[36px]"
+          >Римского</UIText
+        >
       </div>
       <div>
         <div class="inline md:hidden text-center">
-          <UIText class="font-trajan text-titleBrown text-[2rem]"
-            >Римского <br />
-            Корсакова</UIText
+          <UIText
+            class="font-trajan text-titleBrown xl:text-[46px] lg:text-[40px] lg:leading-[55px] md:text-[24px] md:leading-[29px] text-[24px] max-[400px]:text-[24px] leading-[36px]"
           >
+            Римского <br />
+            Корсакова
+          </UIText>
         </div>
         <PagesMainElevenSectionAddressBlock id="section11address" />
       </div>
       <div class="hidden md:inline">
-        <UIText class="font-trajan text-titleBrown text-[calc(1vw+1vh*4)]">Корсакова</UIText>
+        <UIText
+          class="font-trajan text-titleBrown xl:text-[46px] lg:text-[40px] lg:leading-[55px] md:text-[24px] md:leading-[29px] text-[24px] max-[400px]:text-[24px] leading-[36px]"
+        >
+          Корсакова
+        </UIText>
       </div>
     </div>
   </div>

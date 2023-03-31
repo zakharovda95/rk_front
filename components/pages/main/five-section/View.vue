@@ -13,19 +13,19 @@
         <SharedDataItem v-for="el in data" :key="el.id" :item-data="el" />
       </div>
 
-      <div class="flex flex-col 2xl:w-1/2 xl:w-[40%] md:w-[50%] w-full h-full">
+      <div class="flex flex-col lg:w-[35%] md:w-[50%] w-full h-full">
         <div id="section5textcontainer">
           <UIText
             tag="h1"
             id="section5text"
-            class="font-trajan md:text-[40px] text-[calc(1vh+1vw*3.2)] max-[400px]:text-[1.5rem] text-black"
+            class="font-trajan xl:text-[46px] lg:text-[40px] lg:leading-[55px] md:text-[24px] md:leading-[29px] text-[24px] max-[400px]:text-[24px] leading-[36px] text-black"
           >
             РЕКОНСТРУКЦИЯ С БЕРЕЖНЫМ ОТНОШЕНИЕМ К ИСТОРИИ ГОРОДА
           </UIText>
           <UIText
             tag="p"
             id="section5endtext"
-            class="font-helvetica md:text-[16px] text-[calc(1vh+1vw*2)] max-[400px]:text-[1rem] h-[80vh] text-black"
+            class="font-helvetica xl:text-[18px] lg:text-[16px] md:text-[16px] text-[16px] max-[400px]:text-[12px] leading-[25px] h-[80vh] text-black"
           >
             Реконструированное 6-этажное здание казармгвардейского экипажа начала XVIII века, в
             котором будут располагаться частные апартаменты и отель с расширенной инфраструктурой и

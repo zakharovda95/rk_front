@@ -15,7 +15,7 @@
 
     <UIText
       tag="h1"
-      class="relative lg:left-10 md:left-0 font-helvetica text-[white] 2xl:text-[1.5rem] xl:text-[1.2rem] lg:text-[1.1rem] md:text-[1.1rem] w-[50%]"
+      class="relative lg:left-10 md:left-0 font-helvetica text-[white] xl:text-[18px] lg:text-[16px] md:text-[16px] text-[16px] max-[400px]:text-[12px] leading-[25px] w-[50%]"
     >
       {{ activeText }}
     </UIText>

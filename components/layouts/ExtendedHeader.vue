@@ -25,7 +25,9 @@
         />
       </div>
 
-      <SharedDownloadBooklet class="inline md:hidden" />
+      <NuxtLink :href="booklet" download="booklet.pdf" target="_blank">
+        <SharedDownloadBooklet class="inline md:hidden" />
+      </NuxtLink>
 
       <div
         class="flex justify-around h-full justify-end items-center lg:w-[33%] md:w-[40%] flex-nowrap gap-5"

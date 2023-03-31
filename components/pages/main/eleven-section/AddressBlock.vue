@@ -18,6 +18,7 @@
       </UIText>
 
       <div
+        v-if="false"
         @click="isMusicPlayed = !isMusicPlayed"
         class="absolute bottom-[10%] right-[45%] z-[110] cursor-pointer hover:scale-[1.1] transition-[0.5s]"
       >

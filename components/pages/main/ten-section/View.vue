@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full max-[400px]:mt-[200px]">
+  <div class="w-full h-full md:my-0 my-[200px]">
     <div
       class="map w-full max-w-[1399px] h-full flex flex-col justify-center items-center"
       style="margin: 0 auto"
@@ -7,20 +7,22 @@
       <div is="section10textwrapper" class="w-full flex flex-col justify-around mt-0 md:mt-10">
         <UIText
           id="section10text1"
-          class="font-trajan text-black md:text-[calc(1vh+1vw*2)] text-[calc(1vh+1vw*3.2)] mx-10 text-left"
+          class="font-trajan text-black xl:text-[46px] lg:text-[40px] lg:leading-[55px] md:text-[24px] md:leading-[29px] text-[24px] max-[400px]:text-[24px] leading-[36px] mx-10 text-left"
         >
           Высокотехнологичное оснащение
         </UIText>
         <UIText
           id="section10text2"
-          class="font-trajan text-black md:text-[calc(1vh+1vw*2)] text-[calc(1vh+1vw*3.2)] mx-10 text-right"
+          class="font-trajan text-black xl:text-[46px] lg:text-[40px] lg:leading-[55px] md:text-[24px] md:leading-[29px] text-[24px] max-[400px]:text-[24px] leading-[36px] mx-10 text-right"
         >
           для комфортной жизни
         </UIText>
       </div>
 
       <div class="flex items-center text-center max-w-[800px] mt-10">
-        <UIText class="font-helvetica text-black md:text-[calc(1vh+1vw*0.7)] text-[1.1rem] mx-10">
+        <UIText
+          class="font-helvetica text-black xl:text-[18px] lg:text-[16px] md:text-[16px] text-[16px] max-[400px]:text-[12px] leading-[25px] mx-10"
+        >
           Клубный проект «Римского-Корсакова, 22», вдохновленный утонченной концепцией бутикового
           жилья, предлагает жителям максимум комфорта и удобств. Апартаменты оснащены современными
           технологиями, что обеспечивает высокое качество жизни и безопасность для всех жителей.

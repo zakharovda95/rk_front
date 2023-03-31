@@ -10,13 +10,13 @@
       >
         <UIText
           tag="h1"
-          class="font-trajan text-[white] 2xl:text-[2.5rem] xl:text-[2.3rem] lg:text-[2rem] md:text-[1.8rem] text-[1.6rem]"
+          class="font-trajan text-[white] xl:text-[46px] lg:text-[40px] lg:leading-[55px] md:text-[24px] md:leading-[29px] text-[24px] max-[400px]:text-[24px] leading-[36px]"
         >
           Service
         </UIText>
         <UIText
           tag="p"
-          class="font-trajan text-[white] 2xl:text-[1.5rem] xl:text-[1.4rem] lg:text-[1.3rem] md:text-[1.2rem] text-[1.1rem] text-center max-[400px]:text-[0.9rem]"
+          class="font-trajan text-[white] xl:text-[18px] lg:text-[16px] md:text-[16px] text-[16px] max-[400px]:text-[12px] leading-[25px] text-center max-[400px]:text-[0.9rem]"
         >
           Высочайший стандарт сервиса создает уровень комфорта, наполняющий атмосферой роскошного
           жизненного пространства.

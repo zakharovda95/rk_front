@@ -1,11 +1,11 @@
 <template>
   <div class="w-full h-[100vh] mt-[100px]">
     <div class="map w-full max-w-[1499px] h-full flex flex-col" style="margin: 0 auto">
-      <div class="md:w-[70%] w-full">
+      <div class="md:w-[60%] w-full">
         <UIText
           tag="h1"
           id="section4text"
-          class="w-full text-black font-trajan mt-10 md:text-[40px] text-[calc(1vh+1vw*3.7)] max-[400px]:text-[1.4rem] md:mx-10 mx-5"
+          class="w-full text-black font-trajan mt-10 xl:text-[46px] lg:text-[40px] lg:leading-[55px] md:text-[24px] md:leading-[29px] text-[24px] max-[400px]:text-[24px] leading-[36px] md:mx-10 mx-5"
         >
           Апартаменты <br />
           <span class="text-titleBrown"> Римского-Корсакова, 22:</span> <br />
@@ -15,10 +15,10 @@
       </div>
 
       <div class="h-full flex w-full justify-between md:flex-row flex-col mt-2">
-        <div class="md:w-[45%] md:mx-10 mx-5 w-[80%]">
+        <div class="lg:w-[35%] md:w-[50%] md:mx-10 mx-5 w-[80%]">
           <UIText
             tag="p"
-            class="w-full text-black font-helvetica md:text-[16px] text-[calc(1vh+1vw*1.9)] max-[400px]:text-[1rem] text mt-5 mr-5"
+            class="w-full text-black font-helvetica xl:text-[18px] lg:text-[16px] md:text-[16px] text-[16px] max-[400px]:text-[12px] leading-[25px] text mt-5 mr-5"
           >
             Более 100 лет по этому адресу размещался штаб Императорского флотского экипажа — самого
             привилегированного формирования, офицеры которого несли службу в царских резиденциях и
@@ -27,7 +27,7 @@
           <UIText
             tag="p"
             v-if="isReadMore"
-            class="w-full text-black font-helvetica md:text-[16px] text-[calc(1vh+1vw*1.9)] max-[400px]:text-[1rem] text mt-5 mr-5"
+            class="w-full text-black font-helvetica xl:text-[18px] lg:text-[16px] md:text-[16px] text-[16px] max-[400px]:text-[12px] leading-[25px] text mt-5 mr-5"
           >
             Здесь находилась и квартира командиров Экипажа. В разное время ими были выдающиеся
             адмиралы Беллинсгаузен и Нилов, великие князья Алексей Александрович — брат Александра

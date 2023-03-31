@@ -30,7 +30,6 @@ const philter: Ref<string> = computed(() =>
   filter: v-bind(philter);
   -webkit-filter: v-bind(philter);
   transition: 1s;
-  background-attachment: fixed;
 
   @media (max-width: 768px) {
     background-position: top left 35%;
