@@ -16,7 +16,7 @@ export const useCorpusPageStore = defineStore('corpus', {
         const config = useRuntimeConfig();
 
         const { data } = (await useAsyncData('entrance', () =>
-          $fetch(`${config.public.BACK_API}/api/entrance/statuses`, {
+          $fetch(`http://185.26.120.121:8085/api/entrance/statuses`, {
             method: 'GET',
             headers: {
               'accept': 'application/json',

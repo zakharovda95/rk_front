@@ -16,7 +16,7 @@ export const useFlatPageStore = defineStore('flat', {
         urlencoded.append('apartment', apartment);
 
         const { data } = await useAsyncData('apartment', () =>
-          $fetch(`${config.public.BACK_API}/api/apartment`, {
+          $fetch(`http://185.26.120.121:8085/api/apartment`, {
             method: 'POST',
             headers: {
               'accept': 'application/json',
@@ -47,7 +47,7 @@ export const useFlatPageStore = defineStore('flat', {
         urlencoded.append('apartment', body.apartment);
 
         const { data } = await useAsyncData('book', () =>
-          $fetch(`${config.public.BACK_API}/api/reservation-apartment`, {
+          $fetch(`http://185.26.120.121:8085/api/reservation-apartment`, {
             method: 'POST',
             headers: {
               'accept': 'application/json',

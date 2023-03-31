@@ -18,7 +18,7 @@ export const useCommonStore = defineStore('common', {
         const config = useRuntimeConfig();
 
         const { data } = (await useAsyncData('booklet', () =>
-          $fetch(`${config.public.BACK_API}/api/booklet`, {
+          $fetch(`http://185.26.120.121:8085/api/booklet`, {
             method: 'GET',
             headers: {
               'accept': 'application/json',

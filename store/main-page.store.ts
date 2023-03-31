@@ -12,7 +12,7 @@ export const useMainPageStore = defineStore('main', {
         urlencoded.append('name', body.name);
 
         const { data } = await useAsyncData('call', () =>
-          $fetch(`${config.public.BACK_API}/api/call`, {
+          $fetch(`http://185.26.120.121:8085/api/call`, {
             method: 'POST',
             headers: {
               'accept': 'application/json',
