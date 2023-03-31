@@ -3,13 +3,13 @@
     <img
       alt="img"
       class="w-full h-full"
-      :src="`${config.public.BACK_API + images.empty}`"
+      :src="`${'http://185.26.120.121:8085' + images.empty}`"
       v-if="isEmptyPlan"
     />
     <img
       class="w-full h-full"
       alt="img"
-      :src="`${config.public.BACK_API + images.possible}`"
+      :src="`${'http://185.26.120.121:8085' + images.possible}`"
       v-if="!isEmptyPlan"
     />
   </div>
