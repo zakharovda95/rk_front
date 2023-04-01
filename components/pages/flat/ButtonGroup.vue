@@ -47,7 +47,7 @@
 
       <div v-if="!isSuccess" class="flex flex-col justify-center items-center">
         <UIText tag="h3" class="text-center font-helvetica text-[#8F6C51] text-[24px]">
-          Чтобы забронировать апартамент <br />
+          Чтобы забронировать аппартамент <br />
           введите данные
         </UIText>
 

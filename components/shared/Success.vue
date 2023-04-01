@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col justify-center items-center">
     <UIText tag="h3" class="text-center font-helvetica text-[#8F6C51] my-2 text-[24px]">
-      {{ text ? text : 'Бронирование успешно завершено!' }}
+      {{ text }}
     </UIText>
     <UIText tag="h3" class="text-center font-helvetica text-[#8F6C51] my-2 text-[14px]">
       Наш менеджер свяжется с Вами в ближайшее время.

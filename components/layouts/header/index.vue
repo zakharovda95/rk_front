@@ -4,7 +4,7 @@
       class="w-full h-full max-w-[1599px] flex justify-between flex-nowrap items-center"
       style="margin: 0 auto"
     >
-      <div class="h-full flex justify-between items-center flex-nowrap lg:w-[15%] md:w-[400%]">
+      <div class="h-full flex justify-between items-center flex-nowrap lg:w-[20%] md:w-[400%]">
         <LayoutsHeaderBurger class="p-2" />
       </div>
 
@@ -17,19 +17,19 @@
       <div
         class="flex justify-around h-full gap-5 justify-end items-center 2xl:w-[20%] lg:w-[30%] md:w-[40%] flex-nowrap"
       >
-        <!--        <LayoutsHeaderPlay class="hidden lg:inline" id="play" v-if="!isBurgerOpen" />-->
-        <UIAnimatedLink
-          class="hidden lg:flex"
-          @click="
-            $router.push(
-              `/corpus-${availableCorpusAndFloor.corpus}/floor-${availableCorpusAndFloor.floor}`,
-            )
-          "
-          v-if="isBurgerOpen"
-          color="black"
-        >
-          планировки
-        </UIAnimatedLink>
+        <LayoutsHeaderPlay class="hidden lg:inline" id="play" v-if="!isBurgerOpen" />
+        <!--        <UIAnimatedLink-->
+        <!--          class="hidden lg:flex"-->
+        <!--          @click="-->
+        <!--            $router.push(-->
+        <!--              `/corpus-${availableCorpusAndFloor.corpus}/floor-${availableCorpusAndFloor.floor}`,-->
+        <!--            )-->
+        <!--          "-->
+        <!--          v-if="isBurgerOpen"-->
+        <!--          color="black"-->
+        <!--        >-->
+        <!--          планировки-->
+        <!--        </UIAnimatedLink>-->
         <UIAnimatedLink
           :href="booklet"
           download="booklet.pdf"

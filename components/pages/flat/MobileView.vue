@@ -15,7 +15,10 @@
     </div>
 
     <div class="mx-5 my-5">
-      <div class="flex items-center justify-center gap-5 mb-5">
+      <div
+        class="flex items-center justify-center gap-5 mb-5"
+        v-if="data.data.image_possible_layout"
+      >
         <div>
           <UIRadio
             :disabled="!data.data.image_possible_layout"

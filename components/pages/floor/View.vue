@@ -10,23 +10,7 @@
     </div>
 
     <div
-      v-if="currentCorpus === '3'"
-      @click="$router.push(`/corpus-2/floor-${availableFloors[0]}`)"
-      class="w-[14%] h-[100vh] bg-[lightgray] flex items-center justify-center cursor-pointer opacity-[0.8] hover:opacity-[1]"
-    >
-      <div class="mt-10">
-        <NuxtLink>
-          <UIText class="text-center text-[calc(1vw+1vh*8)] font-trajan">
-            <span class="text-[24px] text-titleBrown">корпус</span>
-            <br />
-            2
-          </UIText>
-        </NuxtLink>
-      </div>
-    </div>
-
-    <div
-      class="w-[65%] h-full flex flex-col-reverse items-center justify-around overflow-scroll mx-5"
+      class="w-full h-full flex flex-col-reverse items-center justify-around overflow-scroll mx-5"
     >
       <div class="flex w-full items-center mx-10">
         <PagesFloorInfo v-if="floorInfo" :floor-info="floorInfo" />
@@ -40,16 +24,19 @@
         </div>
       </div>
 
-      <div class="w-full my-5">
-        <UIText tag="h1" class="font-trajan text-[calc(1vh+1vw*1)] text-center">
-          Внутренний двор
-        </UIText>
-      </div>
+      <div style="margin: 0 auto" class="w-full overflow-scroll min-h-[calc(1vw+1vh*35)] pt-[12vh]">
+        <div
+          v-if="currentCorpus === '2'"
+          class="w-full flex items-center justify-center max-h-[10vh] mb-5 border-t border-b py-10 border-[lightgray]"
+        >
+          <UIText tag="h1" class="font-trajan text-[calc(1vh+1vw*1)] text-center">
+            пр-т Римского Корсакова
+          </UIText>
+        </div>
 
-      <div style="margin: 0 auto" class="w-full overflow-scroll min-h-[calc(1vw+1vh*35)]">
         <div
           v-if="currentCorpus === '3'"
-          class="w-full flex gap-5 items-center justify-center h-[20vh] mt-[100px] px-5"
+          class="w-full flex gap-5 items-center justify-center h-[20vh] px-5"
         >
           <div class="h-[10vh] w-1/2 border border-[lightgray] flex items-center justify-center">
             <UIText
@@ -69,39 +56,66 @@
           </div>
         </div>
 
-        <PagesFloorPlan
-          v-if="!isLoading.floor"
-          class="w-[100%] h-auto"
-          :tag="tag"
-          :current-floor="currentFloor"
-          :current-corpus="currentCorpus"
-          :apartments="availableApartments"
-        />
-      </div>
+        <div class="flex w-full">
+          <div
+            v-if="currentCorpus === '3'"
+            @click="$router.push(`/corpus-2/floor-${availableFloors[0]}`)"
+            class="w-[14%] h-[50vh] bg-[lightgray] flex items-center justify-center cursor-pointer opacity-[0.8] hover:opacity-[1]"
+          >
+            <div class="mt-10">
+              <NuxtLink>
+                <UIText class="text-center text-[calc(1vw+1vh*8)] font-trajan">
+                  <span class="text-[24px] text-titleBrown">корпус</span>
+                  <br />
+                  2
+                </UIText>
+              </NuxtLink>
+            </div>
+          </div>
+          <div>
+            <div class="w-[70vw] min-h-[35vh]">
+              <PagesFloorPlan
+                v-if="!isLoading.floor"
+                class="w-[70vw] h-auto"
+                :tag="tag"
+                :current-floor="currentFloor"
+                :current-corpus="currentCorpus"
+                :apartments="availableApartments"
+              />
 
-      <div
-        v-if="currentCorpus === '2'"
-        class="w-full flex items-center justify-center max-h-[10vh] mt-[100px] mb-5 border-t border-b py-10 border-[lightgray]"
-      >
-        <UIText tag="h1" class="font-trajan text-[calc(1vh+1vw*1)] text-center">
-          пр-т Римского Корсакова
-        </UIText>
-      </div>
-    </div>
+              <div
+                v-if="isLoading.floor"
+                class="w-[69vw] h-[35vh] bg-titleBrown opacity-[0.3] flex justify-center items-center"
+              >
+                <UIText tag="h1" class="font-trajan text-black text-[calc(1vh+1vw*1)] text-center">
+                  Загрузка
+                </UIText>
+              </div>
+            </div>
 
-    <div
-      v-if="currentCorpus === '2'"
-      @click="$router.push(`/corpus-3/floor-${availableFloors[0]}`)"
-      class="w-[14%] h-[100vh] bg-[lightgray] flex items-center justify-center cursor-pointer opacity-[0.8] hover:opacity-[1]"
-    >
-      <div class="mt-10">
-        <NuxtLink>
-          <UIText class="text-center text-[calc(1vw+1vh*8)] font-trajan">
-            <span class="text-[24px] text-titleBrown">корпус</span>
-            <br />
-            3
-          </UIText>
-        </NuxtLink>
+            <div class="w-full my-5">
+              <UIText tag="h1" class="font-trajan text-[calc(1vh+1vw*1)] text-center">
+                Внутренний двор
+              </UIText>
+            </div>
+          </div>
+
+          <div
+            v-if="currentCorpus === '2'"
+            @click="$router.push(`/corpus-3/floor-${availableFloors[0]}`)"
+            class="w-[14%] h-[50vh] bg-[lightgray] flex items-center justify-center cursor-pointer opacity-[0.8] hover:opacity-[1]"
+          >
+            <div class="mt-10">
+              <NuxtLink>
+                <UIText class="text-center text-[calc(1vw+1vh*8)] font-trajan">
+                  <span class="text-[24px] text-titleBrown">корпус</span>
+                  <br />
+                  3
+                </UIText>
+              </NuxtLink>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

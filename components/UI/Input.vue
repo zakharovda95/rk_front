@@ -31,6 +31,11 @@ const props = defineProps({
     required: false,
     default: () => 'white',
   },
+  isError: {
+    type: Boolean,
+    required: false,
+    default: () => false,
+  },
 });
 
 const emit = defineEmits(['custom:update-model-value']);
@@ -51,6 +56,7 @@ const classes = computed(() => {
     'border-titleBrown': props.border === 'beige',
     'text-[white]': props.color === 'white',
     'text-black': props.color === 'black',
+    'border-[red]': props.isError,
   };
 });
 

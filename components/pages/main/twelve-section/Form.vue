@@ -4,12 +4,14 @@
       placeholder="Ваше имя"
       class="my-2"
       :model-value="body.name"
+      :is-error="errName"
       @custom:update-model-value="body.name = $event"
     />
     <UIInput
       placeholder="Номер телефона"
       class="my-2"
       :model-value="body.phone"
+      :is-error="errPhone"
       @custom:update-model-value="body.phone = $event"
     />
     <UIButton
@@ -39,7 +41,7 @@
     class="flex justify-center items-center"
     content-class="max-w-xl mx-4 p-4 bg-[white] rounded-lg space-y-2"
   >
-    <SharedSuccess text="Успешно!" />
+    <SharedSuccess :text="text" @custom:close-modal="options.modelValue = false" />
   </VueFinalModal>
 
   <ModalsContainer />
@@ -72,11 +74,23 @@ const body: Ref<CallFormData> = ref({
   phone: '',
 });
 
+const errName = ref(false);
+const errPhone = ref(false);
+
+const text = ref('');
+
 const call = async (): Promise<void> => {
-  const res = await mainPageStore.call(body.value);
-  console.log(res);
-  if (res.success) {
-    options.value.modelValue = true;
+  errName.value = !body.value.name;
+
+  errPhone.value = !body.value.phone;
+
+  if (body.value.name && body.value.phone) {
+    const res = await mainPageStore.call(body.value);
+    if (res.success) {
+      text.value = res.data;
+      options.value.modelValue = true;
+      body.value = { name: '', phone: '' };
+    }
   }
 };
 </script>
