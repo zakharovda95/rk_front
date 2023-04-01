@@ -1,58 +1,58 @@
 <template>
   <NuxtLayout>
-    <div class="smooth-wrapper" data-scroll-container>
-      <div class="smooth-content">
-        <div class="w-full min-h-[100vh] overflow-hidden">
-          <div ref="container" id="container" class="w-full overflow-hidden">
-            <section id="section-wrapper-1" class="w-full h-[100vh] bg-black">
-              <PagesMainFirstSectionView />
-            </section>
+    <div class="w-full min-h-[100vh] overflow-hidden">
+      <div ref="container" id="container" class="w-full overflow-hidden">
+        <section id="section-wrapper-1" class="w-full h-[100vh] bg-black">
+          <PagesMainFirstSectionView />
+        </section>
 
-            <section id="section-wrapper-2" class="w-full h-[100vh]">
-              <PagesMainSecondSectionView />
-            </section>
+        <section id="section-wrapper-2" class="w-full h-[100vh]">
+          <PagesMainSecondSectionView />
+        </section>
 
-            <section id="section-wrapper-3" class="w-full h-[100vh]">
-              <PagesMainThirdSectionView />
-            </section>
+        <section id="section-wrapper-2.1" class="w-full h-[100vh]" v-if="widthX <= 768">
+          <PagesMainSecondSectionViewMobile />
+        </section>
 
-            <section id="section-wrapper-4" class="w-full h-auto md:h-[100vh]">
-              <PagesMainFourSectionView />
-            </section>
+        <section id="section-wrapper-3" class="w-full h-[100vh]">
+          <PagesMainThirdSectionView />
+        </section>
 
-            <section id="section-wrapper-5" class="w-full h-auto md:h-[100vh]">
-              <PagesMainFiveSectionView />
-            </section>
+        <section id="section-wrapper-4" class="w-full min-h-[100vh]">
+          <PagesMainFourSectionView />
+        </section>
 
-            <section id="section-wrapper-6" class="w-full h-[100vh]">
-              <PagesMainSixSectionView />
-            </section>
+        <section id="section-wrapper-5" class="w-full min-h-[100vh] bg-[white]">
+          <PagesMainFiveSectionView />
+        </section>
 
-            <section id="section-wrapper-7" class="w-full h-[100vh]">
-              <PagesMainSevenSectionView />
-            </section>
+        <section id="section-wrapper-6" class="w-full h-[100vh] bg-[white]">
+          <PagesMainSixSectionView />
+        </section>
 
-            <section id="section-wrapper-8" class="w-full h-[100vh] relative bottom-[300px]">
-              <PagesMainEightSectionView />
-            </section>
+        <section id="section-wrapper-7" class="w-full min-h-[100vh]">
+          <PagesMainSevenSectionView />
+        </section>
 
-            <section id="section-wrapper-9" class="w-full h-[100vh]">
-              <PagesMainNineSectionView />
-            </section>
+        <section id="section-wrapper-8" class="w-full h-[100vh]">
+          <PagesMainEightSectionView />
+        </section>
 
-            <section id="section-wrapper-10" class="w-full h-[100vh]">
-              <PagesMainTenSectionView />
-            </section>
+        <!--            <section id="section-wrapper-9" class="w-full h-[100vh]">-->
+        <!--              <PagesMainNineSectionView />-->
+        <!--            </section>-->
 
-            <section id="section-wrapper-11" class="w-full h-[100vh] md:mt-0 mt-[150px]">
-              <PagesMainElevenSectionView />
-            </section>
+        <!--            <section id="section-wrapper-10" class="w-full h-[100vh]">-->
+        <!--              <PagesMainTenSectionView />-->
+        <!--            </section>-->
 
-            <section id="section-wrapper-12" class="w-full h-[100vh] flex items-end">
-              <PagesMainTwelveSectionView />
-            </section>
-          </div>
-        </div>
+        <!--            <section id="section-wrapper-11" class="w-full h-[100vh] md:mt-0 mt-[150px]">-->
+        <!--              <PagesMainElevenSectionView />-->
+        <!--            </section>-->
+
+        <!--            <section id="section-wrapper-12" class="w-full h-[100vh] flex items-end">-->
+        <!--              <PagesMainTwelveSectionView />-->
+        <!--            </section>-->
       </div>
     </div>
   </NuxtLayout>

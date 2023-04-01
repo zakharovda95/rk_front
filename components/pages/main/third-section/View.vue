@@ -1,10 +1,10 @@
 <template>
-  <div class="map w-full h-[100vh]">
+  <div class="map w-full h-[100vh] bg-[#FCF9F4] relative">
     <div class="w-full max-w-[1499px] flex flex-col justify-center" style="margin: 0 auto">
       <UIText
         tag="h1"
         id="section3text"
-        class="absolute z-[50] left-0 top-[12vh] font-trajan text-black md:w-[50%] w-[90%] xl:text-[46px] lg:text-[40px] lg:leading-[55px] md:text-[24px] md:leading-[29px] text-[24px] max-[400px]:text-[24px] leading-[36px] md:mx-10 mx-5"
+        class="absolute z-[50] left-0 md:top-[12vh] top-[5vh] font-trajan text-black md:w-[50%] w-[90%] xl:text-[46px] lg:text-[40px] lg:leading-[55px] md:text-[24px] md:leading-[29px] text-[24px] max-[400px]:text-[24px] leading-[36px] md:mx-10 mx-5"
       >
         Атмосфера локации в историческом центре
       </UIText>
@@ -91,25 +91,29 @@ const getInitialValues = () => ({
 });
 const options = ref(getInitialValues());
 
-onMounted((): void => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#section-wrapper-3',
-      endTrigger: '#section-wrapper-4',
-      start: 'top top',
-      end: 'bottom center',
-      pin: true,
-    },
-  });
+const { widthX } = usePageWidthWatcher();
 
-  tl.fromTo(
-    '#section3text',
-    { opacity: 0 },
-    {
-      opacity: 1,
-      duration: 1,
-    },
-  );
+onMounted((): void => {
+  if (widthX.value >= 768) {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#section-wrapper-3',
+        endTrigger: '#section-wrapper-4',
+        start: 'top top',
+        end: 'bottom center',
+        pin: true,
+      },
+    });
+
+    tl.fromTo(
+      '#section3text',
+      { opacity: 0 },
+      {
+        opacity: 1,
+        duration: 1,
+      },
+    );
+  }
 });
 </script>
 

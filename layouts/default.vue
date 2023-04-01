@@ -19,6 +19,8 @@ const commonStore = useCommonStore();
 
 commonStore.downloadBooklet();
 
+const { widthX } = usePageWidthWatcher();
+
 const isBurgerOpen: Ref<boolean> = computed(() => commonStore.isBurgerOpen);
 const isThereOffset: Ref<boolean> = computed(() => commonStore.isThereOffset);
 

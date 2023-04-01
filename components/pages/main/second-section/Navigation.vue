@@ -1,32 +1,109 @@
 <template>
   <div id="section2navigation" class="flex gap-5 md:justify-start justify-between">
     <div class="flex flex-col">
-      <div v-for="elem in data" :key="data.id" class="flex mb-3 items-center gap-5">
+      <div class="flex mb-3 items-center gap-5">
         <UIText
           tag="p"
           class="font-helvetica lg:text-[calc(1vh+1vw*1.2)] md:text-[calc(1vh+1vw*1.5)] text-[white] cursor-pointer"
         >
-          {{ elem.name }}
+          Корпус
         </UIText>
 
         <div class="flex gap-5">
-          <component
-            :is="el.url ? 'NuxtLink' : 'div'"
-            v-for="el in elem.values"
-            :key="el.id"
+          <NuxtLink
             class="cursor-pointer"
-            :class="{
-              'link-active': elem.name === 'корпус' ? el.name === to.corpus : el.name === to.floor,
-            }"
-            @click="setValues(elem.name, el.name)"
+            v-if="availableFloor.c2.length"
+            @click="to.corpus = '2'"
+            :class="{ 'link-active': to.corpus === '2' }"
           >
             <UIText
               tag="p"
               class="font-helvetica lg:text-[calc(1vh+1vw*1.1)] md:text-[calc(1vh+1vw*1.3)] text-[white]"
             >
-              {{ el.name }}
+              2
             </UIText>
-          </component>
+          </NuxtLink>
+
+          <NuxtLink
+            class="cursor-pointer"
+            v-if="availableFloor.c3.length"
+            @click="to.corpus = '3'"
+            :class="{ 'link-active': to.corpus === '3' }"
+          >
+            <UIText
+              tag="p"
+              class="font-helvetica lg:text-[calc(1vh+1vw*1.1)] md:text-[calc(1vh+1vw*1.3)] text-[white]"
+            >
+              3
+            </UIText>
+          </NuxtLink>
+        </div>
+      </div>
+
+      <div class="flex mb-3 items-center gap-5">
+        <UIText
+          tag="p"
+          class="font-helvetica lg:text-[calc(1vh+1vw*1.2)] md:text-[calc(1vh+1vw*1.5)] text-[white] cursor-pointer"
+        >
+          Этаж
+        </UIText>
+
+        <div class="flex gap-5">
+          <NuxtLink
+            class="cursor-pointer"
+            v-if="currentAvailableFloors.includes('2')"
+            @click="setFloor('2')"
+            :class="{ 'link-active': to.floor === '2' }"
+          >
+            <UIText
+              tag="p"
+              class="font-helvetica lg:text-[calc(1vh+1vw*1.1)] md:text-[calc(1vh+1vw*1.3)] text-[white]"
+            >
+              2
+            </UIText>
+          </NuxtLink>
+
+          <NuxtLink
+            class="cursor-pointer"
+            v-if="currentAvailableFloors.includes('3')"
+            @click="setFloor('3')"
+            :class="{ 'link-active': to.floor === '3' }"
+          >
+            <UIText
+              tag="p"
+              class="font-helvetica lg:text-[calc(1vh+1vw*1.1)] md:text-[calc(1vh+1vw*1.3)] text-[white]"
+            >
+              3
+            </UIText>
+          </NuxtLink>
+
+          <NuxtLink
+            class="cursor-pointer"
+            v-if="currentAvailableFloors.includes('4')"
+            @click="setFloor('4')"
+            :class="{ 'link-active': to.floor === '4' }"
+          >
+            <UIText
+              tag="p"
+              class="font-helvetica lg:text-[calc(1vh+1vw*1.1)] md:text-[calc(1vh+1vw*1.3)] text-[white]"
+            >
+              4
+            </UIText>
+          </NuxtLink>
+
+          <NuxtLink
+            class="cursor-pointer"
+            v-if="currentAvailableFloors.includes('5')"
+            @click="setFloor('5')"
+            :class="{ 'link-active': to.floor === '5' }"
+          >
+            <UIText
+              tag="p"
+              class="font-helvetica lg:text-[calc(1vh+1vw*1.1)] md:text-[calc(1vh+1vw*1.3)] text-[white]"
+            >
+              5
+            </UIText>
+          </NuxtLink>
         </div>
       </div>
     </div>
@@ -46,35 +123,36 @@
 </template>
 
 <script setup lang="ts">
-import { Section2NavigationType } from '~/helpers/types/constants/section-2.type';
-import { SECTION_2_NAVIGATION_CONSTANTS } from '~/helpers/constants/section-2.constants';
 import { usePageWidthWatcher } from '~/composables/usePageWidthWatcher';
+import { AvailableFloorsType, FloorType } from '~/helpers/types/common.type';
+import { useCorpusPageStore } from '~/store/corpus.store';
 
-const data: Ref<Section2NavigationType[]> = ref(SECTION_2_NAVIGATION_CONSTANTS);
+const store = useCorpusPageStore();
 const { widthX } = usePageWidthWatcher();
+const router = useRouter();
 
-const to = ref({
-  corpus: '2',
+const emit = defineEmits(['custom:select-floor']);
+
+const availableFloor: Ref<AvailableFloorsType> = computed(() => store.corpusData);
+
+const to: Ref<FloorType> = ref({
+  corpus: availableFloor.value.c2.length ? '2' : '3',
   floor: '2',
 });
 
-const emit = defineEmits(['floor']);
+const currentAvailableFloors: Ref<string[]> = computed(() =>
+  to.value.corpus === '2' ? availableFloor.value.c2 : availableFloor.value.c3,
+);
 
 onMounted(() => {
-  emit('floor', to.value);
+  emit('custom:select-floor', to.value);
 });
 
-const setValues = (val1: string, val2: string): void => {
-  if (val1 === 'корпус') {
-    to.value.corpus = val2;
-  } else {
-    to.value.floor = val2;
-  }
-
-  emit('floor', to.value);
+const setFloor = (floor: string): void => {
+  to.value.floor = floor;
+  emit('custom:select-floor', to.value);
 };
 
-const router = useRouter();
 const goTo = () => {
   if (to.value.corpus === '3' && to.value.floor === '5') {
     router.push(`/corpus-${to.value.corpus}/floor-4`);

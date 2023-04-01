@@ -1,20 +1,18 @@
 <template>
-  <div
-    class="w-full h-[100vh] flex justify-between md:mt-0 min-[600px]:pt-[100px] max-[400px]:mt-[150px] max-[400px]:mb-[300px]"
-  >
+  <div class="w-full min-h-[100vh] bg-[white] flex justify-between relative">
     <div
-      class="map w-full max-w-[1499px] h-full flex md:flex-row flex-col-reverse md:items-end items-center justify-around p-5"
+      class="map w-full max-w-[1599px] h-full flex md:flex-row flex-col-reverse items-start justify-around p-5"
       style="margin: 0 auto"
     >
       <div
         id="section5dates"
-        class="flex flex-col justify-center items-center md:mx-10 mx-5 relative md:top-[5vh] top-[-40vh] md:my-10"
+        class="flex flex-col md:mx-10 mx-5 justify-between items-center mt-10 md:mt-0 md:w-auto w-full"
       >
         <SharedDataItem v-for="el in data" :key="el.id" :item-data="el" />
       </div>
 
-      <div class="flex flex-col lg:w-[35%] md:w-[50%] w-full h-full">
-        <div id="section5textcontainer">
+      <div class="flex flex-col justify-start items-center lg:w-[35%] md:w-[50%] w-[90%] h-full">
+        <div id="section5textcontainer" class="md:mr-0 mr-10">
           <UIText
             tag="h1"
             id="section5text"
@@ -25,7 +23,7 @@
           <UIText
             tag="p"
             id="section5endtext"
-            class="font-helvetica xl:text-[18px] lg:text-[16px] md:text-[16px] text-[16px] max-[400px]:text-[12px] leading-[25px] h-[80vh] text-black"
+            class="font-helvetica xl:text-[18px] lg:text-[16px] md:text-[16px] text-[16px] max-[400px]:text-[12px] leading-[25px]text-black"
           >
             Реконструированное 6-этажное здание казармгвардейского экипажа начала XVIII века, в
             котором будут располагаться частные апартаменты и отель с расширенной инфраструктурой и
@@ -42,7 +40,6 @@ import { SECTION_5_CONSTANTS } from '~/helpers/constants/section-5.constants';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { usePageWidthWatcher } from '~/composables/usePageWidthWatcher';
-import { usePageHeightWatcher } from '~/composables/usePageHeightWatcker';
 import { Section5Type } from '~/helpers/types/constants/section-5.type';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -50,108 +47,24 @@ gsap.registerPlugin(ScrollTrigger);
 const data: Ref<Section5Type[]> = ref(SECTION_5_CONSTANTS);
 
 const { widthX } = usePageWidthWatcher();
-const { heightY } = usePageHeightWatcher();
+
+const calculateEndAnimation = () => {
+  const elemBottom = document.querySelector('#section5endtext')!.getBoundingClientRect().bottom;
+  const elemBottom2 = document.querySelector('#section5dates')!.getBoundingClientRect().bottom;
+  return `+=${elemBottom2 - elemBottom - 30}`;
+};
 
 onMounted((): void => {
-  if (widthX.value < 768) {
+  if (widthX.value >= 768) {
     gsap.timeline({
       scrollTrigger: {
-        trigger: '#section-wrapper-5',
-        scrub: 2,
-        pin: false,
-        start: 'top 30%',
+        trigger: '#section5textcontainer',
+        start: 'center center',
         endTrigger: '#section5dates',
-        end: 'bottom 50%',
-      },
-    });
-  }
-
-  if (widthX.value >= 768) {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '#section-wrapper-5',
-        scrub: 2,
+        end: () => calculateEndAnimation(),
         pin: true,
-        start: 'top 20%',
-        endTrigger: '#section5dates',
-        end: 'bottom 50%',
       },
     });
-
-    if (widthX.value >= 768 && widthX.value < 1024) {
-      tl.fromTo(
-        '#section5dates',
-        {
-          x: 0,
-          y: 0,
-        },
-        {
-          x: 0,
-          y: `-${widthX.value / 100 + (heightY.value / 100) * 5}vh`,
-          duration: 5,
-        },
-      );
-    }
-
-    if (widthX.value >= 1024 && widthX.value < 1224) {
-      tl.fromTo(
-        '#section5dates',
-        {
-          x: 0,
-          y: '20vh',
-        },
-        {
-          x: 0,
-          y: `-${(widthX.value / 100 + heightY.value / 100) * 2.4}vh`,
-          duration: 5,
-        },
-      );
-    }
-
-    if (widthX.value >= 1224 && widthX.value < 1500) {
-      tl.fromTo(
-        '#section5dates',
-        {
-          x: 0,
-          y: '40vh',
-        },
-        {
-          x: 0,
-          y: `-${widthX.value / 100 + (heightY.value / 100) * 2.2}vh`,
-          duration: 10,
-        },
-      );
-    }
-
-    if (widthX.value >= 1500 && widthX.value < 1600) {
-      tl.fromTo(
-        '#section5dates',
-        {
-          x: 0,
-          y: '40vh',
-        },
-        {
-          x: 0,
-          y: `-${(widthX.value / 100 + heightY.value / 100) * 1.8}vh`,
-          duration: 5,
-        },
-      );
-    }
-
-    if (widthX.value >= 1600) {
-      tl.fromTo(
-        '#section5dates',
-        {
-          x: 0,
-          y: '45vh',
-        },
-        {
-          x: 0,
-          y: `-${widthX.value / 100 + heightY.value / 100}vh`,
-          duration: 5,
-        },
-      );
-    }
   }
 });
 </script>

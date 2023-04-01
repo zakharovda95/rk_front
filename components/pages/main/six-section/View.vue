@@ -1,6 +1,6 @@
 <template>
-  <div class="relative overflow-hidden h-[80vh] top-0 left-0">
-    <div class="section6image w-full h-[100vh]" />
+  <div class="relative overflow-hidden h-[80vh] top-0 left-0 bg-[white]">
+    <div class="section6image w-full h-[100vh] bg-[white]" />
   </div>
 </template>
 
@@ -14,39 +14,17 @@ gsap.registerPlugin(ScrollTrigger);
 const { widthX } = usePageWidthWatcher();
 
 onMounted((): void => {
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: '#section5text',
-      pin: '#section-wrapper-6',
-      scrub: 2,
-      start: 'top top',
-      end: 'bottom bottom',
-    },
-  });
-
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '#section-wrapper-6',
-      start: 'top 15%',
-      end: 'bottom top',
-      scrub: 2,
       pin: true,
+      start: 'top 15%',
+      end: '+=300',
+      scrub: 2,
     },
   });
 
   tl.to('.section6image', { x: 0, y: '-30%', duration: 2 });
-
-  if (widthX.value >= 768) {
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: '#section5text',
-        pin: '#section-wrapper-7',
-        scrub: 2,
-        start: 'top center',
-        end: 'top 30%',
-      },
-    });
-  }
 });
 </script>
 

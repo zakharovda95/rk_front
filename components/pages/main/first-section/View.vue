@@ -8,16 +8,16 @@
       v-if="!isBurgerOpen"
     >
       <PagesMainFirstSectionBrand
-        class="absolute top-[calc(1vw+1vh*89)] z-[500] hidden md:inline"
+        class="absolute top-[calc(1vw+1vh*89)] z-[5] hidden md:inline"
         v-if="!isThereOffset"
       />
       <PagesMainFirstSectionScroll
-        class="absolute top-[calc(1vw+1vh*72)] z-[500] hidden md:inline"
+        class="absolute top-[calc(1vw+1vh*72)] z-[5] hidden md:inline"
         v-if="!isThereOffset"
       />
     </div>
 
-    <div class="absolute top-0 left-0 w-full h-[100vh] z-[2000]">
+    <div class="absolute top-0 left-0 w-full h-[100vh] z-[10]">
       <div class="flex flex-col w-full h-full justify-end">
         <div class="flex items-end">
           <div class="flex flex-col">
@@ -77,48 +77,6 @@ onMounted(() => {
   const innerWidth: number = window.innerWidth;
 
   scrollBarWidth.value = innerWidth - clientWidth;
-
-  if (widthX.value <= 768) {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        pin: true,
-        trigger: '#section-wrapper-1',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 2,
-      },
-    });
-
-    tl.fromTo(
-      '#section1text',
-      { opacity: 0 },
-      {
-        opacity: 1,
-        duration: 3,
-        paused: true,
-        scrollTrigger: {
-          trigger: '#section1img',
-          start: 'top 140%',
-          end: 'top 120%',
-        },
-      },
-    );
-
-    tl.fromTo(
-      '#header',
-      { y: '-100px' },
-      {
-        y: 0,
-        duration: 1,
-        scrollTrigger: {
-          trigger: '#section-wrapper-2',
-          start: 'top bottom',
-          end: 'bottom 10%',
-          scrub: 1,
-        },
-      },
-    );
-  }
 
   if (widthX.value > 768) {
     const tl = gsap.timeline({
