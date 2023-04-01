@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full h-full max-[400px]:mt-[300px]">
+  <div class="w-full h-[100vh] relative bg-[white]">
     <div
-      class="map w-full max-w-[1499px] h-full flex justify-around items-center"
+      class="map w-full max-w-[1599px] h-full flex justify-around items-center"
       style="margin: 0 auto"
     >
       <div class="hidden md:inline">
@@ -46,9 +46,9 @@ onMounted((): void => {
       paused: true,
       scrollTrigger: {
         trigger: '#section-wrapper-11',
-        start: 'top 15%',
-        end: 'bottom 95%',
-        pin: true,
+        start: 'top top',
+        end: '+=600',
+        pin: '#section-wrapper-11',
         scrub: 3,
       },
     });
@@ -70,7 +70,7 @@ onMounted((): void => {
       '#section11addressimg',
       {
         x: 0,
-        y: '-50vh',
+        y: '-150vh',
       },
       {
         x: 0,
@@ -88,10 +88,18 @@ onMounted((): void => {
       },
     );
 
-    tl.to('#section11addressimg', {
-      x: 0,
-      duration: 10,
-    });
+    tl.fromTo(
+      '#s11block',
+      {
+        x: 0,
+        y: 0,
+      },
+      {
+        x: 0,
+        y: 0,
+        duration: 20,
+      },
+    );
   }
 });
 </script>

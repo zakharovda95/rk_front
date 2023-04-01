@@ -1,5 +1,5 @@
 <template>
-  <div class="section9image w-full h-[100vh]">
+  <div class="section9image w-full h-[100vh] relative bg-[white]">
     <div
       class="map w-full max-w-[1499px] h-full flex flex-col justify-around"
       style="margin: 0 auto"
@@ -45,37 +45,19 @@ gsap.registerPlugin(ScrollTrigger);
 const { widthX } = usePageWidthWatcher();
 
 onMounted((): void => {
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: '#section-wrapper-8',
-      scrub: true,
-      pin: '#section-wrapper-9',
-      start: 'top top',
-      end: 'center bottom',
-    },
-  });
-
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: '#section-wrapper-9',
-      scrub: 1,
-      pin: '#section-wrapper-10',
-      start: 'top 10%',
-      end: 'center 20%',
-    },
-  });
-
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.section9image',
-      start: 'top top',
-      scrub: 2,
-      pin: '#section-wrapper-9',
-    },
-  });
-  tl.fromTo('#section9header', { opacity: 0 }, { opacity: 1, duration: 1 });
-  tl.fromTo('#section9nav', { opacity: 0 }, { opacity: 1, duration: 1 });
-  tl.fromTo('#section9nav', { x: 0, y: 0 }, { x: 0, y: 0, duration: 5 });
+  if (widthX.value > 768) {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#section-wrapper-9',
+        start: 'top top',
+        scrub: true,
+        pin: true,
+      },
+    });
+    tl.fromTo('#section9header', { opacity: 0 }, { opacity: 1, duration: 1 });
+    tl.fromTo('#section9nav', { opacity: 0 }, { opacity: 1, duration: 1 });
+    tl.fromTo('#section9nav', { x: 0, y: 0 }, { x: 0, y: 0, duration: 5 });
+  }
 });
 </script>
 

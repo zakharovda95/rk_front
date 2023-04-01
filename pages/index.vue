@@ -30,29 +30,29 @@
           <PagesMainSixSectionView />
         </section>
 
-        <section id="section-wrapper-7" class="w-full min-h-[100vh]">
+        <section id="section-wrapper-7" class="w-full min-h-[100vh] bg-[white]">
           <PagesMainSevenSectionView />
         </section>
 
-        <section id="section-wrapper-8" class="w-full h-[100vh]">
+        <section id="section-wrapper-8" class="w-full h-[100vh] bg-[white]">
           <PagesMainEightSectionView />
         </section>
 
-        <!--            <section id="section-wrapper-9" class="w-full h-[100vh]">-->
-        <!--              <PagesMainNineSectionView />-->
-        <!--            </section>-->
+        <section id="section-wrapper-9" class="w-full h-[100vh] bg-[white]">
+          <PagesMainNineSectionView />
+        </section>
 
-        <!--            <section id="section-wrapper-10" class="w-full h-[100vh]">-->
-        <!--              <PagesMainTenSectionView />-->
-        <!--            </section>-->
+        <section id="section-wrapper-10" class="w-full min-h-[100vh] bg-[white]">
+          <PagesMainTenSectionView />
+        </section>
 
-        <!--            <section id="section-wrapper-11" class="w-full h-[100vh] md:mt-0 mt-[150px]">-->
-        <!--              <PagesMainElevenSectionView />-->
-        <!--            </section>-->
+        <section id="section-wrapper-11" class="w-full h-[100vh] bg-[white]">
+          <PagesMainElevenSectionView />
+        </section>
 
-        <!--            <section id="section-wrapper-12" class="w-full h-[100vh] flex items-end">-->
-        <!--              <PagesMainTwelveSectionView />-->
-        <!--            </section>-->
+        <section id="section-wrapper-12" class="w-full h-[100vh] flex items-end bg-[white]">
+          <PagesMainTwelveSectionView />
+        </section>
       </div>
     </div>
   </NuxtLayout>

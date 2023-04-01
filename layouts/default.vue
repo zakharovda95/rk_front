@@ -1,14 +1,16 @@
 <template>
-  <LayoutsHeader
-    :available-corpus-and-floor="availableCorpusAndFloor"
-    v-if="!isThereOffset || isBurgerOpen"
-  />
-  <LayoutsExtendedHeader
-    :available-corpus-and-floor="availableCorpusAndFloor"
-    v-if="!isBurgerOpen"
-  />
-  <LayoutsMenu :corpus-data="corpusData" v-if="isBurgerOpen" />
-  <slot />
+  <div>
+    <LayoutsHeader
+      :available-corpus-and-floor="availableCorpusAndFloor"
+      v-if="!isThereOffset || isBurgerOpen"
+    />
+    <LayoutsExtendedHeader
+      :available-corpus-and-floor="availableCorpusAndFloor"
+      v-if="!isBurgerOpen"
+    />
+    <LayoutsMenu :corpus-data="corpusData" v-if="isBurgerOpen" />
+    <slot />
+  </div>
 </template>
 
 <script setup lang="ts">

@@ -1,10 +1,12 @@
 <template>
-  <div class="w-full h-full relative bg-[white] flex justify-between items-center p-5">
+  <div
+    class="w-full h-full relative bg-[white] flex justify-between items-center p-5 md:mb-0 mb-10"
+  >
     <div
-      class="map w-full max-w-[1599px] h-full flex lg:flex-row flex-col items-start justify-around"
+      class="map w-full max-w-[1599px] h-full flex lg:flex-row flex-col items-start lg:items-center justify-around"
       style="margin: 0 auto"
     >
-      <div class="md:inline hidden">
+      <div class="lg:inline hidden">
         <div class="w-[90%] relative left-0 overflow-hidden">
           <img
             id="s8img1"
@@ -24,19 +26,21 @@
         </div>
       </div>
 
-      <swiper class="h-[100vw] w-full inline md:hidden" :slides-per-view="1">
-        <swiper-slide>
-          <img class="w-full h-full my-3" src="/img/images/section8img1.png" alt="img" />
-        </swiper-slide>
+      <div class="inline lg:hidden h-[80vw] w-full">
+        <swiper class="f-full w-full" :slides-per-view="1">
+          <swiper-slide>
+            <img class="w-full h-full my-3" src="/img/images/section8img1.png" alt="img" />
+          </swiper-slide>
 
-        <swiper-slide>
-          <img class="w-full h-full my-3" src="/img/images/section8img2.png" alt="img" />
-        </swiper-slide>
-      </swiper>
+          <swiper-slide>
+            <img class="w-full h-full my-3" src="/img/images/section8img2.png" alt="img" />
+          </swiper-slide>
+        </swiper>
+      </div>
 
       <div
         id="section8text"
-        class="lg:w-[40%] md:w-3/4 w-[90%] h-full flex flex-col justify-center items-start p-[24px]"
+        class="lg:w-[40%] md:w-3/4 w-[90%] h-full flex flex-col justify-center items-start lg:mt-0 mt-10"
       >
         <UIText
           tag="h1"
@@ -73,81 +77,16 @@ gsap.registerPlugin(ScrollTrigger);
 
 const { widthX } = usePageWidthWatcher();
 
-// onMounted((): void => {
-//   if (widthX.value < 768) {
-//     const tl = gsap.timeline({
-//       scrollTrigger: {
-//         trigger: '#section-wrapper-8',
-//         start: 'top 80%',
-//         endTrigger: '#section-wrapper-8',
-//         end: 'bottom center',
-//         scrub: 1,
-//       },
-//     });
-//
-//     tl.fromTo('#section8img', { x: '80vw' }, { x: '-80vw', duration: 3 });
-//   }
-//
-//   if (widthX.value >= 768 && widthX.value <= 1024) {
-//     const tl = gsap.timeline({
-//       scrollTrigger: {
-//         trigger: '#section8img',
-//         start: 'top 80%',
-//         scrub: 3,
-//       },
-//     });
-//
-//     tl.fromTo('#section8img', { x: '40vw' }, { x: '-40vw', duration: 10 });
-//   }
-//
-//   if (widthX.value > 1024) {
-//     gsap.timeline({
-//       scrollTrigger: {
-//         trigger: '#section8text',
-//         start: 'top 80%',
-//         scrub: 1,
-//       },
-//     });
-//
-//     gsap.fromTo(
-//       '#section8text',
-//       { opacity: 0 },
-//       {
-//         opacity: 1,
-//         duration: 0.1,
-//         scrollTrigger: {
-//           trigger: '#section8text',
-//         },
-//       },
-//     );
-//
-//     gsap.fromTo(
-//       '#s8img1',
-//       { x: '-1vw' },
-//       {
-//         x: '1vw',
-//         duration: 0.1,
-//         scrollTrigger: {
-//           trigger: '#section8text',
-//           start: 'top 80%',
-//           scrub: 3,
-//         },
-//       },
-//     );
-//
-//     gsap.fromTo(
-//       '#s8img2',
-//       { x: '1vw' },
-//       {
-//         x: '-1vw',
-//         duration: 0.1,
-//         scrollTrigger: {
-//           trigger: '#section8text',
-//           start: 'top 60%',
-//           scrub: 1,
-//         },
-//       },
-//     );
-//   }
-// });
+onMounted((): void => {
+  if (widthX.value > 768) {
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '#section-wrapper-8',
+        start: 'top center',
+        pin: '#section-wrapper-9',
+        end: '+=200',
+      },
+    });
+  }
+});
 </script>

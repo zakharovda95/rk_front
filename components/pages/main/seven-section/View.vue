@@ -1,7 +1,7 @@
 <template>
   <div class="w-full h-full flex justify-around relative bg-[white]">
     <div
-      class="map w-full max-w-[1599px] h-full flex lg:flex-row flex-col justify-around items-start gap-10"
+      class="map w-full max-w-[1599px] h-full flex md:flex-row flex-col justify-around items-start gap-10"
       style="margin: 0 auto"
     >
       <div id="section7textcontainer" class="lg:w-[30%] md:w-[40%] w-[80%] md:h-[300px] mx-5">
@@ -23,7 +23,7 @@
 
       <div
         id="section7values"
-        class="lg:w-[60%] w-full flex justify-center gap-5 lg:justify-around items-start md:mt-0 mt-10"
+        class="lg:w-[60%] w-full flex justify-center lg:gap-5 gap-0 md:justify-around items-start md:mt-0 mt-10"
       >
         <div class="flex flex-col justify-center items-center">
           <PagesMainSevenSectionBadge class="my-2"> пешком </PagesMainSevenSectionBadge>

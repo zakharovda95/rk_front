@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full h-[90vh] flex">
+  <div class="w-full h-[100vh] flex bg-[white] relative">
     <div class="lg:w-[70%] w-full h-full bg-[#483738]">
-      <div class="px-[10%] py-[5%] flex flex-col justify-around h-full">
+      <div class="px-[10%] py-[10%] flex flex-col justify-around h-full">
         <div>
           <UIText tag="h1" class="font-trajan text-[white] text-[calc(1vh+1vw*1.8)]">
             Узнайте <br />
@@ -9,13 +9,13 @@
           </UIText>
 
           <div class="flex md:flex-row flex-col justify-between">
-            <UIText tag="p" class="font-trajan text-[white] text-[calc(1vh+1vw*0.3)]">
+            <UIText tag="p" class="font-trajan text-[white] text-[12px]">
               Закажите обратный звонок, и <br />
               персональный менеджер свяжется с вами, <br />
               чтобы рассказать детали.
             </UIText>
 
-            <UIText tag="p" class="font-trajan text-[white] text-[calc(1vh+1vw*0.3)] mr-[50px]">
+            <UIText tag="p" class="font-trajan text-[white] text-[12px] mr-[50px]">
               Офис продаж: <br />
               Ежедневно 9:00 – 21:00
               <br />

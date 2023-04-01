@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full h-full md:my-0 my-[200px]">
+  <div class="w-full h-full relative bg-[white] py-10">
     <div
-      class="map w-full max-w-[1399px] h-full flex flex-col justify-center items-center"
+      class="map w-full max-w-[1599px] h-full flex flex-col justify-center items-center"
       style="margin: 0 auto"
     >
       <div is="section10textwrapper" class="w-full flex flex-col justify-around mt-0 md:mt-10">
@@ -88,39 +88,42 @@ gsap.registerPlugin(ScrollTrigger);
 
 const data: Ref<Section10Type[]> = ref(SECTION_10_CONSTANTS);
 
+const { widthX } = usePageWidthWatcher();
 onMounted(() => {
-  gsap.fromTo(
-    '#section10text1',
-    {
-      x: '-2vw',
-    },
-    {
-      x: 0,
-      duration: 2,
-      scrollTrigger: {
-        trigger: '#section10text1',
-        start: 'top 40%',
-        end: 'top top',
-        scrub: 3,
+  if (widthX.value >= 768) {
+    gsap.fromTo(
+      '#section10text1',
+      {
+        x: '-2vw',
       },
-    },
-  );
+      {
+        x: 0,
+        duration: 2,
+        scrollTrigger: {
+          trigger: '#section10text1',
+          start: 'top 40%',
+          end: 'top top',
+          scrub: 3,
+        },
+      },
+    );
 
-  gsap.fromTo(
-    '#section10text2',
-    {
-      x: '2vw',
-    },
-    {
-      x: 0,
-      duration: 2,
-      scrollTrigger: {
-        trigger: '#section10text1',
-        start: 'top 40%',
-        end: 'top top',
-        scrub: 3,
+    gsap.fromTo(
+      '#section10text2',
+      {
+        x: '2vw',
       },
-    },
-  );
+      {
+        x: 0,
+        duration: 2,
+        scrollTrigger: {
+          trigger: '#section10text1',
+          start: 'top 40%',
+          end: 'top top',
+          scrub: 3,
+        },
+      },
+    );
+  }
 });
 </script>
