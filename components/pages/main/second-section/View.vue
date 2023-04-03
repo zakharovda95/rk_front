@@ -11,7 +11,7 @@
 
       <PagesMainSecondSectionParalaxImages
         id="section2img"
-        class="relative z-20 md:bottom-[-10vh] bottom-[10vh] left-0"
+        class="relative z-20 md:bottom-[-10vh] bottom-[5vh] max-[400px]:bottom-[15vh] left-0"
       />
 
       <div

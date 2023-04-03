@@ -38,7 +38,7 @@
           <PagesMainEightSectionView />
         </section>
 
-        <section id="section-wrapper-9" class="w-full md:h-[100vh] h-[60vh] bg-[white]">
+        <section id="section-wrapper-9" class="w-full md:h-[100vh] h-[70vh] bg-[white]">
           <PagesMainNineSectionView />
         </section>
 

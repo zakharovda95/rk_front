@@ -17,7 +17,7 @@
       />
     </div>
 
-    <div class="absolute md:top-0 top-[-5vh] left-0 w-full h-[100vh] z-[10]">
+    <div class="absolute md:top-0 top-[-10vh] left-0 w-full h-[100vh] z-[10]">
       <div class="flex flex-col w-full h-full justify-end">
         <div class="flex items-end">
           <div class="flex flex-col">

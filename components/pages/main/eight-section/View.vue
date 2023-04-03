@@ -25,7 +25,13 @@
       </div>
 
       <div class="inline lg:hidden h-[80vw] w-full">
-        <swiper class="f-full w-full" :slides-per-view="1">
+        <swiper
+          class="f-full w-full"
+          :slides-per-view="1"
+          :pagination="true"
+          :modules="[Pagination]"
+          :style="{ '--swiper-pagination-color': 'white' }"
+        >
           <swiper-slide>
             <img class="w-full h-full my-3" src="/img/images/section8img1.png" alt="img" />
           </swiper-slide>
@@ -70,6 +76,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { usePageWidthWatcher } from '~/composables/usePageWidthWatcher';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
+import { Pagination } from 'swiper';
+import 'swiper/css/pagination';
 
 gsap.registerPlugin(ScrollTrigger);
 

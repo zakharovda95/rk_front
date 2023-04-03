@@ -22,7 +22,7 @@
       type="rounded"
       size="medium"
       font-color="white"
-      :style="{ width: mobile ? '280px' : 'auto' }"
+      :style="{ width: mobile ? '280px' : 'auto', 'margin-bottom': mobile ? '5px' : '0' }"
       effect
     >
       Забронировать

@@ -7,7 +7,7 @@
   >
     <swiper-slide v-for="slide in data" :key="slide.id">
       <div
-        class="w-[90%] h-[30vh] flex flex-col items-center justify-start text-center"
+        class="w-[90%] h-[42vh] flex flex-col items-center justify-center text-center"
         style="margin: auto"
       >
         <UIText class="font-helvetica text-[1.3rem] text-[white] mb-5">
