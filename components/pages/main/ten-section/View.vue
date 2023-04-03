@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full relative bg-[white] py-10">
+  <div class="w-full h-full relative bg-[white] py-5">
     <div
       class="map w-full max-w-[1599px] h-full flex flex-col justify-center items-center"
       style="margin: 0 auto"
@@ -7,13 +7,13 @@
       <div is="section10textwrapper" class="w-full flex flex-col justify-around mt-0 md:mt-10">
         <UIText
           id="section10text1"
-          class="font-trajan text-black xl:text-[46px] lg:text-[40px] lg:leading-[55px] md:text-[24px] md:leading-[29px] text-[24px] max-[400px]:text-[24px] leading-[36px] mx-10 text-left"
+          class="font-trajan text-black xl:text-[46px] lg:text-[40px] lg:leading-[55px] md:text-[24px] md:leading-[29px] text-[24px] max-[400px]:text-[24px] leading-[36px] md:mx-10 mx-5 text-left"
         >
           Высокотехнологичное оснащение
         </UIText>
         <UIText
           id="section10text2"
-          class="font-trajan text-black xl:text-[46px] lg:text-[40px] lg:leading-[55px] md:text-[24px] md:leading-[29px] text-[24px] max-[400px]:text-[24px] leading-[36px] mx-10 text-right"
+          class="font-trajan text-black xl:text-[46px] lg:text-[40px] lg:leading-[55px] md:text-[24px] md:leading-[29px] text-[24px] max-[400px]:text-[24px] leading-[36px] md:mx-10 mx-5 text-right"
         >
           для комфортной жизни
         </UIText>

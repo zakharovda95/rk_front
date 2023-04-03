@@ -98,9 +98,8 @@ onMounted((): void => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '#section-wrapper-3',
-        endTrigger: '#section-wrapper-4',
         start: 'top top',
-        end: 'bottom center',
+        end: '+=300',
         pin: true,
       },
     });

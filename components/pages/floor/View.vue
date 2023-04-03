@@ -36,7 +36,7 @@
 
         <div
           v-if="currentCorpus === '3'"
-          class="w-full flex gap-5 items-center justify-center h-[20vh] px-5"
+          class="w-full flex gap-5 items-center justify-start h-[15vh]"
         >
           <div class="h-[10vh] w-1/2 border border-[lightgray] flex items-center justify-center">
             <UIText
@@ -46,7 +46,7 @@
               Доходный дом В. И. Шене
             </UIText>
           </div>
-          <div class="h-[10vh] w-1/2 border border-[lightgray]">
+          <div class="h-[10vh] w-[calc(50%-4vw)] border border-[lightgray]">
             <UIText
               tag="h1"
               class="font-trajan text-[lightgray] text-[calc(1vh+1vw*0.8)] relative top-[10px] text-center"
@@ -60,7 +60,7 @@
           <div
             v-if="currentCorpus === '3'"
             @click="$router.push(`/corpus-2/floor-${availableFloors[0]}`)"
-            class="w-[14%] h-[50vh] bg-[lightgray] flex items-center justify-center cursor-pointer opacity-[0.8] hover:opacity-[1]"
+            class="teleport w-[14%] h-[50vh] flex items-center justify-center cursor-pointer opacity-[0.8] hover:opacity-[1] mt-3"
           >
             <div class="mt-10">
               <NuxtLink>
@@ -103,7 +103,7 @@
           <div
             v-if="currentCorpus === '2'"
             @click="$router.push(`/corpus-3/floor-${availableFloors[0]}`)"
-            class="w-[14%] h-[50vh] bg-[lightgray] flex items-center justify-center cursor-pointer opacity-[0.8] hover:opacity-[1]"
+            class="w-[14%] h-[50vh] teleport flex items-center justify-center cursor-pointer opacity-[0.8] hover:opacity-[1] mt-2"
           >
             <div class="mt-10">
               <NuxtLink>
@@ -156,3 +156,9 @@ const props = defineProps({
   },
 });
 </script>
+
+<style scoped lang="scss">
+.teleport {
+  background: linear-gradient(#f1eee9, #fcf9f4);
+}
+</style>

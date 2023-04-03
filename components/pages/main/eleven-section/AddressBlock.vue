@@ -11,8 +11,9 @@
         class="w-full h-full absolute z-[100]"
       />
       <UIText
+        tag="h1"
         id="section11addressnumber"
-        class="font-helvetica relative z-[110] text-[white] text-[calc(1vw+1vh*15)]"
+        class="font-helvetica relative text-black z-[110] text-[white] text-[calc(1vw+1vh*12)]"
       >
         22
       </UIText>

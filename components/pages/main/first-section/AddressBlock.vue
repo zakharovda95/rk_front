@@ -9,11 +9,9 @@
 
     <div
       ref="address"
-      class="flex items-center justify-center w-[40vh] h-[40vh] max-w-[380px] max-h-[380px] bg-[white] mt-10"
+      class="flex items-center justify-center w-[50vh] h-[50vh] max-w-[380px] max-h-[380px] bg-[white] mt-10"
     >
-      <UIText class="lg:text-[calc(1vh+1vw*10)] text-[calc(1vh+1vw*13)] font-helvetica" tag="h1">
-        22
-      </UIText>
+      <UIText class="text-black text-[calc(1vh+1vw*12)] font-helvetica" tag="h1"> 22 </UIText>
     </div>
   </div>
 </template>

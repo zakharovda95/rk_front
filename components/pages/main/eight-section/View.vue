@@ -1,9 +1,7 @@
 <template>
-  <div
-    class="w-full h-full relative bg-[white] flex justify-between items-center p-5 md:mb-0 mb-10"
-  >
+  <div class="w-full h-full relative bg-[white] flex justify-between items-center p-5">
     <div
-      class="map w-full max-w-[1599px] h-full flex lg:flex-row flex-col items-start lg:items-center justify-around"
+      class="map w-full max-w-[1599px] bg-[white] h-full flex lg:flex-row flex-col items-start lg:items-center justify-around"
       style="margin: 0 auto"
     >
       <div class="lg:inline hidden">

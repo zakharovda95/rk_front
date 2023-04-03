@@ -34,7 +34,7 @@
           <PagesMainSevenSectionView />
         </section>
 
-        <section id="section-wrapper-8" class="w-full h-[100vh] bg-[white]">
+        <section id="section-wrapper-8" class="w-full min-h-[100vh] bg-[white]">
           <PagesMainEightSectionView />
         </section>
 

@@ -17,7 +17,7 @@
     </div>
     <UIText
       tag="p"
-      class="relative text-center bottom-[40px] font-helvetica xl:text-[24px] lg:text-[24px] md:text-[18px] text-[18x] max-[400px]:text-[18px]"
+      class="relative text-center bottom-[40px] font-helvetica xl:text-[24px] lg:text-[24px] md:text-[18px] text-[18x] max-[400px]:text-[14px]"
     >
       {{ itemData.text }}
     </UIText>

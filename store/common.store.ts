@@ -10,6 +10,7 @@ export const useCommonStore = defineStore('common', {
       addressBlockSizes: null,
       aspectRatio: 0,
       booklet: '',
+      audio: null,
     } as CommonStoreType),
 
   actions: {

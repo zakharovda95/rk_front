@@ -5,7 +5,7 @@
       style="margin: 0 auto"
     >
       <div
-        class="flex md:flex-row flex-col md:w-[70%] w-[90%] justify-center items-center h-[10%] gap-[5vw] md:ml-10 mx-5 relative top-[110px] max-[400px]:top-[130px]"
+        class="flex md:flex-row flex-col md:w-[70%] w-[90%] justify-center items-center h-[10%] gap-[5vw] md:ml-10 mx-5 relative top-[110px] max-[400px]:top-[50px]"
         id="section9header"
       >
         <UIText

@@ -11,15 +11,20 @@
 
       <PagesMainSecondSectionParalaxImages
         id="section2img"
-        class="relative z-20 md:bottom-[-10vh] left-0"
+        class="relative z-20 md:bottom-[-10vh] bottom-[15vh] left-0"
       />
 
-      <img
+      <div
         id="section2img-1"
-        :src="`/img/background/${img}.png`"
-        alt="img2"
-        class="2xl:w-[550px] object-cover 2xl:h-[430px] lg:w-[450px] lg:h-[350px] md:w-[350px] md:h-[270px] w-[55vw] h-[55vw] absolute z-[30] m-auto top-0 bottom-0 left-0 right-0 2xl:top-[25%] xl:top-[10%] top-[30%]"
-      />
+        class="bg-titleBrown 2xl:w-[550px] 2xl:h-[430px] lg:w-[450px] lg:h-[350px] md:w-[350px] md:h-[270px] w-[55vw] h-[55vw] absolute z-[30] m-auto top-0 bottom-0 left-0 right-0 2xl:top-[25%] xl:top-[10%] top-[30%]"
+      >
+        <img
+          id="section2-img"
+          :src="`/img/background/${img}.png`"
+          alt="img2"
+          class="w-full h-full object-cover"
+        />
+      </div>
 
       <div class="md:flex hidden flex-col">
         <UIText
@@ -50,7 +55,13 @@ gsap.registerPlugin(ScrollTrigger);
 const floor: Ref<FloorType | null> = ref(null);
 
 const test = (ev: FloorType) => {
-  floor.value = ev;
+  setTimeout(() => {
+    floor.value = ev;
+    if (floor.value === ev) {
+      return;
+    }
+  }, 500);
+  gsap.fromTo('#section2-img', { opacity: 0 }, { opacity: 1, duration: 1 });
 };
 
 const img = computed(() => {
@@ -71,18 +82,6 @@ const img = computed(() => {
 const { widthX } = usePageWidthWatcher();
 
 onMounted((): void => {
-  if (widthX.value <= 768) {
-    gsap.to('#section2img', {
-      y: '-15vh',
-      duration: 2,
-      scrollTrigger: {
-        trigger: '#section2img',
-        start: 'top 70%',
-        scrub: 2,
-      },
-    });
-  }
-
   if (widthX.value > 768) {
     gsap.to('#section2img', {
       y: '-25vh',

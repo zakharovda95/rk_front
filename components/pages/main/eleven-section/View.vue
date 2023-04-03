@@ -47,7 +47,7 @@ onMounted((): void => {
       scrollTrigger: {
         trigger: '#section-wrapper-11',
         start: 'top top',
-        end: '+=600',
+        end: '+=1000',
         pin: '#section-wrapper-11',
         scrub: 3,
       },
@@ -75,7 +75,7 @@ onMounted((): void => {
       {
         x: 0,
         y: 0,
-        duration: 10,
+        duration: 5,
       },
     );
 

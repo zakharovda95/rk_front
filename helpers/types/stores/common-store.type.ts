@@ -6,4 +6,5 @@ export interface CommonStoreType {
   addressBlockSizes: AddressBlockSizesType | null;
   aspectRatio: number;
   booklet: string;
+  audio: null | unknown;
 }

@@ -129,7 +129,7 @@ onMounted(() => {
 
     tl.fromTo(
       '#header',
-      { y: '-100px' },
+      { y: '-130px' },
       {
         y: 0,
         duration: 1,

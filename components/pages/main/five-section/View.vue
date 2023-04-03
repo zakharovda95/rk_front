@@ -1,12 +1,12 @@
 <template>
-  <div class="w-full min-h-[100vh] bg-[white] flex justify-between relative">
+  <div class="w-full min-h-[100vh] bg-[white] flex justify-between relative p-5">
     <div
-      class="map w-full max-w-[1599px] h-full flex md:flex-row flex-col-reverse items-start justify-around p-5"
+      class="map w-full max-w-[1599px] h-full flex md:flex-row flex-col-reverse items-start justify-around"
       style="margin: 0 auto"
     >
       <div
         id="section5dates"
-        class="flex flex-col md:mx-10 mx-5 justify-between items-center mt-10 md:mt-0 md:w-auto w-full"
+        class="flex flex-col md:mx-10 justify-between items-center mt-10 md:mt-0 md:w-auto w-full"
       >
         <SharedDataItem v-for="el in data" :key="el.id" :item-data="el" />
       </div>

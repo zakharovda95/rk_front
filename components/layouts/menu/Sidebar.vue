@@ -4,34 +4,102 @@
   >
     <div class="absolute top-[30%]">
       <UIText tag="h2" class="text-[32px] font-trajan text-[black]">Апартаменты</UIText>
-      <ul>
-        <li v-for="link in links" :key="link.id" class="flex flex-col mt-5">
-          <UIText class="font-helvetica text-[18px] text-black mb-3">{{ link.name }}</UIText>
 
-          <NuxtLink
-            @click="go(elem.url)"
-            v-for="elem in link.elems"
-            :key="elem.id"
-            class="cursor-pointer hover:translate-y-[-1px] transition-[0.2s]"
-          >
-            <UIText tag="p" class="font-helvetica text-[18px] text-black">{{ elem.name }}</UIText>
-          </NuxtLink>
-        </li>
-      </ul>
+      <div class="flex flex-col mt-5" v-if="availableFloor.c2.length">
+        <UIText class="font-helvetica text-[18px] text-black mb-3">Корпус 2</UIText>
+
+        <NuxtLink
+          class="cursor-pointer hover:translate-y-[-1px] transition-[0.2s]"
+          v-if="availableFloor.c2.includes('1')"
+          @click="go('/corpus-2/floor-1')"
+        >
+          <UIText tag="p" class="font-helvetica text-[18px] text-black">1 этаж</UIText>
+        </NuxtLink>
+
+        <NuxtLink
+          class="cursor-pointer hover:translate-y-[-1px] transition-[0.2s]"
+          v-if="availableFloor.c2.includes('2')"
+          @click="go('/corpus-2/floor-2')"
+        >
+          <UIText tag="p" class="font-helvetica text-[18px] text-black">2 этаж</UIText>
+        </NuxtLink>
+
+        <NuxtLink
+          class="cursor-pointer hover:translate-y-[-1px] transition-[0.2s]"
+          v-if="availableFloor.c2.includes('3')"
+          @click="go('/corpus-2/floor-3')"
+        >
+          <UIText tag="p" class="font-helvetica text-[18px] text-black">3 этаж</UIText>
+        </NuxtLink>
+
+        <NuxtLink
+          class="cursor-pointer hover:translate-y-[-1px] transition-[0.2s]"
+          v-if="availableFloor.c2.includes('4')"
+          @click="go('/corpus-2/floor-4')"
+        >
+          <UIText tag="p" class="font-helvetica text-[18px] text-black">4 этаж</UIText>
+        </NuxtLink>
+
+        <NuxtLink
+          class="cursor-pointer hover:translate-y-[-1px] transition-[0.2s]"
+          v-if="availableFloor.c2.includes('5')"
+          @click="go('/corpus-2/floor-5')"
+        >
+          <UIText tag="p" class="font-helvetica text-[18px] text-black">5 этаж</UIText>
+        </NuxtLink>
+      </div>
+
+      <div class="flex flex-col mt-5" v-if="availableFloor.c3.length">
+        <UIText class="font-helvetica text-[18px] text-black mb-3">Корпус 3</UIText>
+
+        <NuxtLink
+          class="cursor-pointer hover:translate-y-[-1px] transition-[0.2s]"
+          v-if="availableFloor.c2.includes('1')"
+          @click="go('/corpus-3/floor-1')"
+        >
+          <UIText tag="p" class="font-helvetica text-[18px] text-black">1 этаж</UIText>
+        </NuxtLink>
+
+        <NuxtLink
+          class="cursor-pointer hover:translate-y-[-1px] transition-[0.2s]"
+          v-if="availableFloor.c2.includes('2')"
+          @click="go('/corpus-3/floor-2')"
+        >
+          <UIText tag="p" class="font-helvetica text-[18px] text-black">2 этаж</UIText>
+        </NuxtLink>
+
+        <NuxtLink
+          class="cursor-pointer hover:translate-y-[-1px] transition-[0.2s]"
+          v-if="availableFloor.c2.includes('3')"
+          @click="go('/corpus-3/floor-3')"
+        >
+          <UIText tag="p" class="font-helvetica text-[18px] text-black">3 этаж</UIText>
+        </NuxtLink>
+
+        <NuxtLink
+          class="cursor-pointer hover:translate-y-[-1px] transition-[0.2s]"
+          v-if="availableFloor.c2.includes('4')"
+          @click="go('/corpus-3/floor-4')"
+        >
+          <UIText tag="p" class="font-helvetica text-[18px] text-black">4 этаж</UIText>
+        </NuxtLink>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { MainMenuType } from '~/helpers/types/constants/main-menu.type';
-import { MAIN_MENU_CONSTANTS } from '~/helpers/constants/main-menu.constants';
 import { useCommonStore } from '~/store/common.store';
+import { useCorpusPageStore } from '~/store/corpus.store';
+import { AvailableFloorsType } from '~/helpers/types/common.type';
 
-const links: Ref<MainMenuType[]> = ref(MAIN_MENU_CONSTANTS);
+const corpusStore = useCorpusPageStore();
 const store = useCommonStore();
 const router = useRouter();
 
-const go = url => {
+const availableFloor: Ref<AvailableFloorsType> = computed(() => corpusStore.corpusData);
+
+const go = (url: string) => {
   router.push(url);
   store.isBurgerOpen = false;
 };

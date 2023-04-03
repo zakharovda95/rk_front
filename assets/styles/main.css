@@ -6,16 +6,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-weight: 300;
 }
 
 ::-webkit-scrollbar {
   width: 0;
-}
-
-@media screen and (max-width: 768px){
-  .pin-spacer {
-    background: white !important;
-  }
 }
 
 @font-face {
@@ -27,7 +22,7 @@
 
 @font-face {
   font-family: 'Helvetica';
-  src: url('../fonts/helvetica-regular.otf') format('truetype');
+  src: url('../fonts/helvetica.otf') format('truetype');
   font-style: normal;
   font-weight: normal;
 }

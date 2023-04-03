@@ -39,7 +39,10 @@
             брусчатки, , по которой ступали русские императоры и выдающиеся адмиралы.
           </UIText>
 
-          <PagesMainFourSectionReadMore class="my-3" @custom:read-more="isReadMore = !isReadMore" />
+          <PagesMainFourSectionReadMore
+            class="my-3 relative left-[-12px]"
+            @custom:read-more="isReadMore = !isReadMore"
+          />
         </div>
 
         <div
@@ -69,18 +72,6 @@ const isReadMore: Ref<boolean> = ref(false);
 const { widthX } = usePageWidthWatcher();
 
 onMounted((): void => {
-  if (widthX.value <= 768) {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '#section-wrapper-4',
-        start: 'top 10%',
-        end: 'bottom bottom',
-        scrub: 1,
-      },
-    });
-    tl.fromTo('#section4img', { x: '80vw', y: 0 }, { x: 0, y: 0, duration: 10 });
-  }
-
   if (widthX.value > 768) {
     if (widthX.value > 1224) {
       const tl = gsap.timeline({

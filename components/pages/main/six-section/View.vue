@@ -1,5 +1,5 @@
 <template>
-  <div class="relative overflow-hidden h-[80vh] top-0 left-0 bg-[white]">
+  <div class="relative overflow-hidden md:h-[80vh] h-100vh top-0 left-0 bg-[white]">
     <div class="section6image w-full h-[100vh] bg-[white]" />
   </div>
 </template>
@@ -14,17 +14,19 @@ gsap.registerPlugin(ScrollTrigger);
 const { widthX } = usePageWidthWatcher();
 
 onMounted((): void => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#section-wrapper-6',
-      pin: true,
-      start: 'top 15%',
-      end: '+=300',
-      scrub: 2,
-    },
-  });
+  if (widthX.value > 768) {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#section-wrapper-6',
+        pin: true,
+        start: 'top 15%',
+        end: '+=300',
+        scrub: 2,
+      },
+    });
 
-  tl.to('.section6image', { x: 0, y: '-30%', duration: 2 });
+    tl.to('.section6image', { x: 0, y: '-30%', duration: 2 });
+  }
 });
 </script>
 

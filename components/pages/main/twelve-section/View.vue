@@ -1,6 +1,6 @@
 <template>
   <div class="w-full h-[100vh] flex bg-[white] relative">
-    <div class="lg:w-[70%] w-full h-full bg-[#483738]">
+    <div class="lg:w-[70%] w-full h-full bg-[#483738] md:pt-0 pt-10">
       <div class="px-[10%] py-[10%] flex flex-col justify-around h-full">
         <div>
           <UIText tag="h1" class="font-trajan text-[white] text-[calc(1vh+1vw*1.8)]">

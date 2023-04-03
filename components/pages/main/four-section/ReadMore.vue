@@ -1,6 +1,6 @@
 <template>
   <div class="read-more flex cursor-pointer" @click="readMore">
-    <div class="elem w-[30px] h-[3px] rotate-90 mt-1" />
+    <div class="elem w-[30px] h-[2px] rotate-90 mt-1" />
     <span class="font-helvetica text-[calc(1vh+1vw*0.9)] 2xl:text-[1.3rem]">
       {{ text }}
     </span>
@@ -30,7 +30,7 @@ const readMore = (): void => {
   top: 0;
   left: 0;
   width: 0;
-  height: 3px;
+  height: 2px;
   background: black;
   transition: all 1s ease;
   z-index: 100;
