@@ -4,7 +4,18 @@
       class="map w-full max-w-[1599px] h-full flex flex-col justify-center items-center"
       style="margin: 0 auto"
     >
-      <div is="section10textwrapper" class="w-full flex flex-col justify-around mt-0 md:mt-10">
+      <div class="w-full md:hidden inline mt-10">
+        <UIText
+          class="font-trajan text-black xl:text-[46px] lg:text-[40px] lg:leading-[55px] md:text-[24px] md:leading-[29px] text-[24px] max-[400px]:text-[24px] leading-[36px] md:mx-10 mx-5 text-left"
+        >
+          Высокотехнологичное оснащение для комфортной жизни
+        </UIText>
+      </div>
+
+      <div
+        id="section10textwrapper"
+        class="w-full md:flex hidden flex-col justify-around mt-0 md:mt-10"
+      >
         <UIText
           id="section10text1"
           class="font-trajan text-black xl:text-[46px] lg:text-[40px] lg:leading-[55px] md:text-[24px] md:leading-[29px] text-[24px] max-[400px]:text-[24px] leading-[36px] md:mx-10 mx-5 text-left"
@@ -19,9 +30,9 @@
         </UIText>
       </div>
 
-      <div class="flex items-center text-center max-w-[800px] mt-10">
+      <div class="flex items-center md:text-center text-left max-w-[800px] mt-10">
         <UIText
-          class="font-helvetica text-black xl:text-[18px] lg:text-[16px] md:text-[16px] text-[16px] max-[400px]:text-[12px] leading-[25px] mx-10"
+          class="font-helvetica text-black xl:text-[18px] lg:text-[16px] md:text-[16px] text-[16px] max-[400px]:text-[12px] leading-[25px] md:mx-10 mx-5"
         >
           Клубный проект «Римского-Корсакова, 22», вдохновленный утонченной концепцией бутикового
           жилья, предлагает жителям максимум комфорта и удобств. Апартаменты оснащены современными

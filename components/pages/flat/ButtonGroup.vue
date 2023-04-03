@@ -41,12 +41,12 @@
       :lock-scroll="options.lockScroll"
       :swipe-to-close="options.swipeToClose"
       class="flex justify-center items-center"
-      content-class="max-w-xl mx-4 p-4 bg-[white] rounded-lg space-y-2"
+      content-class="max-w-xl mx-4 p-8 bg-[white] rounded-lg space-y-2"
     >
       <SharedSuccess v-if="isSuccess" @custom:close-modal="close" />
 
       <div v-if="!isSuccess" class="flex flex-col justify-center items-center">
-        <UIText tag="h3" class="text-center font-helvetica text-[#8F6C51] text-[24px]">
+        <UIText tag="h3" class="text-center font-helvetica font-bold text-[#8F6C51] text-[22px]">
           Чтобы забронировать аппартамент <br />
           введите данные
         </UIText>

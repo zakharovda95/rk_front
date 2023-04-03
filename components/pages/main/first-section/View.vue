@@ -17,14 +17,14 @@
       />
     </div>
 
-    <div class="absolute top-0 left-0 w-full h-[100vh] z-[10]">
+    <div class="absolute md:top-0 top-[-5vh] left-0 w-full h-[100vh] z-[10]">
       <div class="flex flex-col w-full h-full justify-end">
         <div class="flex items-end">
           <div class="flex flex-col">
             <div id="section1text" class="flex flex-col justify-end ml-[10%]">
               <UIText
                 tag="h1"
-                class="font-trajan text-[white] md:text-[calc(1vh+1vw*2)] text-[2rem] mb-2"
+                class="font-trajan text-[white] md:text-[calc(1vh+1vw*2)] text-[1rem] mb-2"
               >
                 Клубный проект
               </UIText>
@@ -34,7 +34,7 @@
                 class="font-trajan text-[white] text-titleBrown md:hidden inline text-[2.3rem] mb-2"
               >
                 Римского <br />
-                Корсакова
+                Корсакова, 22
               </UIText>
 
               <UIText
@@ -78,6 +78,26 @@ onMounted(() => {
 
   scrollBarWidth.value = innerWidth - clientWidth;
 
+  if (widthX.value <= 768) {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        pin: false,
+        trigger: '#section-wrapper-1',
+        start: 'top top',
+        end: '+=200',
+        scrub: 2,
+      },
+    });
+
+    tl.fromTo(
+      '#header',
+      { y: '-130px' },
+      {
+        y: 0,
+        duration: 1,
+      },
+    );
+  }
   if (widthX.value > 768) {
     const tl = gsap.timeline({
       scrollTrigger: {

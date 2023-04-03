@@ -1,7 +1,7 @@
 <template>
   <NuxtLink class="el flex items-center gap-3 cursor-pointer">
     <span class="line" />
-    <UIText tag="p" class="font-helvetica font-[calc(1vw+1vh*1)]" :style="{ color }">
+    <UIText tag="p" class="text-[16px]" :style="{ color }">
       <slot />
     </UIText>
   </NuxtLink>

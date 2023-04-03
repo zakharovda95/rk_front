@@ -56,7 +56,7 @@ const classes = computed(() => {
     'border-titleBrown': props.border === 'beige',
     'text-[white]': props.color === 'white',
     'text-black': props.color === 'black',
-    'border-[red]': props.isError,
+    'error': props.isError,
   };
 });
 
@@ -66,5 +66,10 @@ const placeholder = computed(() => (props.border === 'beige' ? '#8F6C51' : 'ligh
 <style scoped lang="scss">
 input::placeholder {
   color: v-bind(placeholder);
+}
+
+.error {
+  border-bottom: 2px solid #a92d2d !important;
+  transition: 2s;
 }
 </style>

@@ -68,11 +68,9 @@ defineProps({
     type: Object as PropType<{ corpus: string; floor: string }>,
     required: true,
   },
-  // booklet: {
-  //   type: String,
-  //   required: true,
-  // },
+  booklet: {
+    type: String,
+    required: true,
+  },
 });
-
-const booklet = ref('http://185.26.120.121:8085/upload/booklet/1/6426a6c000e89.pdf');
 </script>

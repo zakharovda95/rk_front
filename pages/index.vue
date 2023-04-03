@@ -10,11 +10,11 @@
           <PagesMainSecondSectionView />
         </section>
 
-        <section id="section-wrapper-2.1" class="w-full h-[100vh]" v-if="widthX <= 768">
+        <section id="section-wrapper-2.1" class="w-full" v-if="widthX <= 768">
           <PagesMainSecondSectionViewMobile />
         </section>
 
-        <section id="section-wrapper-3" class="w-full h-[100vh]">
+        <section id="section-wrapper-3" class="w-full md:h-[100vh] h-[105vh]">
           <PagesMainThirdSectionView />
         </section>
 
@@ -26,7 +26,7 @@
           <PagesMainFiveSectionView />
         </section>
 
-        <section id="section-wrapper-6" class="w-full h-[100vh] bg-[white]">
+        <section id="section-wrapper-6" class="w-full md:h-[100vh] h-[40vh] bg-[white]">
           <PagesMainSixSectionView />
         </section>
 
@@ -38,7 +38,7 @@
           <PagesMainEightSectionView />
         </section>
 
-        <section id="section-wrapper-9" class="w-full h-[100vh] bg-[white]">
+        <section id="section-wrapper-9" class="w-full md:h-[100vh] h-[60vh] bg-[white]">
           <PagesMainNineSectionView />
         </section>
 

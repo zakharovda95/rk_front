@@ -13,10 +13,9 @@
       <div>
         <div class="inline md:hidden text-center">
           <UIText
-            class="font-trajan text-titleBrown xl:text-[46px] lg:text-[40px] lg:leading-[55px] md:text-[24px] md:leading-[29px] text-[24px] max-[400px]:text-[24px] leading-[36px]"
+            class="font-trajan text-titleBrown xl:text-[46px] lg:text-[40px] lg:leading-[55px] md:text-[24px] md:leading-[29px] text-[30px] max-[400px]:text-[24px] leading-[36px] my-5"
           >
-            Римского <br />
-            Корсакова
+            Римского Корсакова
           </UIText>
         </div>
         <PagesMainElevenSectionAddressBlock id="section11address" />
@@ -41,6 +40,17 @@ gsap.registerPlugin(ScrollTrigger);
 const { widthX } = usePageWidthWatcher();
 
 onMounted((): void => {
+  if (widthX.value <= 768) {
+    gsap.fromTo(
+      '#section11addressnumber',
+      { color: 'black' },
+      {
+        color: 'white',
+        duration: 1,
+      },
+    );
+  }
+
   if (widthX.value > 768) {
     const tl = gsap.timeline({
       paused: true,

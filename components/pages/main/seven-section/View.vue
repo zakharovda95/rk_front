@@ -4,17 +4,17 @@
       class="map w-full max-w-[1599px] h-full flex md:flex-row flex-col justify-around items-start gap-10"
       style="margin: 0 auto"
     >
-      <div id="section7textcontainer" class="lg:w-[30%] md:w-[40%] w-[80%] md:h-[300px] mx-5">
+      <div id="section7textcontainer" class="lg:w-[30%] md:w-[40%] w-[80%] mx-5">
         <UIText
           tag="h1"
-          class="font-trajan text-black mb-10 xl:text-[46px] lg:text-[40px] lg:leading-[55px] md:text-[24px] md:leading-[29px] text-[24px] max-[400px]:text-[24px] leading-[36px]"
+          class="font-trajan text-black xl:text-[46px] lg:text-[40px] lg:leading-[55px] md:text-[24px] md:leading-[29px] text-[24px] max-[400px]:text-[24px] leading-[36px]"
         >
           Окружение
         </UIText>
         <UIText
           id="section7endtext"
           tag="p"
-          class="font-helvetica text-black xl:text-[18px] lg:text-[16px] md:text-[16px] text-[16px] max-[400px]:text-[12px] leading-[25px]"
+          class="font-helvetica text-black xl:text-[18px] lg:text-[16px] md:text-[16px] text-[16px] max-[400px]:text-[12px] md:mt-7 mt-5 leading-[25px]"
         >
           Коломна — исторический район Санкт-Петербурга, один из уникальных мест, откуда быстро и
           просто можно добраться до любой точки исторического центра города на Неве.

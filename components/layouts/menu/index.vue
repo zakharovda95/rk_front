@@ -31,7 +31,7 @@
       <PagesMainFirstSectionBrand
         class="absolute top-[92vh] md:left-[12vw] left-[28vw] inline lg:hidden"
       />
-      <LayoutsMenuLinks class="links absolute top-[32vh]" />
+      <LayoutsMenuLinks class="links absolute top-[calc(1vw+1vh*20)]" />
     </div>
 
     <VueFinalModal
@@ -47,12 +47,12 @@
       :lock-scroll="options.lockScroll"
       :swipe-to-close="options.swipeToClose"
       class="flex justify-center items-center"
-      content-class="max-w-xl mx-4 p-4 bg-[white] rounded-lg space-y-2"
+      content-class="max-w-xl mx-4 p-8 bg-[white] rounded-lg space-y-2"
     >
       <SharedSuccess v-if="isSuccess" :text="text" @custom:close-modal="close" />
 
       <div v-if="!isSuccess" class="flex flex-col justify-center items-center">
-        <UIText tag="h3" class="text-center font-helvetica text-[#8F6C51] text-[24px]">
+        <UIText tag="h3" class="text-center font-helvetica font-bold text-[#8F6C51] text-[22px]">
           Введите данные <br />
           и мы Вам перезвоним.
         </UIText>

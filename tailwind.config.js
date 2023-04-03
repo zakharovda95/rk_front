@@ -17,6 +17,7 @@ module.exports = {
     fontFamily: {
       'trajan': ['Trajan', 'sans-serif'],
       'helvetica': ['Helvetica', 'sans-serif'],
+      'tiny': ['Tiny', 'sans-serif'],
     },
     extend: {},
   },

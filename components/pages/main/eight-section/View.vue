@@ -38,7 +38,7 @@
 
       <div
         id="section8text"
-        class="lg:w-[40%] md:w-3/4 w-[90%] h-full flex flex-col justify-center items-start lg:mt-0 mt-10"
+        class="lg:w-[40%] md:w-3/4 w-[90%] h-full flex flex-col justify-center items-start lg:mt-0 mt-10 md:mb-0 mb-10"
       >
         <UIText
           tag="h1"

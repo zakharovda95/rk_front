@@ -11,7 +11,7 @@
       ref="address"
       class="flex items-center justify-center w-[50vh] h-[50vh] max-w-[380px] max-h-[380px] bg-[white] mt-10"
     >
-      <UIText class="text-black text-[calc(1vh+1vw*12)] font-helvetica" tag="h1"> 22 </UIText>
+      <UIText class="text-black text-[calc(1vh+1vw*12)] font-tiny" tag="h1"> 22 </UIText>
     </div>
   </div>
 </template>

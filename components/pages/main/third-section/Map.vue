@@ -11,7 +11,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   @media (max-width: 768px) {
-    background-position: bottom left 30%;
+    background-position: left 30% bottom 10%;
   }
 }
 </style>

@@ -1,8 +1,13 @@
 <template>
-  <swiper :slides-per-view="1">
+  <swiper
+    :slides-per-view="1"
+    :pagination="true"
+    :modules="[Pagination]"
+    :style="{ '--swiper-pagination-color': 'white' }"
+  >
     <swiper-slide v-for="slide in data" :key="slide.id">
       <div
-        class="w-[70%] h-[400px] flex flex-col items-center justify-end text-center"
+        class="w-[90%] h-[30vh] flex flex-col items-center justify-start text-center"
         style="margin: auto"
       >
         <UIText class="font-helvetica text-[1.3rem] text-[white] mb-5">
@@ -23,6 +28,9 @@ import { Section9Type } from '~/helpers/types/constants/section-9.type';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 
+import { Pagination } from 'swiper';
+import 'swiper/css/pagination';
+
 defineProps({
   data: {
     type: Array as PropType<Section9Type[]>,
@@ -30,3 +38,5 @@ defineProps({
   },
 });
 </script>
+
+<style scoped lang="scss"></style>

@@ -8,7 +8,11 @@
         id="loader-block"
         class="w-full h-full bg-[white] flex justify-center items-center relative left-[-50vw]"
       >
-        <UIText id="loader-text" class="text-black text-[calc(1vh+1vw*12)] font-helvetica" tag="h1">
+        <UIText
+          id="loader-text"
+          class="text-black md:text-[calc(1vh+1vw*12)] text-[calc(1vh+1vw*30)] font-tiny"
+          tag="h1"
+        >
           22
         </UIText>
       </div>

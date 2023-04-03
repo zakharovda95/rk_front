@@ -1,6 +1,6 @@
 <template>
-  <div class="map w-full h-[100vh] bg-[#FCF9F4] relative">
-    <div class="w-full max-w-[1499px] flex flex-col justify-center" style="margin: 0 auto">
+  <div class="map w-full h-full bg-[#FCF9F4] relative">
+    <div class="w-full max-w-[1599px] flex flex-col justify-center" style="margin: 0 auto">
       <UIText
         tag="h1"
         id="section3text"

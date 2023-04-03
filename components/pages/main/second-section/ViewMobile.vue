@@ -1,25 +1,15 @@
 <template>
-  <div class="w-full h-full bg-[white] relative">
-    <img
-      id="section2img-1"
-      :src="`/img/background/${img}.png`"
-      alt="img2"
-      class="object-cover w-full h-[100vh]"
-    />
-
-    <div class="flex-col px-10">
+  <div class="w-full h-full bg-[white] relative pb-10">
+    <div class="flex-col px-5">
       <UIText
         id="section2text"
         tag="h1"
-        class="absolute top-[150px] font-trajan text-[white] w-[50%] md:text-[24px] md:leading-[29px] text-[24px] max-[400px]:text-[24px] leading-[36px]"
+        class="font-trajan text-black w-[80%] md:text-[24px] md:leading-[29px] text-[24px] max-[400px]:text-[24px] leading-[36px] mb-10"
       >
         Выберете свою идеальную планировку
       </UIText>
 
-      <PagesMainSecondSectionNavigation
-        @custom:select-floor="test($event)"
-        class="absolute z-20 bottom-10 right-0 md:w-[40%] w-80% mx-10"
-      />
+      <PagesMainSecondSectionMobileNavigation class="w-[90%]" />
     </div>
   </div>
 </template>

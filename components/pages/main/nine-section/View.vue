@@ -1,11 +1,11 @@
 <template>
-  <div class="section9image w-full h-[100vh] relative bg-[white]">
+  <div class="section9image w-full h-full relative bg-[white]">
     <div
       class="map w-full max-w-[1499px] h-full flex flex-col justify-around"
       style="margin: 0 auto"
     >
       <div
-        class="flex md:flex-row flex-col md:w-[70%] w-[90%] justify-center items-center h-[10%] gap-[5vw] md:ml-10 mx-5 relative top-[110px] max-[400px]:top-[50px]"
+        class="flex md:flex-row flex-col md:w-[70%] w-[90%] justify-center items-center h-[10%] gap-[5vw] md:ml-10 mx-5 relative md:top-[110px] top-[50px]"
         id="section9header"
       >
         <UIText

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col w-full p-5 w-[100vw] overflow-hidden">
+  <div class="flex flex-col bg-[#FCF9F4] w-full p-5 w-[100vw] overflow-hidden">
     <div class="w-full flex justify-between items-center mt-20">
       <UIText tag="h1" class="text-black font-trajan text-[calc(1vh+1vw*10)]">
         {{ data.data.number }}

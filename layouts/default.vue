@@ -1,10 +1,12 @@
 <template>
   <div>
     <LayoutsHeader
+      :booklet="booklet"
       :available-corpus-and-floor="availableCorpusAndFloor"
       v-if="!isThereOffset || isBurgerOpen"
     />
     <LayoutsExtendedHeader
+      :booklet="booklet"
       :available-corpus-and-floor="availableCorpusAndFloor"
       v-if="!isBurgerOpen"
     />
@@ -34,4 +36,6 @@ const availableCorpusAndFloor = computed(() =>
     ? { corpus: '2', floor: corpusData.value.c2[0] }
     : { corpus: '3', floor: corpusData.value.c3[0] },
 );
+
+const booklet = computed(() => commonStore.booklet);
 </script>

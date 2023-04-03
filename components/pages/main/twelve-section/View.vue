@@ -42,7 +42,9 @@
         alt="img"
         src="/img/background/footer-img.png"
         style="width: 100%; height: 100%; object-fit: cover; position: relative; left: -50vw"
+        class="z-[80]"
       />
+
       <LayoutsHeaderBooklet
         @click="scrollTo('#section-wrapper-1')"
         class="relative z-[90] bottom-[5vh] left-[30px]"

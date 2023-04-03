@@ -28,7 +28,7 @@ export const useFloorPageStore = defineStore('floor', {
         urlencoded.append('floor', body.floor);
 
         const { data } = (await useAsyncData('floor', () =>
-          $fetch(`http://185.26.120.121:8085/api/floor`, {
+          $fetch(`${config.public.BACK_API}/api/floor`, {
             method: 'POST',
             headers: {
               'accept': 'application/json',

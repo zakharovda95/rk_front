@@ -13,7 +13,7 @@
       <UIText
         tag="h1"
         id="section11addressnumber"
-        class="font-helvetica relative text-black z-[110] text-[white] text-[calc(1vw+1vh*12)]"
+        class="font-tiny relative text-black z-[110] text-[white] md:text-[calc(1vw+1vh*12)] text-[calc(1vw+1vh*20)]"
       >
         22
       </UIText>
@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <UIText class="font-helvetica text-black text-[calc(1vw+1vh*1)] max-[400px]:text-[0.9rem] mt-3">
+    <UIText class="font-helvetica text-black md:text-[calc(1vw+1vh*1)] text-[18px] mt-3">
       Адрес как музыка
     </UIText>
   </div>
