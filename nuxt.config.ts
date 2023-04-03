@@ -25,7 +25,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      BACK_API: '',
+      BACK_API: 'http://185.26.120.121:8085',
     },
   },
 });

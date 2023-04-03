@@ -19,6 +19,7 @@ FROM dependency-base AS production-base
 # build will also take care of building
 # if necessary
 COPY . .
+COPY .env .
 RUN npm run build
 
 FROM $NODE_VERSION-slim AS production
@@ -36,4 +37,5 @@ ENV NUXT_APP_VERSION=${NUXT_APP_VERSION}
 ENV NODE_ENV=production
 EXPOSE 3000
 # start the app
+CMD [ "source", ".env" ]
 CMD [ "node", "/app/.output/server/index.mjs" ]

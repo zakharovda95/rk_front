@@ -27,8 +27,6 @@ export const useFlatPageStore = defineStore('flat', {
         );
 
         this.flatData = data.value as object;
-
-        console.log(this.flatData);
       } catch (err) {
         console.log(err);
       } finally {
