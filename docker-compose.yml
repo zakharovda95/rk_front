@@ -15,6 +15,7 @@ services:
       - /app
     command: sh -c "node .output/server/index.mjs"
     stdin_open: true
+    restart: always
     tty: true
     networks:
       - default
