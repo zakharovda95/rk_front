@@ -1,0 +1,20 @@
+version: '3.6'
+
+services:
+  rk22_front:
+    ports:
+      - '3000:3000'
+    user: node
+    env_file:
+      - .env.production
+    build:
+      dockerfile: Dockerfile
+      context: .
+    working_dir: /app
+    volumes:
+      - /app
+    command: sh -c "node .output/server/index.mjs"
+    stdin_open: true
+    tty: true
+    networks:
+      - default

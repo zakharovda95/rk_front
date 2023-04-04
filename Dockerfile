@@ -3,11 +3,10 @@ ARG NODE_VERSION=node:16.15.1
 FROM $NODE_VERSION AS dependency-base
 
 RUN mkdir -p /app
+
 WORKDIR /app
 
-ARG NUXT_PUBLIC_BACK_API
-ENV NUXT_PUBLIC_BACK_API=${NUXT_PUBLIC_BACK_API}
-
+COPY .env.production .
 COPY package.json .
 COPY yarn.lock .
 RUN yarn install --frozen-lockfile
