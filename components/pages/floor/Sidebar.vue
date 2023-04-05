@@ -4,6 +4,12 @@
     :current-floor="currentFloor"
     :current-corpus="currentCorpus"
   />
+  <!--  <PagesFloorSide2Svg-->
+  <!--    v-if="currentCorpus === '3'"-->
+  <!--    class="w-full h-full"-->
+  <!--    :current-floor="currentFloor"-->
+  <!--    :current-corpus="currentCorpus"-->
+  <!--  />-->
 </template>
 
 <script setup lang="ts">

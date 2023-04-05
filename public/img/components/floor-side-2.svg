@@ -1,40 +1,49 @@
-<template>
-  <svg
-    version="1.1"
-    id="svg3"
-    viewBox="0 0 1920 1200"
-    preserveAspectRatio="xMinYMin slice"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    xmlns="http://www.w3.org/2000/svg"
-    width="600"
-  >
-    <defs id="defs136" />
-    <sodipodi:namedview
-      id="namedview134"
-      pagecolor="#ffffff"
-      bordercolor="#000000"
-      borderopacity="0.25"
-      inkscape:showpageshadow="2"
-      inkscape:pageopacity="0.0"
-      inkscape:pagecheckerboard="0"
-      inkscape:deskcolor="#d1d1d1"
-      showgrid="false"
-      inkscape:zoom="1.5320647"
-      inkscape:cx="59.39697"
-      inkscape:cy="554.15415"
-      inkscape:window-width="1920"
-      inkscape:window-height="1009"
-      inkscape:window-x="-8"
-      inkscape:window-y="-8"
-      inkscape:window-maximized="1"
-      inkscape:current-layer="side-menu-svg"
-    />
-    <g inkscape:groupmode="layer" inkscape:label="Image" id="g138">
-      <image
-        width="550"
-        height="1200"
-        preserveAspectRatio="none"
-        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAREAAAJACAYAAACqrlJBAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg132"
+   width="364"
+   height="768"
+   viewBox="0 0 364 768"
+   sodipodi:docname="floor-side-2.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs136" />
+  <sodipodi:namedview
+     id="namedview134"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.5320647"
+     inkscape:cx="59.39697"
+     inkscape:cy="554.15415"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="side-menu-svg" />
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
+     id="g138">
+    <image
+       width="364"
+       height="768"
+       preserveAspectRatio="none"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAREAAAJACAYAAACqrlJBAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA
 AXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAgFnSURBVHgB7P3ZjyZZdieInXvNvsW3WHKtysza
 WCySTXZxUU9r2C12S2qggRF6IEAPehEGAvSH6HH0JgzmURAgPUgvPRgIkqAHQTs108NeZthkk80m
 WcXaszIzMmPx9dvM7M75neXa/T53j/g83D08ItNOpoe7m9tndtdzz/mdLcS3/0miNQr6rW31e8Lv
@@ -2343,123 +2352,76 @@ VaA04bNrN8XOjZqdp4BqGkvzU9rrbuVM8GZ2NXtmd7J2F/Vudj4tdL6MX6OX/Ll+VWqDHOYv91+m
 3felnWvcvnbeq2Vun9Mh/HLX/kk2x4+zGWN827Pss6Dueg4c2zuus3sudFbQrqWzb53nPb//uOd2
 63x3x0nv0zNv/ffbY9Kf28r/A9SxfJLdHJ5VAAAAAElFTkSuQmCC
 "
-        id="image140"
-      />
+       id="image140" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="side-menu-svg"
+     inkscape:label="Image 1">
+    <g
+       id="g576"
+       class="sidebar-mask"
+       data-floor="4">
+      <path
+         style="fill:#ffffff;opacity:0.5"
+         d="m 113.07692,371.53846 250.61539,-0.46154 V 450 l -251.07693,0.92308 z"
+         id="path301"
+         class="sidebar-fill" />
+      <text
+         xml:space="preserve"
+         style="font-size:32px;fill:#000000"
+         x="185.53845"
+         y="424.61539"
+         id="text517"
+         class="sidebar-link"><tspan
+           sodipodi:role="line"
+           x="185.53845"
+           y="424.61539"
+           id="tspan519">4 этаж</tspan></text>
     </g>
-    <g inkscape:groupmode="layer" id="side-menu-svg" inkscape:label="Image 1">
-      <g id="g576" class="sidebar-mask" data-floor="4">
-        <path
-          style="fill: #ffffff; opacity: 0.5"
-          d="m 113.07692,371.53846 250.61539,-0.46154 V 450 l -251.07693,0.92308 z"
-          id="path301"
-          class="sidebar-fill"
-        />
-        <text
-          xml:space="preserve"
-          style="font-size: 32px; fill: #000000"
-          x="185.53845"
-          y="424.61539"
-          id="text517"
-          class="sidebar-link"
-        >
-          <tspan sodipodi:role="line" x="185.53845" y="424.61539" id="tspan519">4 этаж</tspan>
-        </text>
-      </g>
-      <g
-        id="g576-9"
-        class="sidebar-mask"
-        data-floor="3"
-        transform="translate(-0.23076778,96.230769)"
-      >
-        <path
-          style="opacity: 0.5; fill: #ffffff"
-          d="m 113.07692,371.53846 250.61539,-0.46154 V 450 l -251.07693,0.92308 z"
-          id="path301-6"
-          class="sidebar-fill"
-        />
-        <text
-          xml:space="preserve"
-          style="font-size: 32px; fill: #000000"
-          x="185.53845"
-          y="424.61539"
-          id="text517-7"
-          class="sidebar-link"
-        >
-          <tspan sodipodi:role="line" x="185.53845" y="424.61539" id="tspan519-1">3 этаж</tspan>
-        </text>
-      </g>
-      <g id="g576-9-5" class="sidebar-mask" data-floor="2" transform="translate(0.23076988,195)">
-        <path
-          style="opacity: 0.5; fill: #ffffff"
-          d="m 113.07692,371.53846 250.61539,-0.46154 V 450 l -251.07693,0.92308 z"
-          id="path301-6-0"
-          class="sidebar-fill"
-        />
-        <text
-          xml:space="preserve"
-          style="font-size: 32px; fill: #000000"
-          x="185.53845"
-          y="424.61539"
-          id="text517-7-5"
-          class="sidebar-link"
-        >
-          <tspan sodipodi:role="line" x="185.53845" y="424.61539" id="tspan519-1-2">2 этаж</tspan>
-        </text>
-      </g>
+    <g
+       id="g576-9"
+       class="sidebar-mask"
+       data-floor="3"
+       transform="translate(-0.23076778,96.230769)">
+      <path
+         style="opacity:0.5;fill:#ffffff"
+         d="m 113.07692,371.53846 250.61539,-0.46154 V 450 l -251.07693,0.92308 z"
+         id="path301-6"
+         class="sidebar-fill" />
+      <text
+         xml:space="preserve"
+         style="font-size:32px;fill:#000000"
+         x="185.53845"
+         y="424.61539"
+         id="text517-7"
+         class="sidebar-link"><tspan
+           sodipodi:role="line"
+           x="185.53845"
+           y="424.61539"
+           id="tspan519-1">3 этаж</tspan></text>
     </g>
-  </svg>
-</template>
-
-<script setup lang="ts">
-import { PropType } from '@vue/runtime-core';
-
-const props = defineProps({
-  currentFloor: {
-    type: String as PropType<'1' | '2' | '3' | '4' | '5'>,
-    required: true,
-  },
-  currentCorpus: {
-    type: String as PropType<'2' | '3'>,
-    required: true,
-  },
-});
-</script>
-
-<style scoped lang="scss">
-#side-menu-svg {
-  .sidebar-mask {
-    cursor: pointer;
-    .sidebar-fill {
-      opacity: 0 !important;
-    }
-
-    .sidebar-link {
-      font-family: Trajan, sans-serif;
-      fill: white !important;
-      font-size: 2rem !important;
-    }
-  }
-
-  .sidebar-mask:hover {
-    .sidebar-fill {
-      opacity: 0.5 !important;
-      transition: 0.2s;
-    }
-
-    .sidebar-link {
-      fill: #303030 !important;
-    }
-  }
-
-  .sidebar-mask-active {
-    .sidebar-fill {
-      opacity: 0.5 !important;
-      transition: 0.2s;
-    }
-
-    .sidebar-link {
-      fill: #303030 !important;
-    }
-  }
-}
-</style>
+    <g
+       id="g576-9-5"
+       class="sidebar-mask"
+       data-floor="2"
+       transform="translate(0.23076988,195)">
+      <path
+         style="opacity:0.5;fill:#ffffff"
+         d="m 113.07692,371.53846 250.61539,-0.46154 V 450 l -251.07693,0.92308 z"
+         id="path301-6-0"
+         class="sidebar-fill" />
+      <text
+         xml:space="preserve"
+         style="font-size:32px;fill:#000000"
+         x="185.53845"
+         y="424.61539"
+         id="text517-7-5"
+         class="sidebar-link"><tspan
+           sodipodi:role="line"
+           x="185.53845"
+           y="424.61539"
+           id="tspan519-1-2">2 этаж</tspan></text>
+    </g>
+  </g>
+</svg>

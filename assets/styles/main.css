@@ -22,7 +22,7 @@
 
 @font-face {
   font-family: 'Helvetica';
-  src: url('../fonts/HelveticaLt.ttf') format('truetype');
+  src: url('../fonts/HelveticaLt.otf') format('truetype');
   font-style: normal;
   font-weight: normal;
 }
@@ -36,7 +36,7 @@
 
 @font-face {
   font-family: 'Tiny';
-  src: url('../fonts/helvetica.otf') format('truetype');
+  src: url('../fonts/HelveticaLt.otf') format('truetype');
   font-style: normal;
   font-weight: normal;
 }

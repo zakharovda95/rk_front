@@ -66,6 +66,8 @@
             placeholder="Ваш телефон"
             :model-value="body.phone"
             @custom:update-model-value="body.phone = $event"
+            v-maska
+            data-maska="+7 (###) ### ## ##"
           />
           <UIButton
             effect="beige"
@@ -89,6 +91,8 @@
 <script setup lang="ts">
 import { ModalsContainer, VueFinalModal } from 'vue-final-modal';
 import { useFlatPageStore } from '~/store/flat.store';
+import { vMaska } from 'maska';
+
 defineProps({
   mobile: {
     type: Boolean,

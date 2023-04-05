@@ -74,6 +74,8 @@
             :model-value="body.phone"
             @custom:update-model-value="body.phone = $event"
             :is-error="errPhone"
+            v-maska
+            data-maska="+7 (###) ### ## ##"
           />
           <UIButton
             effect="beige"
@@ -98,6 +100,7 @@
 import { ModalsContainer, VueFinalModal } from 'vue-final-modal';
 import { useMainPageStore } from '~/store/main-page.store';
 import { CallFormData } from '~/helpers/types/pages/index-page.type';
+import { vMaska } from 'maska';
 
 defineProps({
   corpusData: {

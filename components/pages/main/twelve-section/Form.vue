@@ -13,6 +13,8 @@
       :model-value="body.phone"
       :is-error="errPhone"
       @custom:update-model-value="body.phone = $event"
+      v-maska
+      data-maska="+7 (###) ### ## ##"
     />
     <UIButton
       @click.prevent="call"
@@ -51,6 +53,7 @@
 import { useMainPageStore } from '~/store/main-page.store';
 import { CallFormData } from '~/helpers/types/pages/index-page.type';
 import { ModalsContainer, VueFinalModal } from 'vue-final-modal';
+import { vMaska } from 'maska';
 
 const getInitialValues = () => ({
   teleportTo: 'body',
