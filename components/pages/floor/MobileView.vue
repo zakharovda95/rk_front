@@ -13,6 +13,15 @@
         :current-corpus="currentCorpus"
         :apartments="availableApartments"
       />
+
+      <div
+        v-if="isLoading.floor"
+        class="min-w-[1000px] min-h-[245px]  bg-titleBrown opacity-[0.3] flex justify-start items-center"
+      >
+        <UIText tag="h1" class="font-trajan text-black text-[2rem] ml-[25vw] text-center">
+          Загрузка
+        </UIText>
+      </div>
     </div>
 
     <PagesFloorScroll />

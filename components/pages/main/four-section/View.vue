@@ -47,7 +47,7 @@
 
         <div
           id="section4imgwrapper"
-          class="2xl:w-[40%] 2xl:h-[80%] xl:w-[40%] xl:h-[80%] lg:w-[40%] lg:h-[70%] md:w-[45%] md:h-[70%] w-[85%] h-[55vh] overflow-hidden md:mt-0 my-10"
+          class="2xl:w-[40%] 2xl:h-[80%] xl:w-[40%] xl:h-[80%] lg:w-[40%] lg:h-[70%] md:w-[45%] md:h-[70%] w-full h-[55vh] overflow-hidden md:mt-0 my-10"
         >
           <img
             id="section4img"
@@ -72,6 +72,23 @@ const isReadMore: Ref<boolean> = ref(false);
 const { widthX } = usePageWidthWatcher();
 
 onMounted((): void => {
+  if (widthX.value <= 768) {
+    gsap.fromTo(
+      '#section4imgwrapper',
+      { x: '100%' },
+      {
+        x: 0,
+        duration: 2,
+        scrollTrigger: {
+          trigger: '#section-wrapper-4',
+          start: () => 'top 10%',
+          end: () => '+=150',
+          scrub: 2,
+        },
+      },
+    );
+  }
+
   if (widthX.value > 768) {
     if (widthX.value > 1224) {
       const tl = gsap.timeline({
