@@ -46,7 +46,9 @@
         :key="el.id"
       >
         <UIText class="font-trajan text-black text-[2rem]">{{ el.value }}</UIText>
-        <UIText class="font-helvetica text-black text-[1.1rem]">{{ el.name }}</UIText>
+        <UIText class="font-helvetica text-black text-[1.1rem] relative top-2">{{
+          el.name
+        }}</UIText>
       </div>
       <UIText
         v-if="isCorpusActive"
@@ -100,6 +102,13 @@ const info = computed(() => [
     id: 4,
     name: 'этаж',
     value: props.data.data.floor,
+  },
+  {
+    id: 5,
+    name: 'стоимость',
+    value: props.data.data.price
+      ? props.data.data.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + '₽'
+      : 'нет цены',
   },
 ]);
 

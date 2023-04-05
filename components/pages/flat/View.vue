@@ -28,6 +28,18 @@
             </template>
             <template #name> общая площадь </template>
           </PagesFlatInfo>
+
+          <PagesFlatInfo>
+            <template #value>
+              {{
+                data.data.price
+                  ? data.data.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+                  : 'нет цены'
+              }}
+              <small v-if="data.data.price" class="relative bottom-[10px]">&#8381;</small>
+            </template>
+            <template #name> стоимость </template>
+          </PagesFlatInfo>
         </div>
       </div>
 
@@ -80,7 +92,7 @@
 </template>
 
 <script setup lang="ts">
-defineProps({
+const props = defineProps({
   data: {
     type: Object,
     required: true,
@@ -94,4 +106,5 @@ defineProps({
 const isEmptyPlan = ref(true);
 
 const config = useRuntimeConfig();
+console.log(props.data.data.price);
 </script>
