@@ -16,11 +16,9 @@
 
       <div
         v-if="isLoading.floor"
-        class="min-w-[1000px] min-h-[245px]  bg-titleBrown opacity-[0.3] flex justify-start items-center"
+        class="w-full min-h-[245px] bg-titleBrown opacity-[0.3] flex items-center justify-center"
       >
-        <UIText tag="h1" class="font-trajan text-black text-[2rem] ml-[25vw] text-center">
-          Загрузка
-        </UIText>
+        <UIText tag="h1" class="font-trajan text-black text-[16px] text-center"> загрузка </UIText>
       </div>
     </div>
 
