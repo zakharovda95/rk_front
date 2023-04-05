@@ -10,7 +10,7 @@
       >
         <UIText
           id="loader-text"
-          class="text-black md:text-[calc(1vh+1vw*12)] text-[calc(1vh+1vw*30)] font-tiny"
+          class="text-black md:text-[calc(1vh+1vw*12)] text-[calc(1vh+1vw*23)] font-regular font-bold"
           tag="h1"
         >
           22
@@ -29,6 +29,8 @@ gsap.registerPlugin(ScrollTrigger);
 const emit = defineEmits(['custom:is-loaded']);
 
 onMounted((): void => {
+  console.log(window, screen);
+
   const tl = gsap.timeline();
   tl.to('#loader-block', { x: '+50vw', duration: 2, ease: 'SlowMo.easeOut' });
   tl.fromTo('#loader-text', { opacity: 0 }, { opacity: 1, duration: 1 });

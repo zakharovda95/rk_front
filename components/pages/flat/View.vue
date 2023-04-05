@@ -32,11 +32,9 @@
           <PagesFlatInfo>
             <template #value>
               {{
-                data.data.price
-                  ? data.data.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
-                  : 'нет цены'
+                data.data.price ? Number(data.data.price / 1000000).toFixed(1) : 'цена по запросу'
               }}
-              <small v-if="data.data.price" class="relative bottom-[10px]">&#8381;</small>
+              млн. <small v-if="data.data.price" class="relative bottom-[10px]">&#8381;</small>
             </template>
             <template #name> стоимость </template>
           </PagesFlatInfo>

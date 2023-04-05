@@ -18,6 +18,7 @@ module.exports = {
       'trajan': ['Trajan', 'sans-serif'],
       'helvetica': ['Helvetica', 'sans-serif'],
       'tiny': ['Tiny', 'sans-serif'],
+      'regular': ['Regular', 'sans-serif'],
     },
     extend: {},
   },
