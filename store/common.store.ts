@@ -18,7 +18,7 @@ export const useCommonStore = defineStore('common', {
       try {
         const config = useRuntimeConfig();
 
-        const { data } = (await useAsyncData(`booklet-${Date.now()}`, () =>
+        const { data } = (await useAsyncData(`booklet`, () =>
           $fetch(`${config.public.BACK_API}/api/booklet`, {
             method: 'GET',
             headers: {

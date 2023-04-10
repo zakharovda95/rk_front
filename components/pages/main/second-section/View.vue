@@ -76,6 +76,8 @@ const img = computed(() => {
       case '5':
         return 'floor-5';
     }
+  } else {
+    return 'floor-2';
   }
 });
 

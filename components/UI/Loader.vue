@@ -6,7 +6,7 @@
     <div class="w-[50vw] h-[50vw] max-w-[380px] max-h-[380px] bg-titleBrown overflow-hidden">
       <div
         id="loader-block"
-        class="w-full h-full bg-[white] flex justify-center items-center relative left-[-50vw]"
+        class="w-full h-full bg-[white] flex justify-center items-center relative left-[-55vw]"
       >
         <UIText
           id="loader-text"
@@ -30,9 +30,9 @@ const emit = defineEmits(['custom:is-loaded']);
 
 onMounted((): void => {
   const tl = gsap.timeline();
-  tl.to('#loader-block', { x: '+50vw', duration: 2, ease: 'SlowMo.easeOut' });
+  tl.to('#loader-block', { x: '+55vw', duration: 2, ease: 'SlowMo.easeOut' });
   tl.fromTo('#loader-text', { opacity: 0 }, { opacity: 1, duration: 1 });
-  tl.to('#loader-block', { x: '+100vw', duration: 0.5 });
+  tl.to('#loader-block', { x: '+110vw', duration: 0.5 });
   tl.to('#loader', { opacity: 0, duration: 0.5 });
   setTimeout(() => {
     emit('custom:is-loaded');

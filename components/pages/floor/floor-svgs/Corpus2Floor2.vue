@@ -6,35 +6,10 @@
     fill="none"
     version="1.1"
     id="svg610"
-    sodipodi:docname="2 э.svg"
     xml:space="preserve"
-    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
-    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns="http://www.w3.org/2000/svg"
-    xmlns:svg="http://www.w3.org/2000/svg"
   >
-    <sodipodi:namedview
-      id="namedview612"
-      pagecolor="#ffffff"
-      bordercolor="#000000"
-      borderopacity="0.25"
-      inkscape:showpageshadow="2"
-      inkscape:pageopacity="0.0"
-      inkscape:pagecheckerboard="0"
-      inkscape:deskcolor="#d1d1d1"
-      showgrid="false"
-      inkscape:zoom="1.549884"
-      inkscape:cx="397.4491"
-      inkscape:cy="167.75449"
-      inkscape:window-width="1920"
-      inkscape:window-height="1009"
-      inkscape:window-x="-8"
-      inkscape:window-y="-8"
-      inkscape:window-maximized="1"
-      inkscape:current-layer="38"
-    />
     <g clip-path="url(#clip0_1_944)" id="g599">
       <rect width="862" height="232" fill="#FCF9F4" id="rect567" />
       <rect

@@ -63,7 +63,7 @@ onMounted((): void => {
 
 <style scoped lang="scss">
 .section9image {
-  background-image: url('public/img/background/section9bg.png');
+  background-image: url('/img/background/section9bg.png');
   background-size: cover;
   background-position: left top;
 }
