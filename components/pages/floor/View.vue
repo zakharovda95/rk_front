@@ -73,10 +73,10 @@
             </div>
           </div>
           <div>
-            <div class="w-[70vw] min-h-[35vh]">
+            <div class="w-[70vw] min-h-[30vh] h-auto">
               <SharedFloorPlan
                 v-if="!isLoading.floor"
-                class="w-[70vw] h-auto min-h-[35vh]"
+                class="w-[70vw] h-full min-h-[calc(1vw+1vh*20)]"
                 :tag="tag"
                 :current-floor="currentFloor"
                 :current-corpus="currentCorpus"
@@ -85,11 +85,9 @@
 
               <div
                 v-if="isLoading.floor"
-                class="w-[69vw] h-[35vh] bg-titleBrown opacity-[0.3] flex justify-center items-center"
+                class="w-[69vw] bg-titleBrown opacity-[0.3] flex justify-center items-center"
               >
-                <UIText tag="h1" class="font-trajan text-black text-[calc(1vh+1vw*1)] text-center">
-                  Загрузка
-                </UIText>
+                <UIText tag="h1" class="font-trajan text-black text-center"> Загрузка </UIText>
               </div>
             </div>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="imgg relative">
-    <img width="4096" height="1106" class="absolute z-20" src="/img/components/plan/c2f2.svg" />
+    <img width="4096" height="232" class="absolute z-20" src="/img/components/plan/c2f2.svg" />
     <svg
       class="absolute z-40"
       viewBox="0 0 862 232"

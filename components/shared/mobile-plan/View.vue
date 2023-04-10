@@ -1,6 +1,6 @@
 <template>
   <div class="w-full flex flex-col justify-center items-center">
-    <div id="d&d-wrapper" class="container w-full min-h-[245px] mt-10 overflow-scroll cursor-grab">
+    <div class="container relative w-full min-h-[245px] mt-10 overflow-scroll cursor-grab">
       <LazySharedFloorPlan
         class="min-w-[1000px] ml-[-40px]"
         :class="{ 'ml-[-40px]': currentCorpus === '3', 'ml-[-65px]': currentCorpus === '2' }"
