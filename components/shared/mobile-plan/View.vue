@@ -1,24 +1,26 @@
 <template>
-  <div id="d&d-wrapper" class="w-full min-h-[245px] mt-10 overflow-scroll">
-    <SharedFloorPlan
-      class="min-w-[1000px] ml-[-40px]"
-      :class="{ 'ml-[-40px]': currentCorpus === '3', 'ml-[-65px]': currentCorpus === '2' }"
-      v-if="!isLoading"
-      :tag="tag"
-      :current-floor="currentFloor"
-      :current-corpus="currentCorpus"
-      :apartments="availableApartments"
-    />
+  <div class="w-full flex flex-col justify-center items-center">
+    <div id="d&d-wrapper" class="w-full min-h-[245px] mt-10 overflow-scroll">
+      <SharedFloorPlan
+        class="min-w-[1000px] ml-[-40px]"
+        :class="{ 'ml-[-40px]': currentCorpus === '3', 'ml-[-65px]': currentCorpus === '2' }"
+        v-if="!isLoading"
+        :tag="tag"
+        :current-floor="currentFloor"
+        :current-corpus="currentCorpus"
+        :apartments="availableApartments"
+      />
 
-    <div
-      v-if="isLoading"
-      class="w-full min-h-[245px] bg-titleBrown opacity-[0.3] flex items-center justify-center"
-    >
-      <UIText tag="h1" class="font-trajan text-black text-[16px] text-center"> загрузка </UIText>
+      <div
+        v-if="isLoading"
+        class="w-full min-h-[245px] bg-titleBrown opacity-[0.3] flex items-center justify-center"
+      >
+        <UIText tag="h1" class="font-trajan text-black text-[16px] text-center"> загрузка </UIText>
+      </div>
     </div>
-  </div>
 
-  <SharedMobilePlanScroll style="margin: auto" />
+    <SharedMobilePlanScroll style="margin: auto" />
+  </div>
 </template>
 
 <script setup lang="ts">

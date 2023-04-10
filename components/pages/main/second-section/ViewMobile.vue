@@ -1,15 +1,16 @@
 <template>
-  <div class="w-full h-full bg-[white] relative pb-10">
+  <div class="w-full h-full bg-bg relative pb-10">
     <div class="flex-col px-5">
       <UIText
         id="section2text"
         tag="h1"
-        class="font-trajan text-black w-[80%] md:text-[24px] md:leading-[29px] text-[24px] max-[400px]:text-[24px] leading-[36px] mb-10"
+        class="font-trajan text-black w-[80%] md:text-[24px] md:leading-[29px] text-[24px] max-[400px]:text-[24px] leading-[36px]"
       >
         Выберете свою идеальную планировку
       </UIText>
 
       <SharedMobilePlanView
+        class="w-full relative left-[-10px]"
         :is-loading="isLoading"
         :current-corpus="corpusData.corpus"
         :current-floor="corpusData.floor"
@@ -17,7 +18,7 @@
         :available-apartments="availableApartments"
       />
 
-      <PagesMainSecondSectionMobileNavigation class="w-[90%]" />
+      <PagesMainSecondSectionMobileNavigation class="w-[90%] mt-5" />
     </div>
   </div>
 </template>

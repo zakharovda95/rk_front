@@ -12,6 +12,7 @@ module.exports = {
       titleBrown: '#E3BC98',
       lightGray: '#F1F0EE',
       black: '#252120',
+      bg: '#FCF9F4',
     },
 
     fontFamily: {

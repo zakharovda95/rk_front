@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full bg-[white] relative">
+  <div class="w-full h-full bg-bg relative">
     <div class="w-full h-full max-w-[1599px] pt-[12vh]" style="margin: 0 auto">
       <UIText
         class="font-trajan text-black xl:text-[26px] xl:leading-[40px] lg:text-[20px] lg:leading-[32px] md:text-[18px] md:leading-[32px] text-[16px] leading-[28px] max-[400px]:text-[1rem] w-full md:mx-10 mx-5"
