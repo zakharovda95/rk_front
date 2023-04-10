@@ -1,5 +1,5 @@
 <template>
-  <div class="section9image w-full h-full relative bg-[white]">
+  <div class="section9image w-full h-full relative bg-bg">
     <div
       class="map w-full max-w-[1499px] h-full flex flex-col justify-around"
       style="margin: 0 auto"

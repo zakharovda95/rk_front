@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full min-h-[100vh] bg-[white] flex justify-between relative p-5">
+  <div class="w-full min-h-[100vh] bg-bg flex justify-between relative p-5">
     <div
       class="map w-full max-w-[1599px] h-full flex md:flex-row flex-col-reverse items-start justify-around"
       style="margin: 0 auto"
@@ -23,7 +23,7 @@
           <UIText
             tag="p"
             id="section5endtext"
-            class="font-helvetica xl:text-[18px] lg:text-[16px] md:text-[16px] text-[16px] max-[400px]:text-[12px] leading-[25px]text-black md:mt-7 mt-5"
+            class="font-helvetica xl:text-[18px] lg:text-[16px] md:text-[16px] text-[16px] max-[400px]:text-[12px] leading-[25px] text-black md:mt-7 mt-5"
           >
             Реконструированное 6-этажное здание казармгвардейского экипажа начала XVIII века, в
             котором будут располагаться частные апартаменты и отель с расширенной инфраструктурой и

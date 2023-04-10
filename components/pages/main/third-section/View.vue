@@ -1,5 +1,5 @@
 <template>
-  <div class="map w-full h-full bg-[#FCF9F4] relative">
+  <div class="map w-full h-full bg-bg relative">
     <div class="w-full max-w-[1599px] flex flex-col justify-center" style="margin: 0 auto">
       <UIText
         tag="h1"

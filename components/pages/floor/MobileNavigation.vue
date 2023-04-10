@@ -3,7 +3,7 @@
     <div class="flex flex-col">
       <UIText class="font-helvetica text-[lightgray] mb-1">этажность</UIText>
       <div class="flex gap-3">
-        <div v-for="el in data[1].values" :key="el.id">
+        <div v-for="el in data[1].values" :key="el.id" class="cursor-pointer">
           <UIButton
             v-if="availableFloors.includes(el.name)"
             @click="$router.push(`/corpus-${currentCorpus}/floor-${el.name}`)"
@@ -22,7 +22,7 @@
     <div class="flex flex-col">
       <UIText class="font-helvetica text-[lightgray] mb-1">корпус</UIText>
       <div class="flex gap-3">
-        <div v-for="el in data[0].values" :key="el.id">
+        <div v-for="el in data[0].values" :key="el.id" class="cursor-pointer">
           <UIButton
             @click="$router.push(`/corpus-${el.name}/floor-${availableFloors[0]}`)"
             tag="a"

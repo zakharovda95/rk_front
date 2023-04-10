@@ -30,7 +30,7 @@ import { useCorpusPageStore } from '~/store/corpus.store';
 
 definePageMeta({
   layout: 'default',
-  middleware: ['fetching-floors', 'scroll-to-top'],
+  middleware: 'fetching-floors',
   scrollToTop: true,
 });
 

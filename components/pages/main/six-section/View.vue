@@ -1,6 +1,6 @@
 <template>
-  <div class="relative overflow-hidden md:h-[80vh] h-[40vh] top-0 left-0 bg-[white]">
-    <div class="section6image w-full md:h-[100vh] h-full bg-[white]" />
+  <div class="relative overflow-hidden md:h-[80vh] h-[40vh] top-0 left-0 bg-bg">
+    <div class="section6image w-full md:h-[100vh] h-full bg-bg" />
   </div>
 </template>
 

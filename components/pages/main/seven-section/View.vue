@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full flex justify-around relative bg-[white] pt-10 md:pt-0">
+  <div class="w-full h-full flex justify-around relative bg-bg pt-10 md:pt-0">
     <div
       class="map w-full max-w-[1599px] h-full flex md:flex-row flex-col justify-around items-start gap-10"
       style="margin: 0 auto"

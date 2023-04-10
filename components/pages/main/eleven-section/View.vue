@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-[100vh] relative bg-[white]">
+  <div class="w-full h-[100vh] relative bg-bg">
     <div
       class="map w-full max-w-[1599px] h-full flex justify-around items-center"
       style="margin: 0 auto"

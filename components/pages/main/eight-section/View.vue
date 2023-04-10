@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full h-full relative bg-[white] flex justify-between items-center p-5">
+  <div class="w-full h-full relative bg-bg flex justify-between items-center p-5">
     <div
-      class="map w-full max-w-[1599px] bg-[white] h-full flex lg:flex-row flex-col items-start lg:items-center justify-around"
+      class="map w-full max-w-[1599px] bg-bg h-full flex lg:flex-row flex-col items-start lg:items-center justify-around"
       style="margin: 0 auto"
     >
       <div class="lg:inline hidden">
@@ -24,7 +24,7 @@
         </div>
       </div>
 
-      <div class="inline lg:hidden h-[80vw] w-full">
+      <div class="inline lg:hidden h-[80vw] w-full bg-bg">
         <swiper
           class="f-full w-full"
           :slides-per-view="1"

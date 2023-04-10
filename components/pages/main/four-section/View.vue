@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full min-h-[100vh] md:pt-[10vh] pt-0 relative bg-[white]">
+  <div class="w-full min-h-[100vh] md:pt-[10vh] pt-0 relative bg-bg">
     <div class="map w-full max-w-[1599px] h-full flex flex-col" style="margin: 0 auto">
       <div class="md:w-[60%] w-full">
         <UIText
