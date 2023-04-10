@@ -76,7 +76,7 @@
             <div class="w-[70vw] min-h-[35vh]">
               <SharedFloorPlan
                 v-if="!isLoading.floor"
-                class="w-[70vw] h-auto"
+                class="w-[70vw] h-auto min-h-[35vh]"
                 :tag="tag"
                 :current-floor="currentFloor"
                 :current-corpus="currentCorpus"

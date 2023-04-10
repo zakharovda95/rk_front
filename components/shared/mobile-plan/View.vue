@@ -1,6 +1,6 @@
 <template>
   <div class="w-full flex flex-col justify-center items-center">
-    <div id="d&d-wrapper" class="w-full min-h-[245px] mt-10 overflow-scroll cursor-grab">
+    <div id="d&d-wrapper" class="container w-full min-h-[245px] mt-10 overflow-scroll cursor-grab">
       <LazySharedFloorPlan
         class="min-w-[1000px] ml-[-40px]"
         :class="{ 'ml-[-40px]': currentCorpus === '3', 'ml-[-65px]': currentCorpus === '2' }"
@@ -48,3 +48,11 @@ const props = defineProps({
   },
 });
 </script>
+
+<style scoped lang="scss">
+.container {
+  @media only screen and (max-width: 768px) {
+    min-height: -webkit-fill-available;
+  }
+}
+</style>
