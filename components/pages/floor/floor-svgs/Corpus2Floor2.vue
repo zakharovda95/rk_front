@@ -1,5 +1,5 @@
 <template>
-  <div class="test">
+  <div class="plan">
     <svg
       class="w-full h-full"
       viewBox="0 0 862 232"
@@ -294,7 +294,7 @@
 </template>
 
 <style scoped lang="scss">
-.test {
+.plan {
   background-image: url('/img/components/plan/c2f2.svg');
   background-size: contain;
   background-repeat: no-repeat;
