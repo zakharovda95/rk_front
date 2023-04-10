@@ -29,8 +29,6 @@ gsap.registerPlugin(ScrollTrigger);
 const emit = defineEmits(['custom:is-loaded']);
 
 onMounted((): void => {
-  console.log(window, screen);
-
   const tl = gsap.timeline();
   tl.to('#loader-block', { x: '+50vw', duration: 2, ease: 'SlowMo.easeOut' });
   tl.fromTo('#loader-text', { opacity: 0 }, { opacity: 1, duration: 1 });

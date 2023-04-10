@@ -69,7 +69,7 @@
 
         <div class="relative top-[10vh]">
           <PagesFlatButtonGroup
-            :link="`${'http://185.26.120.121:8085' + data.data.pdf}`"
+            :link="`${config.public.BACK_API + data.data.pdf}`"
             class="flex gap-5 justify-center items-center"
           />
         </div>
@@ -104,5 +104,4 @@ const props = defineProps({
 const isEmptyPlan = ref(true);
 
 const config = useRuntimeConfig();
-console.log(props.data.data.price);
 </script>

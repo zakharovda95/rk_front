@@ -2,27 +2,13 @@
   <div class="w-[100vw] bg-[#FCF9F4] p-5 flex flex-col items-center justify-center overflow-hidden">
     <PagesFloorInfo class="mt-[calc(1vw+1vh*10)]" :floor-info="floorInfo" />
 
-    <div id="d&d-wrapper" class="w-full min-h-[245px] mt-10 overflow-scroll">
-      <PagesFloorPlan
-        id="d&d"
-        class="min-w-[1000px] ml-[-40px]"
-        :class="{ 'ml-[-40px]': currentCorpus === '3', 'ml-[-65px]': currentCorpus === '2' }"
-        v-if="!isLoading.floor"
-        :tag="tag"
-        :current-floor="currentFloor"
-        :current-corpus="currentCorpus"
-        :apartments="availableApartments"
-      />
-
-      <div
-        v-if="isLoading.floor"
-        class="w-full min-h-[245px] bg-titleBrown opacity-[0.3] flex items-center justify-center"
-      >
-        <UIText tag="h1" class="font-trajan text-black text-[16px] text-center"> загрузка </UIText>
-      </div>
-    </div>
-
-    <PagesFloorScroll />
+    <SharedMobilePlanView
+      :is-loading="isLoading.floor"
+      :current-corpus="currentCorpus"
+      :current-floor="currentFloor"
+      :available-apartments="availableApartments"
+      :tag="tag"
+    />
 
     <PagesFloorMobileNavigation
       class="my-10"
@@ -35,10 +21,6 @@
 
 <script setup lang="ts">
 import { FloorInfoType } from '~/helpers/types/pages/floor-page.type';
-// import { gsap } from 'gsap';
-// import Draggable from 'gsap/Draggable';
-//
-// gsap.registerPlugin(Draggable);
 
 const props = defineProps({
   isLoading: {

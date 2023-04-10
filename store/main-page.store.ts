@@ -22,8 +22,6 @@ export const useMainPageStore = defineStore('main', {
           }),
         );
 
-        console.log(data);
-
         return data.value;
       } catch (err) {
         console.log(err);

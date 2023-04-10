@@ -74,7 +74,7 @@
           </div>
           <div>
             <div class="w-[70vw] min-h-[35vh]">
-              <PagesFloorPlan
+              <SharedFloorPlan
                 v-if="!isLoading.floor"
                 class="w-[70vw] h-auto"
                 :tag="tag"

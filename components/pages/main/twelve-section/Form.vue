@@ -87,8 +87,6 @@ const call = async (): Promise<void> => {
 
   errPhone.value = !body.value.phone;
 
-  console.log(errName.value, errPhone.value);
-
   if (body.value.name && body.value.phone) {
     const res = await mainPageStore.call(body.value);
     if (res.success) {

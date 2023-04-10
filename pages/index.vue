@@ -63,8 +63,25 @@ import usePageOffsetWatcher from '~/composables/usePageOffsetWatcher';
 import { useCommonStore } from '~/store/common.store';
 import { usePageHeightWatcher } from '~/composables/usePageHeightWatcker';
 import { usePageWidthWatcher } from '~/composables/usePageWidthWatcher';
+import { useFloorPageStore } from '~/store/floor-page.store';
+import { useCorpusPageStore } from '~/store/corpus.store';
+import { FloorFormDataType } from '~/helpers/types/pages/floor-page.type';
+
+definePageMeta({
+  middleware: 'fetching-available-floor',
+});
 
 const commonStore = useCommonStore();
+
+const store = useFloorPageStore();
+const corpusStore = useCorpusPageStore();
+const firstAvailableCorpusAndFloor = computed(() => corpusStore.firstAvailableCorpusAndFloor);
+
+await store.initFloorData({
+  entrance: firstAvailableCorpusAndFloor.value.corpus,
+  floor: firstAvailableCorpusAndFloor.value.floor,
+} as FloorFormDataType);
+
 const offset = usePageOffsetWatcher();
 
 const { widthX } = usePageWidthWatcher();

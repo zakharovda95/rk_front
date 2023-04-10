@@ -61,7 +61,7 @@
     <div class="w-full">
       <PagesFlatButtonGroup
         mobile
-        :link="`${'http://185.26.120.121:8085' + data.data.pdf}`"
+        :link="`${config.public.BACK_API + data.data.pdf}`"
         class="flex gap-3 flex-col-reverse justify-center items-center"
       />
     </div>

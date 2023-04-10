@@ -15,8 +15,6 @@ const isLoaded = ref(true);
 
 const config = useRuntimeConfig();
 
-console.log(config);
-
 // onMounted(async () => {
 //   commonStore.audio = await new Audio('/mp3/bg.mp3');
 // });

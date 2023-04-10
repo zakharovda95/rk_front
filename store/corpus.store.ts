@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia';
 import { useAsyncData } from '#app';
+import { CorpusStoreType } from '~/helpers/types/stores/corpus-store.type';
 
 export const useCorpusPageStore = defineStore('corpus', {
   state: () =>
@@ -7,7 +8,11 @@ export const useCorpusPageStore = defineStore('corpus', {
       isLoadingCorpus: false,
       corpusData: {},
       corpusActive: {},
-    } as any),
+      firstAvailableCorpusAndFloor: {
+        corpus: null,
+        floor: null,
+      },
+    } as CorpusStoreType),
 
   actions: {
     async getCorpus() {
@@ -45,6 +50,11 @@ export const useCorpusPageStore = defineStore('corpus', {
         const corpusArr2 = format(corpusData2);
         const corpusArr3 = format(corpusData3);
         this.corpusData = { c2: corpusArr2, c3: corpusArr3 };
+
+        this.firstAvailableCorpusAndFloor = {
+          corpus: corpusArr2.length ? '2' : '3',
+          floor: corpusArr2.length ? corpusArr2[0] : corpusArr3[0],
+        };
       } catch (err) {
         console.log(err);
       } finally {

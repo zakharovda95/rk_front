@@ -3,6 +3,7 @@ import { AsyncData, useAsyncData } from '#app';
 import { FloorFormDataType } from '~/helpers/types/pages/floor-page.type';
 import { FloorStoreType } from '~/helpers/types/stores/floor-store.type';
 import { FloorDTO } from '~/helpers/types/dto.type';
+import { useCorpusPageStore } from '~/store/corpus.store';
 
 export const useFloorPageStore = defineStore('floor', {
   state: () =>

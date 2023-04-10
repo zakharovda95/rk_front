@@ -9,32 +9,27 @@
         Выберете свою идеальную планировку
       </UIText>
 
+      <SharedMobilePlanView
+        :is-loading="isLoading"
+        :current-corpus="corpusData.corpus"
+        :current-floor="corpusData.floor"
+        :tag="`c${corpusData.corpus}f${corpusData.floor}`"
+        :available-apartments="availableApartments"
+      />
+
       <PagesMainSecondSectionMobileNavigation class="w-[90%]" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { FloorType } from '~/helpers/types/common.type';
+import { useFloorPageStore } from '~/store/floor-page.store';
+import { useCorpusPageStore } from '~/store/corpus.store';
 
-const floor: Ref<FloorType | null> = ref(null);
+const floorStore = useFloorPageStore();
+const corpusStore = useCorpusPageStore();
 
-const test = (ev: FloorType) => {
-  floor.value = ev;
-};
-
-const img = computed(() => {
-  if (floor.value) {
-    switch (floor.value.floor) {
-      case '2':
-        return 'floor-2';
-      case '3':
-        return 'floor-3';
-      case '4':
-        return 'floor-4';
-      case '5':
-        return 'floor-5';
-    }
-  }
-});
+const isLoading: Ref<boolean> = computed(() => floorStore.isLoadingFloor);
+const corpusData = computed(() => corpusStore.firstAvailableCorpusAndFloor);
+const availableApartments = computed(() => floorStore.availableApartments);
 </script>

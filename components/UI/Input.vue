@@ -45,7 +45,6 @@ const modelValueProxy: Ref<string> = computed({
     return props.modelValue;
   },
   set(value: string): void {
-    console.log(value);
     emit('custom:update-model-value', value);
   },
 });
