@@ -3,10 +3,10 @@ version: '3.6'
 services:
   rk22-test:
     ports:
-      - '3000:3000'
+      - '3003:3000'
     user: node
     env_file:
-      - .env.production
+      - .env
     build:
       dockerfile: Dockerfile
       context: .

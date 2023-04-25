@@ -6,7 +6,7 @@ RUN mkdir -p /app
 
 WORKDIR /app
 
-COPY .env.production .
+COPY .env .
 COPY package.json .
 COPY yarn.lock .
 RUN yarn install --frozen-lockfile
@@ -20,6 +20,7 @@ RUN npm run build
 FROM $NODE_VERSION-slim AS production
 
 COPY --from=production-base /app/.output /app/.output
+COPY --from=production-base /app/.env ./
 
 ENV NUXT_HOST=0.0.0.0
 
