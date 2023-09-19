@@ -1,42 +1,7 @@
-# Nuxt 3 Minimal Starter
+# Проект-презентация жилого комплекса
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Проект был выполнен в срок и одобрен, но оплата за него так и не была проведена, поэтому код этого проекта был выложен через пол года, и служит в качестве примера моих работ
 
-## Setup
+## Стек
 
-Make sure to install the dependencies:
-
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Nuxt 3 + TS + GSAP
